@@ -36,15 +36,23 @@ def parse_arguments():
         description='🏷️ SEO Analyzer Ultra Corrigido - Análise completa de metatags',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-Exemplos de uso:
-  python main.py --url https://example.com
-  python main.py --url https://example.com --max-urls 50 --threads 5
-  python main.py --url https://example.com --crawler smart --output custom_output/
-  python main.py --url https://example.com --analyzer batch --batch-size 200
+🚀 CRAWLING MÁXIMO - ANÁLISE COMPLETA DE DOMÍNIO:
+  python main.py --url https://seusite.com.br
+  python main.py --url https://exemplo.com --threads 30
+  python main.py --url https://loja.com.br --max-urls 5000
+
+📋 CONFIGURAÇÃO OTIMIZADA PARA MÁXIMO CRAWLING:
+  ✅ Padrão: 10.000 URLs máximas (ajustável)
+  ✅ Padrão: Profundidade 10 níveis (completa)
+  ✅ Padrão: 25 threads (alta velocidade)
+  ✅ Padrão: Crawler inteligente com priorização
+
+🎯 USO RECOMENDADO:
+  Apenas informe a URL do domínio - o sistema vai buscar TODAS as páginas possíveis!
 
 Tipos de crawler:
+  smart   - Crawler inteligente com priorização (PADRÃO)
   default - Crawler padrão
-  smart   - Crawler com priorização inteligente  
   batch   - Crawler otimizado para lotes grandes
 
 Correções implementadas:
@@ -58,36 +66,36 @@ Correções implementadas:
     parser.add_argument(
         '--url',
         type=str,
-        default=DEFAULT_URL,
-        help=f'URL inicial para análise (padrão: {DEFAULT_URL})'
+        required=True,  # 🔥 OBRIGATÓRIO: Usuário DEVE informar URL
+        help='URL inicial para análise completa do domínio (OBRIGATÓRIO)'
     )
     
     parser.add_argument(
         '--max-urls',
         type=int,
         default=MAX_URLS_DEFAULT,
-        help=f'Número máximo de URLs para analisar (padrão: {MAX_URLS_DEFAULT})'
+        help=f'Número máximo de URLs para analisar (padrão: {MAX_URLS_DEFAULT} - CRAWLING MÁXIMO)'
     )
     
     parser.add_argument(
         '--max-depth',
         type=int,
-        default=5,
-        help='Profundidade máxima de crawling (padrão: 5)'
+        default=10,  # 🔥 PADRÃO MAIOR: Profundidade máxima para pegar todas as páginas
+        help='Profundidade máxima de crawling (padrão: 10 - BUSCA COMPLETA)'
     )
     
     parser.add_argument(
         '--threads',
         type=int,
         default=MAX_THREADS_DEFAULT,
-        help=f'Número de threads para crawling (padrão: {MAX_THREADS_DEFAULT})'
+        help=f'Número de threads para crawling (padrão: {MAX_THREADS_DEFAULT} - ALTA VELOCIDADE)'
     )
     
     parser.add_argument(
         '--crawler',
         choices=['default', 'smart', 'batch'],
-        default='default',
-        help='Tipo de crawler a usar (padrão: default)'
+        default='smart',  # 🔥 PADRÃO INTELIGENTE: Crawler com priorização
+        help='Tipo de crawler a usar (padrão: smart - CRAWLER INTELIGENTE)'
     )
     
     parser.add_argument(
@@ -213,25 +221,32 @@ def print_startup_info(args, config):
     domain = urlparse(args.url).netloc
     
     print("=" * 80)
-    print("🏷️  SEO ANALYZER ULTRA CORRIGIDO - VERSÃO MODULARIZADA")
+    print("🏷️  SEO ANALYZER ULTRA - CRAWLING MÁXIMO DE DOMÍNIO")
     print("=" * 80)
+    
+    print("🔥 CONFIGURAÇÃO PARA MÁXIMO CRAWLING:")
+    print("   ✅ Busca TODAS as páginas possíveis do domínio")
+    print("   ✅ Crawler inteligente com priorização automática")
+    print("   ✅ Multi-threading para alta velocidade")
+    print("   ✅ Filtros automáticos para URLs relevantes")
     
     print(MSG_CORRECTIONS_IMPLEMENTED)
     print(MSG_IMPROVEMENTS)
     print(MSG_NEW_CONSOLIDATED_TAB)
     
-    print("\n📊 CONFIGURAÇÕES:")
+    print("\n📊 CONFIGURAÇÕES DE CRAWLING MÁXIMO:")
     print(f"   🎯 URL inicial: {args.url}")
-    print(f"   📈 Max URLs: {args.max_urls}")
-    print(f"   📏 Max profundidade: {args.max_depth}")
-    print(f"   ⚡ Threads: {args.threads}")
-    print(f"   🕷️ Tipo de crawler: {args.crawler}")
+    print(f"   📈 Max URLs: {args.max_urls:,} (MÁXIMO POSSÍVEL)")
+    print(f"   📏 Max profundidade: {args.max_depth} (BUSCA COMPLETA)")
+    print(f"   ⚡ Threads: {args.threads} (ALTA VELOCIDADE)")
+    print(f"   🕷️ Tipo de crawler: {args.crawler} (INTELIGENTE)")
     print(f"   🏷️ Tipo de analisador: {args.analyzer}")
     print(f"   📦 Batch size: {args.batch_size}")
     print(f"   📁 Pasta de saída: {args.output}")
     print(f"   ⏱️ Timeout: {args.timeout}s")
     
-    print(f"\n🚀 Iniciando análise do domínio: {domain}")
+    print(f"\n🚀 Iniciando CRAWLING MÁXIMO do domínio: {domain}")
+    print(f"⚡ O sistema vai buscar TODAS as páginas possíveis!")
     print("=" * 80)
 
 
@@ -380,14 +395,15 @@ def main():
         sys.exit(1)
 
 
-def quick_analysis(url, max_urls=50):
-    """⚡ Função para análise rápida (uso programático)"""
+def quick_analysis(url, max_urls=10000):  # 🔥 PADRÃO MAIOR
+    """⚡ Função para análise rápida com configuração máxima (uso programático)"""
     config = get_config()
     config['crawler']['max_urls'] = max_urls
-    config['crawler']['max_threads'] = 10
+    config['crawler']['max_depth'] = 10      # 🔥 PROFUNDIDADE MÁXIMA
+    config['crawler']['max_threads'] = 25    # 🔥 ALTA VELOCIDADE
     
-    # Componentes
-    crawler = create_crawler('default', config)
+    # Componentes com configuração otimizada
+    crawler = create_crawler('smart', config)  # 🔥 CRAWLER INTELIGENTE
     analyzer = create_metatags_analyzer('default', config)
     report_generator = create_report_generator('default', config['output'])
     
@@ -396,7 +412,7 @@ def quick_analysis(url, max_urls=50):
     
     if results:
         filepath, df = report_generator.generate_complete_report(
-            results, analyzer, "QUICK_ANALYSIS"
+            results, analyzer, "QUICK_ANALYSIS_MAXIMO"
         )
         return filepath, df, analyzer.get_stats()
     

@@ -1,13 +1,9 @@
-# core/session_manager.py - Gerenciamento de sessões HTTP
-
 import requests
 import time
 from urllib.parse import urlparse
-from config.settings import DEFAULT_HEADERS, REQUEST_TIMEOUT
 
 
 class SessionManager:
-    """🔧 Gerenciador de sessões HTTP otimizado"""
     
     def __init__(self, config=None):
         self.config = config or {}
@@ -20,14 +16,20 @@ class SessionManager:
         }
     
     def _create_optimized_session(self):
-        """Cria sessão HTTP otimizada"""
         session = requests.Session()
         
-        # Headers padrão
-        headers = self.config.get('headers', DEFAULT_HEADERS)
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'pt-BR,pt;q=0.9,en;q=0.8',
+            'Accept-Encoding': 'gzip, deflate',
+            'Connection': 'keep-alive',
+        }
+        
+        config_headers = self.config.get('headers', {})
+        headers.update(config_headers)
         session.headers.update(headers)
         
-        # Configurações de conexão
         adapter = requests.adapters.HTTPAdapter(
             pool_connections=20,
             pool_maxsize=20,
@@ -39,27 +41,23 @@ class SessionManager:
         return session
     
     def get(self, url, **kwargs):
-        """Faz requisição GET com tratamento de erros"""
         start_time = time.time()
         self.stats['requests_made'] += 1
         
         try:
-            # Configurações padrão
             default_kwargs = {
-                'timeout': self.config.get('timeout', REQUEST_TIMEOUT),
+                'timeout': self.config.get('timeout', 15),
                 'allow_redirects': True,
-                'verify': True
+                'verify': False
             }
             default_kwargs.update(kwargs)
             
             response = self.session.get(url, **default_kwargs)
             
-            # Atualiza estatísticas
             response_time = (time.time() - start_time) * 1000
             self.stats['total_response_time'] += response_time
             self.stats['successful_requests'] += 1
             
-            # Adiciona tempo de resposta ao objeto response
             response.response_time_ms = round(response_time, 2)
             
             return response
@@ -81,12 +79,10 @@ class SessionManager:
             raise Exception(f"Erro inesperado ao acessar {url}: {str(e)}")
     
     def close(self):
-        """Fecha a sessão"""
         if self.session:
             self.session.close()
     
     def get_stats(self):
-        """Retorna estatísticas da sessão"""
         avg_response_time = 0
         if self.stats['successful_requests'] > 0:
             avg_response_time = self.stats['total_response_time'] / self.stats['successful_requests']
@@ -100,7 +96,6 @@ class SessionManager:
         }
     
     def reset_stats(self):
-        """Reseta estatísticas"""
         self.stats = {
             'requests_made': 0,
             'successful_requests': 0,
@@ -109,25 +104,20 @@ class SessionManager:
         }
     
     def update_headers(self, new_headers):
-        """Atualiza headers da sessão"""
         self.session.headers.update(new_headers)
     
     def set_proxy(self, proxy_config):
-        """Configura proxy"""
         if proxy_config:
             self.session.proxies.update(proxy_config)
     
     def __enter__(self):
-        """Context manager - entrada"""
         return self
     
     def __exit__(self, exc_type, exc_val, exc_tb):
-        """Context manager - saída"""
         self.close()
 
 
 class RateLimitedSessionManager(SessionManager):
-    """🚦 Gerenciador de sessão com rate limiting"""
     
     def __init__(self, config=None, rate_limit=None):
         super().__init__(config)
@@ -136,8 +126,6 @@ class RateLimitedSessionManager(SessionManager):
         self.min_interval = 1.0 / self.rate_limit['requests_per_second']
     
     def get(self, url, **kwargs):
-        """GET com rate limiting"""
-        # Aplica rate limiting
         current_time = time.time()
         time_since_last = current_time - self.last_request_time
         
@@ -151,7 +139,6 @@ class RateLimitedSessionManager(SessionManager):
 
 
 class MultiDomainSessionManager:
-    """🌐 Gerenciador para múltiplos domínios"""
     
     def __init__(self, config=None):
         self.config = config or {}
@@ -164,7 +151,6 @@ class MultiDomainSessionManager:
         }
     
     def get_session_for_domain(self, url):
-        """Retorna sessão específica para o domínio"""
         domain = urlparse(url).netloc
         
         if domain not in self.domain_sessions:
@@ -174,7 +160,6 @@ class MultiDomainSessionManager:
         return self.domain_sessions[domain]
     
     def get(self, url, **kwargs):
-        """GET usando sessão específica do domínio"""
         session = self.get_session_for_domain(url)
         
         try:
@@ -189,13 +174,11 @@ class MultiDomainSessionManager:
             raise e
     
     def close_all(self):
-        """Fecha todas as sessões"""
         for session in self.domain_sessions.values():
             session.close()
         self.domain_sessions.clear()
     
     def get_global_stats(self):
-        """Retorna estatísticas globais"""
         domain_stats = {}
         for domain, session in self.domain_sessions.items():
             domain_stats[domain] = session.get_stats()
@@ -213,7 +196,6 @@ class MultiDomainSessionManager:
 
 
 def create_session_manager(config=None, session_type='default'):
-    """🏭 Factory para criar gerenciadores de sessão"""
     
     if session_type == 'rate_limited':
         rate_config = config.get('rate_limit', {}) if config else {}
@@ -222,34 +204,28 @@ def create_session_manager(config=None, session_type='default'):
     elif session_type == 'multi_domain':
         return MultiDomainSessionManager(config)
     
-    else:  # default
+    else:
         return SessionManager(config)
 
 
-# ========================
-# 🧪 FUNÇÕES DE TESTE
-# ========================
-
 def test_session_manager(url="https://httpbin.org/get"):
-    """Testa o gerenciador de sessão"""
-    print("🧪 Testando SessionManager...")
+    print("Testando SessionManager...")
     
     with SessionManager() as session_manager:
         try:
             response = session_manager.get(url)
-            print(f"✅ Status: {response.status_code}")
-            print(f"⏱️ Tempo: {response.response_time_ms}ms")
+            print(f"Status: {response.status_code}")
+            print(f"Tempo: {response.response_time_ms}ms")
             
             stats = session_manager.get_stats()
-            print(f"📊 Stats: {stats}")
+            print(f"Stats: {stats}")
             
         except Exception as e:
-            print(f"❌ Erro: {e}")
+            print(f"Erro: {e}")
 
 
 def test_rate_limited_session(url="https://httpbin.org/get", requests_count=5):
-    """Testa sessão com rate limiting"""
-    print("🚦 Testando RateLimitedSessionManager...")
+    print("Testando RateLimitedSessionManager...")
     
     config = {'rate_limit': {'requests_per_second': 2}}
     
@@ -269,7 +245,6 @@ def test_rate_limited_session(url="https://httpbin.org/get", requests_count=5):
 
 
 if __name__ == "__main__":
-    # Testes básicos
     test_session_manager()
     print("\n" + "="*50 + "\n")
     test_rate_limited_session()

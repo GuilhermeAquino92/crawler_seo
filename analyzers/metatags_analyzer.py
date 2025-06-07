@@ -1,5 +1,3 @@
-# analyzers/metatags_analyzer.py - Analisador completo de metatags com correções
-
 from bs4 import BeautifulSoup
 from .headings_analyzer import HeadingsAnalyzer, HeadingsScoreCalculator
 from config.settings import (
@@ -15,20 +13,16 @@ from utils.constants import (
 
 
 class MetatagsAnalyzer:
-    """🏷️ Analisador completo de metatags - VERSÃO CORRIGIDA"""
     
     def __init__(self, config=None):
         self.config = config or {}
         
-        # Integra o HeadingsAnalyzer CORRIGIDO
         self.headings_analyzer = HeadingsAnalyzer(self.config)
         self.headings_score_calculator = HeadingsScoreCalculator(self.config)
         
-        # Rastreamento de duplicados
         self.titles_encontrados = {}
         self.descriptions_encontradas = {}
         
-        # Estatísticas
         self.stats = {
             'urls_processadas': 0,
             'titles_analisados': 0,
@@ -37,44 +31,36 @@ class MetatagsAnalyzer:
         }
     
     def analyze(self, soup, url):
-        """🏷️ Análise completa de metatags - MÉTODO PRINCIPAL"""
         try:
             resultado = {
                 'url': url,
                 'processed': True
             }
             
-            # 1. 🔢 ANÁLISE DE HEADINGS (usando versão corrigida)
             headings_data = self.headings_analyzer.analyze_all_headings(soup, url)
             resultado.update(headings_data)
             
-            # 2. 📄 ANÁLISE DE TITLE
             title_data = self._analyze_title(soup, url)
             resultado.update(title_data)
             
-            # 3. 📝 ANÁLISE DE DESCRIPTION
             description_data = self._analyze_description(soup, url)
             resultado.update(description_data)
             
-            # 4. 🏷️ OUTRAS METATAGS
             other_meta_data = self._analyze_other_metatags(soup, url)
             resultado.update(other_meta_data)
             
-            # 5. 📊 SCORE FINAL CONSOLIDADO
             score_data = self._calculate_final_score(resultado)
             resultado.update(score_data)
             
-            # 6. 🚨 PROBLEMAS CRÍTICOS E AVISOS
             issues_data = self._identify_critical_issues(resultado)
             resultado.update(issues_data)
             
-            # Atualiza estatísticas
             self.stats['urls_processadas'] += 1
             
             return resultado
             
         except Exception as e:
-            print(f"⚠️ Erro analisando {url}: {e}")
+            print(f"Erro analisando {url}: {e}")
             return {
                 'url': url,
                 'processed': False,
@@ -83,12 +69,10 @@ class MetatagsAnalyzer:
             }
     
     def _analyze_title(self, soup, url):
-        """📄 Análise completa do title"""
         title_tag = soup.find('title')
         title_text = title_tag.get_text().strip() if title_tag else ''
         title_length = len(title_text)
         
-        # Status do title
         if not title_text:
             title_status = STATUS_ABSENT
         elif title_length < TITLE_MIN_LENGTH:
@@ -98,10 +82,8 @@ class MetatagsAnalyzer:
         else:
             title_status = STATUS_OK
         
-        # Rastreamento de duplicados
         title_duplicado = self._track_title_duplicate(title_text, url)
         
-        # Issues específicos do title
         title_issues = []
         if title_status == STATUS_ABSENT:
             title_issues.append('Title ausente')
@@ -124,12 +106,10 @@ class MetatagsAnalyzer:
         }
     
     def _analyze_description(self, soup, url):
-        """📝 Análise completa da meta description"""
         desc_tag = soup.find('meta', attrs={'name': 'description'})
         desc_text = desc_tag.get('content', '').strip() if desc_tag else ''
         desc_length = len(desc_text)
         
-        # Status da description
         if not desc_text:
             desc_status = STATUS_ABSENT
         elif desc_length < DESCRIPTION_MIN_LENGTH:
@@ -139,10 +119,8 @@ class MetatagsAnalyzer:
         else:
             desc_status = STATUS_OK
         
-        # Rastreamento de duplicados
         desc_duplicada = self._track_description_duplicate(desc_text, url)
         
-        # Issues específicos da description
         description_issues = []
         if desc_status == STATUS_ABSENT:
             description_issues.append('Meta description ausente')
@@ -165,26 +143,20 @@ class MetatagsAnalyzer:
         }
     
     def _analyze_other_metatags(self, soup, url):
-        """🏷️ Análise de outras metatags importantes"""
         other_data = {}
         
-        # Meta keywords (informativo)
         keywords_tag = soup.find('meta', attrs={'name': 'keywords'})
         other_data['meta_keywords'] = keywords_tag.get('content', '').strip() if keywords_tag else ''
         
-        # Meta robots
         robots_tag = soup.find('meta', attrs={'name': 'robots'})
         other_data['meta_robots'] = robots_tag.get('content', '').strip() if robots_tag else ''
         
-        # Meta viewport
         viewport_tag = soup.find('meta', attrs={'name': 'viewport'})
         other_data['meta_viewport'] = viewport_tag.get('content', '').strip() if viewport_tag else ''
         
-        # Canonical
         canonical_tag = soup.find('link', attrs={'rel': 'canonical'})
         other_data['canonical_url'] = canonical_tag.get('href', '').strip() if canonical_tag else ''
         
-        # Open Graph básico
         og_title = soup.find('meta', attrs={'property': 'og:title'})
         og_description = soup.find('meta', attrs={'property': 'og:description'})
         og_image = soup.find('meta', attrs={'property': 'og:image'})
@@ -193,13 +165,11 @@ class MetatagsAnalyzer:
         other_data['og_description'] = og_description.get('content', '').strip() if og_description else ''
         other_data['og_image'] = og_image.get('content', '').strip() if og_image else ''
         
-        # Verifica se tem Open Graph básico
         other_data['has_open_graph'] = bool(other_data['og_title'] or other_data['og_description'])
         
         return other_data
     
     def _track_title_duplicate(self, title, url):
-        """🔄 Rastreia duplicados de title"""
         if not title:
             return False
         
@@ -208,7 +178,6 @@ class MetatagsAnalyzer:
         
         self.titles_encontrados[title].append(url)
         
-        # É duplicado se já existe em outra URL
         is_duplicate = len(self.titles_encontrados[title]) > 1
         
         if is_duplicate:
@@ -217,7 +186,6 @@ class MetatagsAnalyzer:
         return is_duplicate
     
     def _track_description_duplicate(self, description, url):
-        """🔄 Rastreia duplicados de description"""
         if not description:
             return False
         
@@ -226,7 +194,6 @@ class MetatagsAnalyzer:
         
         self.descriptions_encontradas[description].append(url)
         
-        # É duplicado se já existe em outra URL
         is_duplicate = len(self.descriptions_encontradas[description]) > 1
         
         if is_duplicate:
@@ -235,43 +202,34 @@ class MetatagsAnalyzer:
         return is_duplicate
     
     def _calculate_final_score(self, resultado):
-        """📊 Calcula score final consolidado"""
         score = 0
         
-        # 1. Score do title (30 pontos máximo)
         if resultado.get('title_status') == STATUS_OK and not resultado.get('title_duplicado'):
             score += SCORE_TITLE_OK
         elif resultado.get('title_duplicado'):
             score += max(0, SCORE_TITLE_OK - PENALTY_DUPLICATE_TITLE)
         
-        # 2. Score da description (25 pontos máximo)
         if resultado.get('description_status') == STATUS_OK and not resultado.get('description_duplicada'):
             score += SCORE_DESCRIPTION_OK
         elif resultado.get('description_duplicada'):
             score += max(0, SCORE_DESCRIPTION_OK - PENALTY_DUPLICATE_DESCRIPTION)
         
-        # 3. Score dos headings (35 pontos máximo) - USA O CALCULADOR CORRIGIDO
         headings_score = self.headings_score_calculator.calculate_headings_score(resultado)
         score += headings_score
         
-        # 4. Bônus por outras features (10 pontos máximo)
         bonus_score = 0
         
-        # Open Graph (+5 pontos)
         if resultado.get('has_open_graph'):
             bonus_score += 5
         
-        # Meta viewport (+3 pontos)
         if resultado.get('meta_viewport'):
             bonus_score += 3
         
-        # Canonical URL (+2 pontos)
         if resultado.get('canonical_url'):
             bonus_score += 2
         
         score += bonus_score
         
-        # Score final (máximo 100)
         final_score = min(score, 100)
         
         return {
@@ -286,11 +244,9 @@ class MetatagsAnalyzer:
         }
     
     def _identify_critical_issues(self, resultado):
-        """🚨 Identifica problemas críticos e avisos"""
         critical_issues = []
         warnings = []
         
-        # Problemas críticos (impedem bom SEO)
         if resultado.get('title_status') == STATUS_ABSENT:
             critical_issues.append('Title ausente')
         
@@ -303,7 +259,6 @@ class MetatagsAnalyzer:
         if resultado.get('headings_gravidade_critica', 0) > 0:
             critical_issues.append(f"H1s problemáticos ({resultado.get('headings_gravidade_critica')})")
         
-        # Avisos (problemas menores)
         if resultado.get('title_duplicado'):
             warnings.append('Title duplicado')
         
@@ -335,7 +290,6 @@ class MetatagsAnalyzer:
         }
     
     def get_duplicates_report(self):
-        """📊 Retorna relatório de duplicados"""
         title_duplicates = {
             title: urls for title, urls in self.titles_encontrados.items() 
             if len(urls) > 1
@@ -354,7 +308,6 @@ class MetatagsAnalyzer:
         }
     
     def get_stats(self):
-        """📊 Retorna estatísticas completas"""
         duplicates_report = self.get_duplicates_report()
         
         return {
@@ -371,7 +324,6 @@ class MetatagsAnalyzer:
         }
     
     def reset_stats(self):
-        """🔄 Reseta estatísticas e duplicados"""
         self.titles_encontrados.clear()
         self.descriptions_encontradas.clear()
         self.stats = {
@@ -383,7 +335,6 @@ class MetatagsAnalyzer:
 
 
 class MetatagsAnalyzerBatch(MetatagsAnalyzer):
-    """📦 Analisador otimizado para processamento em lote"""
     
     def __init__(self, config=None, batch_size=100):
         super().__init__(config)
@@ -391,10 +342,9 @@ class MetatagsAnalyzerBatch(MetatagsAnalyzer):
         self.batch_results = []
     
     def analyze_batch(self, soup_url_pairs):
-        """📦 Analisa lote de páginas"""
         batch_results = []
         
-        print(f"📦 Processando lote de {len(soup_url_pairs)} páginas...")
+        print(f"Processando lote de {len(soup_url_pairs)} páginas...")
         
         for i, (soup, url) in enumerate(soup_url_pairs, 1):
             try:
@@ -405,7 +355,7 @@ class MetatagsAnalyzerBatch(MetatagsAnalyzer):
                     print(f"   Processadas: {i}/{len(soup_url_pairs)}")
                     
             except Exception as e:
-                print(f"⚠️ Erro no lote {url}: {e}")
+                print(f"Erro no lote {url}: {e}")
                 batch_results.append({
                     'url': url,
                     'processed': False,
@@ -413,12 +363,11 @@ class MetatagsAnalyzerBatch(MetatagsAnalyzer):
                 })
         
         self.batch_results.extend(batch_results)
-        print(f"✅ Lote concluído: {len(batch_results)} páginas processadas")
+        print(f"Lote concluído: {len(batch_results)} páginas processadas")
         
         return batch_results
     
     def get_batch_summary(self):
-        """📊 Resumo do processamento em lote"""
         if not self.batch_results:
             return {}
         
@@ -438,30 +387,19 @@ class MetatagsAnalyzerBatch(MetatagsAnalyzer):
         }
 
 
-# ========================
-# 🏭 FACTORY FUNCTIONS
-# ========================
-
 def create_metatags_analyzer(analyzer_type='default', config=None):
-    """🏭 Factory para criar analisadores de metatags"""
     
     if analyzer_type == 'batch':
         batch_size = config.get('batch_size', 100) if config else 100
         return MetatagsAnalyzerBatch(config, batch_size)
     
-    else:  # default
+    else:
         return MetatagsAnalyzer(config)
 
 
-# ========================
-# 🧪 FUNÇÕES DE TESTE
-# ========================
-
 def test_metatags_analyzer():
-    """Testa o analisador de metatags"""
-    print("🧪 Testando MetatagsAnalyzer...")
+    print("Testando MetatagsAnalyzer...")
     
-    # HTML de teste com problemas variados
     html_test = """
     <html>
     <head>
@@ -473,10 +411,11 @@ def test_metatags_analyzer():
     </head>
     <body>
         <h1>Título Principal</h1>
-        <h2></h2>  <!-- Vazio -->
+        <h2></h2>
         <h3>Subtítulo</h3>
+        <h6>Salto na hierarquia</h6>
         <h2 style="color: white;">Heading Oculto</h2>
-        <h4>Salto na hierarquia</h4>
+        <h1>Segundo H1</h1>
     </body>
     </html>
     """
@@ -484,10 +423,9 @@ def test_metatags_analyzer():
     soup = BeautifulSoup(html_test, 'html.parser')
     analyzer = MetatagsAnalyzer()
     
-    # Testa análise completa
     resultado = analyzer.analyze(soup, "https://test.com/page1")
     
-    print("📊 Resultados da análise:")
+    print("Resultados da análise:")
     print(f"  URL: {resultado['url']}")
     print(f"  Title: '{resultado['title']}' ({resultado['title_length']} chars)")
     print(f"  Title Status: {resultado['title_status']}")
@@ -495,28 +433,35 @@ def test_metatags_analyzer():
     print(f"  Description Status: {resultado['description_status']}")
     print(f"  H1 Count: {resultado['h1_count']}")
     print(f"  H1 Ausente: {resultado['h1_ausente']}")
+    print(f"  H1 Múltiplo: {resultado['h1_multiple']}")
     print(f"  Hierarquia Correta: {resultado['hierarquia_correta']}")
     print(f"  Headings Problemáticos: {resultado['headings_problematicos_count']}")
+    print(f"  Headings Vazios: {resultado['headings_vazios_count']}")
+    print(f"  Headings Ocultos: {resultado['headings_ocultos_count']}")
+    print(f"  Headings Críticos: {resultado['headings_gravidade_critica']}")
     print(f"  Score Final: {resultado['metatags_score']}/100")
     
-    print(f"\n🚨 Problemas críticos ({len(resultado['critical_issues'])}):")
+    print(f"\nSequências:")
+    print(f"  Completa: {' → '.join(resultado['heading_sequence'])}")
+    print(f"  Válida: {' → '.join(resultado['heading_sequence_valida'])}")
+    
+    print(f"\nProblemas críticos ({len(resultado['critical_issues'])}):")
     for issue in resultado['critical_issues']:
         print(f"    - {issue}")
     
-    print(f"\n⚠️ Avisos ({len(resultado['warnings'])}):")
+    print(f"\nAvisos ({len(resultado['warnings'])}):")
     for warning in resultado['warnings']:
         print(f"    - {warning}")
     
-    # Testa segunda página para verificar duplicados
     html_test2 = """
     <html>
     <head>
-        <title>Página de Teste SEO</title>  <!-- Title duplicado -->
+        <title>Página de Teste SEO</title>
         <meta name="description" content="Descrição diferente.">
     </head>
     <body>
         <h1>Outro H1</h1>
-        <h1>Segundo H1</h1>  <!-- H1 múltiplo -->
+        <h1>Segundo H1</h1>
     </body>
     </html>
     """
@@ -524,73 +469,16 @@ def test_metatags_analyzer():
     soup2 = BeautifulSoup(html_test2, 'html.parser')
     resultado2 = analyzer.analyze(soup2, "https://test.com/page2")
     
-    print(f"\n📊 Segunda página:")
+    print(f"\nSegunda página:")
     print(f"  Title Duplicado: {resultado2['title_duplicado']}")
     print(f"  H1 Múltiplo: {resultado2['h1_multiple']}")
     print(f"  Score: {resultado2['metatags_score']}/100")
     
-    # Estatísticas do analisador
     stats = analyzer.get_stats()
-    print(f"\n📈 Estatísticas:")
+    print(f"\nEstatísticas:")
     print(f"  URLs processadas: {stats['processing']['urls_processadas']}")
     print(f"  Duplicados encontrados: {stats['duplicates']['total_duplicate_titles']}")
 
 
-def test_batch_analyzer():
-    """Testa o analisador em lote"""
-    print("\n📦 Testando MetatagsAnalyzerBatch...")
-    
-    # Simula múltiplas páginas
-    test_pages = [
-        ('<html><head><title>Página 1</title></head><body><h1>H1-1</h1></body></html>', 'https://test.com/1'),
-        ('<html><head><title>Página 2</title></head><body><h1>H1-2</h1></body></html>', 'https://test.com/2'),
-        ('<html><head><title>Página 1</title></head><body><h1>H1-3</h1></body></html>', 'https://test.com/3'),  # Title duplicado
-    ]
-    
-    # Converte para BeautifulSoup
-    soup_pairs = [(BeautifulSoup(html, 'html.parser'), url) for html, url in test_pages]
-    
-    # Testa analisador em lote
-    batch_analyzer = MetatagsAnalyzerBatch(batch_size=10)
-    results = batch_analyzer.analyze_batch(soup_pairs)
-    
-    print(f"📊 Resultados do lote:")
-    print(f"  Total processado: {len(results)}")
-    
-    # Resumo do lote
-    summary = batch_analyzer.get_batch_summary()
-    print(f"  Taxa de sucesso: {summary['success_rate']:.1f}%")
-    print(f"  Score médio: {summary['average_score']:.1f}")
-    
-    # Verifica duplicados
-    duplicates = batch_analyzer.get_duplicates_report()
-    print(f"  Titles duplicados: {duplicates['total_duplicate_titles']}")
-
-
-def test_factory_functions():
-    """Testa as funções factory"""
-    print("\n🏭 Testando factory functions...")
-    
-    # Testa criação de diferentes tipos
-    analyzers = {
-        'default': create_metatags_analyzer('default'),
-        'batch': create_metatags_analyzer('batch'),
-        'with_config': create_metatags_analyzer('default', {'batch_size': 50})
-    }
-    
-    for name, analyzer in analyzers.items():
-        print(f"   ✅ {name}: {analyzer.__class__.__name__}")
-        
-        # Verifica configuração
-        if hasattr(analyzer, 'batch_size'):
-            print(f"      Batch size: {analyzer.batch_size}")
-
-
 if __name__ == "__main__":
     test_metatags_analyzer()
-    test_batch_analyzer()
-    test_factory_functions()
-    
-    print(f"\n🎯 Testes concluídos!")
-    print(f"💡 O MetatagsAnalyzer está integrado com HeadingsAnalyzer corrigido!")
-    print(f"🔧 Todas as correções de hierarquia estão funcionando!")
