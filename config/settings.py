@@ -1,16 +1,33 @@
 import os
 
+# ========================
+# 🌐 URLs E CONFIGURAÇÕES BÁSICAS
+# ========================
+
+DEFAULT_URL = "https://alastin.com.br/"  # 🆕 ADICIONADO
 URL_INICIAL = "https://alastin.com.br/"
 MAX_URLS_DEFAULT = 10000
 MAX_DEPTH_DEFAULT = 10
 MAX_THREADS_DEFAULT = 25
 
+# ========================
+# ⏱️ TIMEOUTS E CONEXÕES
+# ========================
+
 REQUEST_TIMEOUT = 15
 CONNECTION_TIMEOUT = 10
 READ_TIMEOUT = 30
 
+# ========================
+# 📁 PASTAS DE SAÍDA
+# ========================
+
 OUTPUT_FOLDER = "output"
 LOGS_FOLDER = "logs"
+
+# ========================
+# 🌐 HEADERS HTTP
+# ========================
 
 DEFAULT_USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 
@@ -22,10 +39,18 @@ DEFAULT_HEADERS = {
     'Connection': 'keep-alive',
 }
 
+# ========================
+# 📏 LIMITES DE METATAGS
+# ========================
+
 TITLE_MIN_LENGTH = 30
 TITLE_MAX_LENGTH = 60
 DESCRIPTION_MIN_LENGTH = 120
 DESCRIPTION_MAX_LENGTH = 160
+
+# ========================
+# 🎯 SCORES E PENALIZAÇÕES
+# ========================
 
 SCORE_TITLE_OK = 30
 SCORE_DESCRIPTION_OK = 25
@@ -39,6 +64,10 @@ PENALTY_DUPLICATE_DESCRIPTION = 10
 PENALTY_H1_CRITICAL = 10
 PENALTY_H1_PROBLEMATIC = 3
 PENALTY_INCORRECT_HIERARCHY = 15
+
+# ========================
+# 🛒 FILTROS DE E-COMMERCE
+# ========================
 
 ECOMMERCE_PATTERNS = [
     '/checkout/cart/add/',
@@ -56,6 +85,10 @@ ECOMMERCE_PATTERNS = [
     '/admin/',
 ]
 
+# ========================
+# 📁 EXTENSÕES EXCLUÍDAS
+# ========================
+
 EXCLUDED_EXTENSIONS = {
     '.js', '.css', '.json', '.xml', '.txt', '.ico',
     '.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.svg',
@@ -63,6 +96,10 @@ EXCLUDED_EXTENSIONS = {
     '.zip', '.rar', '.7z', '.mp3', '.mp4', '.avi',
     '.woff', '.woff2', '.ttf', '.eot', '.map'
 }
+
+# ========================
+# ⚙️ PADRÕES TÉCNICOS
+# ========================
 
 TECHNICAL_PATTERNS = [
     '/wp-content/uploads/', '/wp-content/themes/', '/wp-content/plugins/',
@@ -74,6 +111,10 @@ TECHNICAL_PATTERNS = [
     'cloudflare', 'jquery', 'bootstrap', 'fontawesome'
 ]
 
+# ========================
+# 🔗 PARÂMETROS PROBLEMÁTICOS
+# ========================
+
 PROBLEMATIC_PARAMS = [
     'SID=',
     'PHPSESSID=',
@@ -81,6 +122,10 @@ PROBLEMATIC_PARAMS = [
     'gclid=',
     'fbclid=',
 ]
+
+# ========================
+# 👻 DETECÇÃO DE HEADINGS OCULTOS (CORRIGIDO)
+# ========================
 
 HIDDEN_CSS_CLASSES = [
     'hidden', 'hide', 'invisible', 'sr-only', 'screen-reader',
@@ -106,6 +151,12 @@ SUSPICIOUS_POSITIONING = [
     'position:absolute', 'clip:rect'
 ]
 
+RGB_LIGHT_THRESHOLD = 250
+
+# ========================
+# 📅 FORMATAÇÃO E EXCEL
+# ========================
+
 TIMESTAMP_FORMAT = '%Y%m%d_%H%M%S'
 
 EXCEL_ENGINE = 'xlsxwriter'
@@ -128,7 +179,9 @@ COLUMN_WIDTHS = {
     'counter': 12
 }
 
-RGB_LIGHT_THRESHOLD = 250
+# ========================
+# 📝 LOGGING
+# ========================
 
 LOGGING_CONFIG = {
     'level': 'INFO',
@@ -136,8 +189,16 @@ LOGGING_CONFIG = {
     'handlers': ['console', 'file']
 }
 
+# ========================
+# 🚨 STATUS HTTP
+# ========================
+
 CRITICAL_HTTP_STATUS = [404, 500, 502, 503, 504]
 WARNING_HTTP_STATUS = [301, 302, 403]
+
+# ========================
+# ⚙️ CONFIGURAÇÃO PRINCIPAL
+# ========================
 
 DEFAULT_CONFIG = {
     'crawler': {
@@ -163,22 +224,30 @@ DEFAULT_CONFIG = {
     'output': {
         'folder': OUTPUT_FOLDER,
         'timestamp_format': TIMESTAMP_FORMAT,
-        'excel_engine': EXCEL_ENGINE
+        'excel_engine': EXCEL_ENGINE,
+        'use_emoji_names': True  # 🆕 ADICIONADO
     },
     'logging': LOGGING_CONFIG
 }
 
+# ========================
+# 🔧 FUNÇÕES UTILITÁRIAS
+# ========================
+
 def create_output_folders():
+    """Cria pastas de saída se não existirem"""
     import os
     folders = [OUTPUT_FOLDER, LOGS_FOLDER]
     for folder in folders:
         os.makedirs(folder, exist_ok=True)
 
 def get_config():
+    """Retorna configuração padrão com pastas criadas"""
     create_output_folders()
     return DEFAULT_CONFIG.copy()
 
 def update_config(custom_config):
+    """Atualiza configuração com valores customizados"""
     config = get_config()
     
     def deep_update(base_dict, update_dict):
@@ -190,3 +259,27 @@ def update_config(custom_config):
     
     deep_update(config, custom_config)
     return config
+
+# ========================
+# 🧪 TESTE DE CONFIGURAÇÃO
+# ========================
+
+def test_config():
+    """Testa se a configuração está funcionando"""
+    print("🔧 Testando configuração...")
+    
+    config = get_config()
+    
+    print(f"✅ URL padrão: {DEFAULT_URL}")
+    print(f"✅ Max URLs: {config['crawler']['max_urls']}")
+    print(f"✅ Max threads: {config['crawler']['max_threads']}")
+    print(f"✅ Timeout: {config['crawler']['timeout']}s")
+    print(f"✅ Pasta de saída: {config['output']['folder']}")
+    print(f"✅ Detecção cores invisíveis: {config['analysis']['detect_invisible_colors']}")
+    print(f"✅ Consolidar headings: {config['analysis']['consolidate_headings']}")
+    print(f"✅ Gravidade diferenciada: {config['analysis']['differentiate_gravity']}")
+    
+    print("🎯 Configuração OK!")
+
+if __name__ == "__main__":
+    test_config()

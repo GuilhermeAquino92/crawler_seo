@@ -19,6 +19,7 @@ class ExcelReportGenerator:
         os.makedirs(self.output_folder, exist_ok=True)
     
     def generate_complete_report(self, results, crawlers_data=None, filename_prefix="METATAGS_ULTRA"):
+        """Gera relatório completo com 8 abas principais"""
         try:
             df_principal = self._create_main_dataframe(results)
             
@@ -49,6 +50,7 @@ class ExcelReportGenerator:
             return None, None
     
     def generate_complete_report_with_filters(self, results, crawlers_data=None, crawler_instance=None, filename_prefix="METATAGS_ULTRA"):
+        """Gera relatório completo incluindo dados de URLs filtradas"""
         try:
             df_principal = self._create_main_dataframe(results)
             
@@ -63,6 +65,7 @@ class ExcelReportGenerator:
                 'summary': self._create_executive_summary_dataframe(df_principal, crawlers_data)
             }
             
+            # Adiciona aba de URLs filtradas se disponível
             if crawler_instance and hasattr(crawler_instance, 'url_manager'):
                 filtered_urls = crawler_instance.url_manager.get_filtered_urls()
                 if filtered_urls:
@@ -84,6 +87,7 @@ class ExcelReportGenerator:
             return None, None
     
     def _create_main_dataframe(self, results):
+        """Cria DataFrame principal com todas as métricas"""
         dados_principais = []
         
         for resultado in results:
@@ -104,6 +108,7 @@ class ExcelReportGenerator:
                 'H1_Ausente': 'SIM' if resultado.get('h1_ausente', True) else 'NÃO',
                 'H1_Multiple': 'SIM' if resultado.get('h1_multiple', False) else 'NÃO',
                 'Hierarquia_Correta': 'SIM' if resultado.get('hierarquia_correta', True) else 'NÃO',
+                # 🆕 MÉTRICAS CORRIGIDAS DE HEADINGS
                 'Headings_Problematicos_Total': resultado.get('headings_problematicos_count', 0),
                 'Headings_Vazios': resultado.get('headings_vazios_count', 0),
                 'Headings_Ocultos': resultado.get('headings_ocultos_count', 0),
@@ -122,6 +127,7 @@ class ExcelReportGenerator:
         return pd.DataFrame(dados_principais)
     
     def _create_problematic_headings_dataframe(self, results):
+        """🆕 Cria DataFrame consolidado de headings problemáticos (CORREÇÃO PRINCIPAL)"""
         dados_headings_problematicos = []
         
         for resultado in results:
@@ -139,6 +145,7 @@ class ExcelReportGenerator:
                     gravidades.append(heading_prob.get('gravidade', 'MÉDIO'))
                     motivos_todos.extend(heading_prob.get('motivos', []))
                 
+                # 🔥 GRAVIDADE DIFERENCIADA: CRÍTICO se tem H1s problemáticos
                 gravidade_geral = 'CRÍTICO' if 'CRÍTICO' in gravidades else 'MÉDIO'
                 
                 dados_headings_problematicos.append({
@@ -159,6 +166,7 @@ class ExcelReportGenerator:
         return pd.DataFrame(dados_headings_problematicos) if dados_headings_problematicos else pd.DataFrame()
     
     def _create_hierarchy_dataframe(self, results):
+        """Cria DataFrame específico para problemas de hierarquia"""
         dados_hierarquia_problemas = []
         
         for resultado in results:
@@ -179,6 +187,7 @@ class ExcelReportGenerator:
         return pd.DataFrame(dados_hierarquia_problemas) if dados_hierarquia_problemas else pd.DataFrame()
     
     def _create_title_duplicates_dataframe(self, results, crawlers_data):
+        """Cria DataFrame de títulos duplicados"""
         dados_duplicados_title = []
         
         if crawlers_data and hasattr(crawlers_data, 'titles_encontrados'):
@@ -196,6 +205,7 @@ class ExcelReportGenerator:
         return pd.DataFrame(dados_duplicados_title) if dados_duplicados_title else pd.DataFrame()
     
     def _create_description_duplicates_dataframe(self, results, crawlers_data):
+        """Cria DataFrame de descriptions duplicadas"""
         dados_duplicados_description = []
         
         if crawlers_data and hasattr(crawlers_data, 'descriptions_encontradas'):
@@ -213,6 +223,7 @@ class ExcelReportGenerator:
         return pd.DataFrame(dados_duplicados_description) if dados_duplicados_description else pd.DataFrame()
     
     def _create_critical_dataframe(self, results):
+        """Cria DataFrame só com problemas críticos"""
         dados_criticos = []
         
         for resultado in results:
@@ -220,7 +231,7 @@ class ExcelReportGenerator:
                 resultado.get('description_status') == 'Ausente' or
                 resultado.get('h1_ausente', True) or
                 resultado.get('critical_issues') or
-                resultado.get('headings_gravidade_critica', 0) > 0):
+                resultado.get('headings_gravidade_critica', 0) > 0):  # 🆕 HEADINGS CRÍTICOS
                 
                 dados_criticos.append({
                     'URL': resultado['url'],
@@ -228,8 +239,8 @@ class ExcelReportGenerator:
                     'Title_Status': resultado.get('title_status', ''),
                     'Description_Status': resultado.get('description_status', ''),
                     'H1_Ausente': 'SIM' if resultado.get('h1_ausente', True) else 'NÃO',
-                    'Headings_Criticos': resultado.get('headings_gravidade_critica', 0),
-                    'Total_Problemas_Headings': resultado.get('total_problemas_headings', 0),
+                    'Headings_Criticos': resultado.get('headings_gravidade_critica', 0),  # 🆕
+                    'Total_Problemas_Headings': resultado.get('total_problemas_headings', 0),  # 🆕
                     'Critical_Issues': ' | '.join(resultado.get('critical_issues', [])),
                     'Metatags_Score': resultado.get('metatags_score', 0)
                 })
@@ -237,6 +248,7 @@ class ExcelReportGenerator:
         return pd.DataFrame(dados_criticos) if dados_criticos else pd.DataFrame()
     
     def _create_score_ranking_dataframe(self, df_principal):
+        """Cria DataFrame ranking por score"""
         if df_principal.empty:
             return pd.DataFrame()
         
@@ -244,11 +256,13 @@ class ExcelReportGenerator:
         return df_score[['URL', 'Metatags_Score', 'Title_Status', 'Description_Status', 'H1_Ausente', 'Headings_Problematicos_Total']]
     
     def _create_executive_summary_dataframe(self, df_principal, crawlers_data):
+        """🆕 Cria resumo executivo com todas as correções"""
         total_urls = len(df_principal)
         
         if total_urls == 0:
             return pd.DataFrame([['Nenhuma URL analisada', '']], columns=['Métrica', 'Valor'])
         
+        # Métricas básicas
         title_ok = len(df_principal[df_principal['Title_Status'] == 'OK'])
         title_ausente = len(df_principal[df_principal['Title_Status'] == 'Ausente'])
         title_duplicados = len(df_principal[df_principal['Title_Duplicado'] == 'SIM'])
@@ -260,6 +274,7 @@ class ExcelReportGenerator:
         h1_ausente = len(df_principal[df_principal['H1_Ausente'] == 'SIM'])
         hierarquia_incorreta = len(df_principal[df_principal['Hierarquia_Correta'] == 'NÃO'])
         
+        # 🆕 MÉTRICAS CORRIGIDAS DE HEADINGS
         urls_com_headings_problematicos = len(df_principal[df_principal['Headings_Problematicos_Total'] > 0])
         headings_vazios_total = df_principal['Headings_Vazios'].sum()
         headings_ocultos_total = df_principal['Headings_Ocultos'].sum()
@@ -267,6 +282,7 @@ class ExcelReportGenerator:
         
         score_medio = df_principal['Metatags_Score'].mean()
         
+        # Duplicados únicos
         titles_unicos_duplicados = 0
         descriptions_unicas_duplicadas = 0
         
@@ -325,11 +341,13 @@ class ExcelReportGenerator:
         ], columns=['Métrica', 'Valor'])
     
     def _create_filtered_urls_dataframe(self, filtered_urls):
+        """Cria DataFrame de URLs filtradas durante o crawling"""
         if not filtered_urls:
             return pd.DataFrame()
         
         dados_filtrados = []
         
+        # Análise dos tipos de filtro
         tipos_filtro = {}
         for url_data in filtered_urls:
             tipo = url_data.get('reason', 'Desconhecido')
@@ -337,6 +355,7 @@ class ExcelReportGenerator:
                 tipos_filtro[tipo] = []
             tipos_filtro[tipo].append(url_data)
         
+        # Cria dados detalhados
         for url_data in filtered_urls:
             dados_filtrados.append({
                 'URL_Filtrada': url_data.get('url', ''),
@@ -348,6 +367,7 @@ class ExcelReportGenerator:
         
         df_filtered = pd.DataFrame(dados_filtrados)
         
+        # Adiciona resumo no topo
         if not df_filtered.empty:
             resumo_data = []
             for categoria in df_filtered['Categoria'].unique():
@@ -366,6 +386,7 @@ class ExcelReportGenerator:
         return df_filtered
     
     def _classify_filter_type(self, reason):
+        """Classifica tipo de filtro para melhor organização"""
         if 'ECOMMERCE' in reason.upper():
             return '🛒 E-commerce'
         elif 'FILE_EXTENSION' in reason.upper():
@@ -380,6 +401,7 @@ class ExcelReportGenerator:
             return '❓ Outros'
     
     def _get_filter_seo_impact(self, reason):
+        """Avalia impacto SEO do filtro aplicado"""
         if 'ECOMMERCE' in reason.upper():
             return 'Positivo: Evita 404s de endpoints'
         elif 'FILE_EXTENSION' in reason.upper():
@@ -394,8 +416,86 @@ class ExcelReportGenerator:
             return 'Verificar caso específico'
     
     def _write_excel_file(self, filepath, dataframes):
+        """Escreve arquivo Excel com 8 abas principais"""
         try:
             with pd.ExcelWriter(filepath, engine=EXCEL_ENGINE) as writer:
+                # 1. ABA PRINCIPAL - Dados completos
+                if not dataframes['main'].empty:
+                    dataframes['main'].to_excel(writer, sheet_name=self.sheet_names.get('complete', 'Complete'), index=False)
+                    print(f"   ✅ Aba '{self.sheet_names.get('complete', 'Complete')}' criada")
+                
+                # 2. ABA CRÍTICOS - Problemas críticos
+                if not dataframes['critical'].empty:
+                    dataframes['critical'].to_excel(writer, sheet_name=self.sheet_names.get('critical', 'Criticos'), index=False)
+                    print(f"   ✅ Aba '{self.sheet_names.get('critical', 'Criticos')}' criada")
+                else:
+                    pd.DataFrame(columns=['URL', 'Status_Code', 'Title_Status', 'Description_Status', 'H1_Ausente']).to_excel(
+                        writer, sheet_name=self.sheet_names.get('critical', 'Criticos'), index=False)
+                
+                # 3. 🆕 ABA HEADINGS PROBLEMÁTICOS - Consolidada (CORREÇÃO PRINCIPAL)
+                if not dataframes['headings_problematic'].empty:
+                    dataframes['headings_problematic'].to_excel(writer, sheet_name=self.sheet_names.get('headings_problematic', 'Headings_Problematicos'), index=False)
+                    print(f"   ✅ Aba '{self.sheet_names.get('headings_problematic', 'Headings_Problematicos')}' criada (CONSOLIDADA)")
+                else:
+                    pd.DataFrame(columns=['URL', 'Total_Problemas', 'Headings_Vazios', 'Headings_Ocultos', 'Gravidade_Geral']).to_excel(
+                        writer, sheet_name=self.sheet_names.get('headings_problematic', 'Headings_Problematicos'), index=False)
+                
+                # 4. ABA HIERARQUIA - Problemas de hierarquia
+                if not dataframes['hierarchy'].empty:
+                    dataframes['hierarchy'].to_excel(writer, sheet_name=self.sheet_names.get('hierarchy', 'Hierarquia'), index=False)
+                    print(f"   ✅ Aba '{self.sheet_names.get('hierarchy', 'Hierarquia')}' criada")
+                else:
+                    pd.DataFrame(columns=['URL', 'Problemas_Hierarquia', 'H1_Count', 'H1_Text']).to_excel(
+                        writer, sheet_name=self.sheet_names.get('hierarchy', 'Hierarquia'), index=False)
+                
+                # 5. ABA TÍTULOS DUPLICADOS
+                if not dataframes['title_duplicates'].empty:
+                    dataframes['title_duplicates'].to_excel(writer, sheet_name=self.sheet_names.get('title_duplicates', 'Title_Duplicados'), index=False)
+                    print(f"   ✅ Aba '{self.sheet_names.get('title_duplicates', 'Title_Duplicados')}' criada")
+                else:
+                    pd.DataFrame(columns=['Title_Duplicado', 'URL', 'Total_Duplicatas']).to_excel(
+                        writer, sheet_name=self.sheet_names.get('title_duplicates', 'Title_Duplicados'), index=False)
+                
+                # 6. ABA DESCRIPTIONS DUPLICADAS
+                if not dataframes['description_duplicates'].empty:
+                    dataframes['description_duplicates'].to_excel(writer, sheet_name=self.sheet_names.get('description_duplicates', 'Desc_Duplicadas'), index=False)
+                    print(f"   ✅ Aba '{self.sheet_names.get('description_duplicates', 'Desc_Duplicadas')}' criada")
+                else:
+                    pd.DataFrame(columns=['Description_Duplicada', 'URL', 'Total_Duplicatas']).to_excel(
+                        writer, sheet_name=self.sheet_names.get('description_duplicates', 'Desc_Duplicadas'), index=False)
+                
+                # 7. ABA RANKING POR SCORE
+                if not dataframes['score_ranking'].empty:
+                    dataframes['score_ranking'].to_excel(writer, sheet_name=self.sheet_names.get('score_ranking', 'Score_Ranking'), index=False)
+                    print(f"   ✅ Aba '{self.sheet_names.get('score_ranking', 'Score_Ranking')}' criada")
+                else:
+                    pd.DataFrame(columns=['URL', 'Metatags_Score', 'Title_Status']).to_excel(
+                        writer, sheet_name=self.sheet_names.get('score_ranking', 'Score_Ranking'), index=False)
+                
+                # 8. ABA RESUMO EXECUTIVO
+                if not dataframes['summary'].empty:
+                    dataframes['summary'].to_excel(writer, sheet_name=self.sheet_names.get('summary', 'Resumo'), index=False)
+                    print(f"   ✅ Aba '{self.sheet_names.get('summary', 'Resumo')}' criada")
+                else:
+                    pd.DataFrame(columns=['Métrica', 'Valor']).to_excel(
+                        writer, sheet_name=self.sheet_names.get('summary', 'Resumo'), index=False)
+                
+                # Aplica formatação
+                self._apply_excel_formatting(writer)
+                
+                print(f"   ✅ Total de 8 abas criadas com sucesso!")
+            
+            return True
+            
+        except Exception as e:
+            print(MSG_ERROR_EXCEL.format(error=str(e)))
+            return False
+    
+    def _write_excel_file_with_filters(self, filepath, dataframes):
+        """Escreve arquivo Excel incluindo aba de URLs filtradas"""
+        try:
+            with pd.ExcelWriter(filepath, engine=EXCEL_ENGINE) as writer:
+                # 1-8. ABAS PRINCIPAIS (mesmo código do método anterior)
                 if not dataframes['main'].empty:
                     dataframes['main'].to_excel(writer, sheet_name=self.sheet_names.get('complete', 'Complete'), index=False)
                     print(f"   ✅ Aba '{self.sheet_names.get('complete', 'Complete')}' criada")
@@ -404,55 +504,42 @@ class ExcelReportGenerator:
                     dataframes['critical'].to_excel(writer, sheet_name=self.sheet_names.get('critical', 'Criticos'), index=False)
                     print(f"   ✅ Aba '{self.sheet_names.get('critical', 'Criticos')}' criada")
                 else:
-                    pd.DataFrame(columns=['URL', 'Status_Code', 'Title_Status', 'Description_Status', 'H1_Ausente']).to_excel(
+                    pd.DataFrame(columns=['URL', 'Status_Code', 'Title_Status']).to_excel(
                         writer, sheet_name=self.sheet_names.get('critical', 'Criticos'), index=False)
                 
                 if not dataframes['headings_problematic'].empty:
                     dataframes['headings_problematic'].to_excel(writer, sheet_name=self.sheet_names.get('headings_problematic', 'Headings_Problematicos'), index=False)
                     print(f"   ✅ Aba '{self.sheet_names.get('headings_problematic', 'Headings_Problematicos')}' criada (CONSOLIDADA)")
                 else:
-                    pd.DataFrame(columns=['URL', 'Total_Problemas', 'Headings_Vazios', 'Headings_Ocultos', 'Gravidade_Geral']).to_excel(
+                    pd.DataFrame(columns=['URL', 'Total_Problemas']).to_excel(
                         writer, sheet_name=self.sheet_names.get('headings_problematic', 'Headings_Problematicos'), index=False)
                 
                 if not dataframes['hierarchy'].empty:
                     dataframes['hierarchy'].to_excel(writer, sheet_name=self.sheet_names.get('hierarchy', 'Hierarquia'), index=False)
                     print(f"   ✅ Aba '{self.sheet_names.get('hierarchy', 'Hierarquia')}' criada")
-                else:
-                    pd.DataFrame(columns=['URL', 'Problemas_Hierarquia', 'H1_Count', 'H1_Text']).to_excel(
-                        writer, sheet_name=self.sheet_names.get('hierarchy', 'Hierarquia'), index=False)
                 
                 if not dataframes['title_duplicates'].empty:
                     dataframes['title_duplicates'].to_excel(writer, sheet_name=self.sheet_names.get('title_duplicates', 'Title_Duplicados'), index=False)
                     print(f"   ✅ Aba '{self.sheet_names.get('title_duplicates', 'Title_Duplicados')}' criada")
-                else:
-                    pd.DataFrame(columns=['Title_Duplicado', 'URL', 'Total_Duplicatas']).to_excel(
-                        writer, sheet_name=self.sheet_names.get('title_duplicates', 'Title_Duplicados'), index=False)
                 
                 if not dataframes['description_duplicates'].empty:
                     dataframes['description_duplicates'].to_excel(writer, sheet_name=self.sheet_names.get('description_duplicates', 'Desc_Duplicadas'), index=False)
                     print(f"   ✅ Aba '{self.sheet_names.get('description_duplicates', 'Desc_Duplicadas')}' criada")
-                else:
-                    pd.DataFrame(columns=['Description_Duplicada', 'URL', 'Total_Duplicatas']).to_excel(
-                        writer, sheet_name=self.sheet_names.get('description_duplicates', 'Desc_Duplicadas'), index=False)
                 
                 if not dataframes['score_ranking'].empty:
                     dataframes['score_ranking'].to_excel(writer, sheet_name=self.sheet_names.get('score_ranking', 'Score_Ranking'), index=False)
                     print(f"   ✅ Aba '{self.sheet_names.get('score_ranking', 'Score_Ranking')}' criada")
-                else:
-                    pd.DataFrame(columns=['URL', 'Metatags_Score', 'Title_Status']).to_excel(
-                        writer, sheet_name=self.sheet_names.get('score_ranking', 'Score_Ranking'), index=False)
                 
                 if not dataframes['summary'].empty:
                     dataframes['summary'].to_excel(writer, sheet_name=self.sheet_names.get('summary', 'Resumo'), index=False)
                     print(f"   ✅ Aba '{self.sheet_names.get('summary', 'Resumo')}' criada")
-                else:
-                    pd.DataFrame(columns=['Métrica', 'Valor']).to_excel(
-                        writer, sheet_name=self.sheet_names.get('summary', 'Resumo'), index=False)
                 
+                # 9. ABA ADICIONAL - URLs FILTRADAS (se disponível)
                 if 'filtered_urls' in dataframes and not dataframes['filtered_urls'].empty:
                     dataframes['filtered_urls'].to_excel(writer, sheet_name='URLs_Filtradas', index=False)
                     print(f"   ✅ Aba 'URLs_Filtradas' criada")
                 
+                # Aplica formatação
                 self._apply_excel_formatting(writer)
                 
                 total_abas = 8 + (1 if 'filtered_urls' in dataframes and not dataframes['filtered_urls'].empty else 0)
@@ -465,9 +552,11 @@ class ExcelReportGenerator:
             return False
     
     def _apply_excel_formatting(self, writer):
+        """Aplica formatação condicional nas abas do Excel"""
         try:
             workbook = writer.book
             
+            # Formatos
             header_format = workbook.add_format({
                 'bold': True,
                 'text_wrap': True,
@@ -492,43 +581,52 @@ class ExcelReportGenerator:
                 'font_color': 'white'
             })
             
+            # Aplica formatação específica por aba
             for sheet_name in writer.sheets:
                 worksheet = writer.sheets[sheet_name]
                 
+                # Formatação específica para aba de Headings Problemáticos
                 if 'Headings_Problematicos' in sheet_name or 'headings_problematic' in sheet_name.lower():
-                    worksheet.set_column('A:A', COLUMN_WIDTHS['url'])
-                    worksheet.set_column('B:E', COLUMN_WIDTHS['counter'])
-                    worksheet.set_column('F:F', COLUMN_WIDTHS['problems_detailed'])
-                    worksheet.set_column('G:K', COLUMN_WIDTHS['standard'])
+                    worksheet.set_column('A:A', COLUMN_WIDTHS['url'])      # URL
+                    worksheet.set_column('B:E', COLUMN_WIDTHS['counter'])   # Contadores
+                    worksheet.set_column('F:F', COLUMN_WIDTHS['problems_detailed'])  # Problemas detalhados
+                    worksheet.set_column('G:K', COLUMN_WIDTHS['standard'])  # Outras colunas
                 
+                # Formatação para aba de Hierarquia
                 elif 'Hierarquia' in sheet_name or 'hierarchy' in sheet_name.lower():
                     worksheet.set_column('A:A', COLUMN_WIDTHS['url'])
-                    worksheet.set_column('B:B', COLUMN_WIDTHS['sequence'])
+                    worksheet.set_column('B:B', COLUMN_WIDTHS['sequence'])  # Problemas hierarquia
                     worksheet.set_column('C:H', COLUMN_WIDTHS['standard'])
                 
+                # Formatação para aba de Resumo
                 elif 'Resumo' in sheet_name or 'summary' in sheet_name.lower():
-                    worksheet.set_column('A:A', COLUMN_WIDTHS['sequence'])
-                    worksheet.set_column('B:B', COLUMN_WIDTHS['standard'])
+                    worksheet.set_column('A:A', COLUMN_WIDTHS['sequence'])  # Métrica
+                    worksheet.set_column('B:B', COLUMN_WIDTHS['standard'])  # Valor
                 
+                # Formatação para aba de URLs Filtradas
                 elif 'URLs_Filtradas' in sheet_name:
                     worksheet.set_column('A:A', COLUMN_WIDTHS['url'])
                     worksheet.set_column('B:E', COLUMN_WIDTHS['standard'])
                 
+                # Formatação padrão para outras abas
                 else:
                     worksheet.set_column('A:A', COLUMN_WIDTHS['url'])
                     worksheet.set_column('B:Z', COLUMN_WIDTHS['standard'])
         
         except Exception as e:
-            print(f"Erro na formatação: {e}")
+            print(f"⚠️ Erro na formatação: {e}")
     
     def _generate_filename(self, prefix):
+        """Gera nome do arquivo com timestamp"""
         timestamp = datetime.now().strftime(TIMESTAMP_FORMAT)
         return f"{prefix}_CORRIGIDO_{timestamp}.xlsx"
 
 
 class StatusReportGenerator(ExcelReportGenerator):
+    """Gerador especializado para relatórios de status HTTP"""
     
     def generate_status_report(self, results, mixed_content_data=None, filename_prefix="STATUS_REPORT"):
+        """Gera relatório específico para análise de status HTTP"""
         try:
             df_principal = self._create_status_main_dataframe(results)
             
@@ -556,6 +654,7 @@ class StatusReportGenerator(ExcelReportGenerator):
             return None, None
     
     def _create_status_main_dataframe(self, results):
+        """Cria DataFrame principal para análise de status"""
         dados_status = []
         
         for resultado in results:
@@ -575,6 +674,7 @@ class StatusReportGenerator(ExcelReportGenerator):
         return pd.DataFrame(dados_status)
     
     def _create_status_errors_dataframe(self, results):
+        """Cria DataFrame específico para erros HTTP"""
         dados_erros = []
         
         for resultado in results:
@@ -593,12 +693,14 @@ class StatusReportGenerator(ExcelReportGenerator):
         return pd.DataFrame(dados_erros) if dados_erros else pd.DataFrame()
     
     def _create_mixed_content_dataframe(self, mixed_content_data):
+        """Cria DataFrame para problemas de mixed content"""
         if not mixed_content_data:
             return pd.DataFrame()
         
         return pd.DataFrame(mixed_content_data)
     
     def _create_performance_dataframe(self, results):
+        """Cria DataFrame focado em performance"""
         dados_performance = []
         
         for resultado in results:
@@ -620,6 +722,7 @@ class StatusReportGenerator(ExcelReportGenerator):
         return df_performance
     
     def _create_status_summary_dataframe(self, df_principal):
+        """Cria resumo executivo para status HTTP"""
         total_urls = len(df_principal)
         
         if total_urls == 0:
@@ -657,6 +760,7 @@ class StatusReportGenerator(ExcelReportGenerator):
         ], columns=['Métrica', 'Valor'])
     
     def _classify_error_type(self, status_code):
+        """Classifica tipo de erro HTTP"""
         if isinstance(status_code, str):
             return f"⚠️ {status_code}"
         
@@ -674,6 +778,7 @@ class StatusReportGenerator(ExcelReportGenerator):
             return "⚠️ Erro"
     
     def _classify_performance(self, response_time):
+        """Classifica performance da página"""
         if response_time < 1000:
             return "🟢 Rápido"
         elif response_time < 3000:
@@ -682,6 +787,7 @@ class StatusReportGenerator(ExcelReportGenerator):
             return "🔴 Lento"
     
     def _write_status_excel_file(self, filepath, dataframes):
+        """Escreve arquivo Excel específico para status"""
         try:
             with pd.ExcelWriter(filepath, engine=EXCEL_ENGINE) as writer:
                 sheet_names_status = {
@@ -707,17 +813,20 @@ class StatusReportGenerator(ExcelReportGenerator):
 
 
 def create_report_generator(report_type='default', config=None):
+    """Factory function para criar geradores de relatório"""
     
     if report_type == 'status':
         return StatusReportGenerator(config)
     
-    else:
+    else:  # default
         return ExcelReportGenerator(config)
 
 
 def test_excel_generator():
+    """Função de teste para o ExcelReportGenerator"""
     print("Testando ExcelReportGenerator...")
     
+    # Dados de teste simulando resultados do análise
     test_results = [
         {
             'url': 'https://example.com/page1',
@@ -736,6 +845,7 @@ def test_excel_generator():
             'h1_ausente': False,
             'h1_multiple': False,
             'hierarquia_correta': True,
+            # 🆕 MÉTRICAS CORRIGIDAS
             'headings_problematicos_count': 0,
             'headings_vazios_count': 0,
             'headings_ocultos_count': 0,
@@ -748,10 +858,62 @@ def test_excel_generator():
             'warnings': [],
             'title_issues': [],
             'description_issues': [],
-            'heading_issues': []
+            'heading_issues': [],
+            'headings_problematicos': []
+        },
+        {
+            'url': 'https://example.com/page2',
+            'status_code': 200,
+            'response_time': 200,
+            'title': '',  # Title ausente
+            'title_length': 0,
+            'title_status': 'Ausente',
+            'title_duplicado': False,
+            'meta_description': '',  # Description ausente
+            'description_length': 0,
+            'description_status': 'Ausente',
+            'description_duplicada': False,
+            'h1_count': 0,  # H1 ausente
+            'h1_text': '',
+            'h1_ausente': True,
+            'h1_multiple': False,
+            'hierarquia_correta': False,
+            # 🆕 MÉTRICAS CORRIGIDAS - COM PROBLEMAS
+            'headings_problematicos_count': 2,
+            'headings_vazios_count': 1,
+            'headings_ocultos_count': 1,
+            'headings_gravidade_critica': 1,  # H1 problemático
+            'heading_sequence': ['h2:(vazio)', 'h3:Texto oculto'],
+            'heading_sequence_valida': [],  # Sequência válida vazia
+            'total_problemas_headings': 3,
+            'metatags_score': 25,
+            'critical_issues': ['Title ausente', 'Meta description ausente', 'H1 ausente'],
+            'warnings': ['Headings problemáticos (2)'],
+            'title_issues': ['Title ausente'],
+            'description_issues': ['Meta description ausente'],
+            'heading_issues': ['H1 ausente', 'H2 vazio na posição 1', 'H3 oculto na posição 2'],
+            'headings_problematicos': [
+                {
+                    'descricao': 'H2 na posição 1 (vazio)',
+                    'tag': 'h2',
+                    'posicao': 1,
+                    'texto': '',
+                    'motivos': ['Vazio'],
+                    'gravidade': 'MÉDIO'
+                },
+                {
+                    'descricao': 'H3 na posição 2 (oculto)',
+                    'tag': 'h3',
+                    'posicao': 2,
+                    'texto': 'Texto oculto',
+                    'motivos': ['Oculto'],
+                    'gravidade': 'MÉDIO'
+                }
+            ]
         }
     ]
     
+    # Mock para dados do crawler
     class MockCrawlerData:
         def __init__(self):
             self.titles_encontrados = {
@@ -761,95 +923,29 @@ def test_excel_generator():
                 'Descrição da página de teste 1': ['https://example.com/page1']
             }
     
+    # Configuração de teste
     config = {'output_folder': 'test_output', 'use_emoji_names': True}
     generator = ExcelReportGenerator(config)
     
     mock_crawler_data = MockCrawlerData()
     
+    # Gera relatório de teste
     filepath, df = generator.generate_complete_report(
         test_results, 
         mock_crawler_data, 
-        "TEST_METATAGS"
+        "TEST_METATAGS_CORRIGIDO"
     )
     
     if filepath:
-        print(f"Relatório de teste gerado: {filepath}")
-        print(f"DataFrame principal: {len(df)} linhas")
+        print(f"✅ Relatório de teste gerado: {filepath}")
+        print(f"📊 DataFrame principal: {len(df)} linhas")
+        print(f"🔥 Teste das correções de headings incluído!")
     else:
-        print("Falha na geração do relatório de teste")
+        print("❌ Falha na geração do relatório de teste")
 
 
 if __name__ == "__main__":
     import os
     os.makedirs('test_output', exist_ok=True)
     test_excel_generator()
-    print("Testes concluídos!")(
-        test_results, 
-        mock_crawler_data, 
-        "TEST_METATAGS"
-    )
-    
-    if filepath:
-        print(f"Relatório de teste gerado: {filepath}")
-        print(f"DataFrame principal: {len(df)} linhas")
-    else:
-        print("Falha na geração do relatório de teste")
-
-
-if __name__ == "__main__":
-    import os
-    os.makedirs('test_output', exist_ok=True)
-    test_excel_generator()
-    print("Testes concluídos!")
-, sheet_name=self.sheet_names.get('score_ranking', 'Score_Ranking'), index=False)
-                    print(f"   ✅ Aba '{self.sheet_names.get('score_ranking', 'Score_Ranking')}' criada")
-                
-                if not dataframes['summary'].empty:
-                    dataframes['summary'].to_excel(writer, sheet_name=self.sheet_names.get('summary', 'Resumo'), index=False)
-                    print(f"   ✅ Aba '{self.sheet_names.get('summary', 'Resumo')}' criada")
-                
-                self._apply_excel_formatting(writer)
-                
-                print(f"   ✅ Total de 8 abas criadas com sucesso!")
-            
-            return True
-            
-        except Exception as e:
-            print(MSG_ERROR_EXCEL.format(error=str(e)))
-            return False
-    
-    def _write_excel_file_with_filters(self, filepath, dataframes):
-        try:
-            with pd.ExcelWriter(filepath, engine=EXCEL_ENGINE) as writer:
-                if not dataframes['main'].empty:
-                    dataframes['main'].to_excel(writer, sheet_name=self.sheet_names.get('complete', 'Complete'), index=False)
-                    print(f"   ✅ Aba '{self.sheet_names.get('complete', 'Complete')}' criada")
-                
-                if not dataframes['critical'].empty:
-                    dataframes['critical'].to_excel(writer, sheet_name=self.sheet_names.get('critical', 'Criticos'), index=False)
-                    print(f"   ✅ Aba '{self.sheet_names.get('critical', 'Criticos')}' criada")
-                else:
-                    pd.DataFrame(columns=['URL', 'Status_Code', 'Title_Status']).to_excel(
-                        writer, sheet_name=self.sheet_names.get('critical', 'Criticos'), index=False)
-                
-                if not dataframes['headings_problematic'].empty:
-                    dataframes['headings_problematic'].to_excel(writer, sheet_name=self.sheet_names.get('headings_problematic', 'Headings_Problematicos'), index=False)
-                    print(f"   ✅ Aba '{self.sheet_names.get('headings_problematic', 'Headings_Problematicos')}' criada")
-                else:
-                    pd.DataFrame(columns=['URL', 'Total_Problemas']).to_excel(
-                        writer, sheet_name=self.sheet_names.get('headings_problematic', 'Headings_Problematicos'), index=False)
-                
-                if not dataframes['hierarchy'].empty:
-                    dataframes['hierarchy'].to_excel(writer, sheet_name=self.sheet_names.get('hierarchy', 'Hierarquia'), index=False)
-                    print(f"   ✅ Aba '{self.sheet_names.get('hierarchy', 'Hierarquia')}' criada")
-                
-                if not dataframes['title_duplicates'].empty:
-                    dataframes['title_duplicates'].to_excel(writer, sheet_name=self.sheet_names.get('title_duplicates', 'Title_Duplicados'), index=False)
-                    print(f"   ✅ Aba '{self.sheet_names.get('title_duplicates', 'Title_Duplicados')}' criada")
-                
-                if not dataframes['description_duplicates'].empty:
-                    dataframes['description_duplicates'].to_excel(writer, sheet_name=self.sheet_names.get('description_duplicates', 'Desc_Duplicadas'), index=False)
-                    print(f"   ✅ Aba '{self.sheet_names.get('description_duplicates', 'Desc_Duplicadas')}' criada")
-                
-                if not dataframes['score_ranking'].empty:
-                    dataframes['score_ranking'].to_excel(writer
+    print("🎯 Testes concluídos!")
