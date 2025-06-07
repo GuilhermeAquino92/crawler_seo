@@ -1,0 +1,3454 @@
+{
+  "https://alastin.com/": {
+    "hash": "827b07f5df68f28317456c5e11f7c1ac",
+    "last_checked": "2025-06-01T22:31:21.027281"
+  },
+  "https://alastin.com/collections/anti-aging": {
+    "hash": "568c62db4563ba551a817a2944d05fd4",
+    "last_checked": "2025-06-01T22:31:22.865213"
+  },
+  "https://alastin.com/pages/provider-locator": {
+    "hash": "ad7a4ffe73bb8ffe5151fecdae1c182f",
+    "last_checked": "2025-06-01T22:31:24.538801"
+  },
+  "https://alastin.com": {
+    "hash": "827b07f5df68f28317456c5e11f7c1ac",
+    "last_checked": "2025-06-01T22:31:26.167176"
+  },
+  "https://alastin.com/collections/all": {
+    "hash": "0dc1d02d9d4b7e65d329774b40995519",
+    "last_checked": "2025-06-01T22:31:28.126017"
+  },
+  "https://alastin.com/collections/best-sellers": {
+    "hash": "be4bc4ac8ece3b5fbe9492a11b2e11cf",
+    "last_checked": "2025-06-01T22:31:29.901928"
+  },
+  "https://alastin.com/collections/award-winners": {
+    "hash": "bfe015e0864323e33adf39b766675ba9",
+    "last_checked": "2025-06-01T22:31:31.682173"
+  },
+  "https://alastin.com/collections/subscription": {
+    "hash": "a895b923ff7e104a02ea98d6bcc530e9",
+    "last_checked": "2025-06-01T22:31:33.660797"
+  },
+  "https://alastin.com/collections/face-and-eye-care": {
+    "hash": "3d41cf8080a89690cb73b2c20691f6e2",
+    "last_checked": "2025-06-01T22:31:35.503901"
+  },
+  "https://alastin.com/collections/body-care": {
+    "hash": "5f8537f4239eccb8668676b05dd943c4",
+    "last_checked": "2025-06-01T22:31:37.342283"
+  },
+  "https://alastin.com/collections/cleanser": {
+    "hash": "a889d97b4426c95685bba4116e53cfb7",
+    "last_checked": "2025-06-01T22:31:39.064616"
+  },
+  "https://alastin.com/collections/moisturizer": {
+    "hash": "52f5c94f7c5bb6166a8ac5c83f016a26",
+    "last_checked": "2025-06-01T22:31:40.864710"
+  },
+  "https://alastin.com/collections/sunscreen": {
+    "hash": "307d61a5a546167bbf48ce50b4f31501",
+    "last_checked": "2025-06-01T22:31:42.631012"
+  },
+  "https://alastin.com/collections/serums": {
+    "hash": "09c2de72166674cf3e73ad4bfc5318ed",
+    "last_checked": "2025-06-01T22:31:44.465952"
+  },
+  "https://alastin.com/collections/procedure-care": {
+    "hash": "ad5d9e1794691e04ab34fdb93bc009f8",
+    "last_checked": "2025-06-01T22:31:46.338553"
+  },
+  "https://alastin.com/pages/ingredient-glossary": {
+    "hash": "70bf750ca827bb390727ac983824930a",
+    "last_checked": "2025-06-01T22:31:48.129674"
+  },
+  "https://alastin.com/pages/trihex-ingredient": {
+    "hash": "49ffe7144b65cd23f084d4f63a173abc",
+    "last_checked": "2025-06-01T22:31:49.869389"
+  },
+  "https://alastin.com/pages/hyaluronic-acid": {
+    "hash": "6ec233250efde63c47deec635ff29e5f",
+    "last_checked": "2025-06-01T22:31:51.559841"
+  },
+  "https://alastin.com/pages/niacinamide": {
+    "hash": "0c2f3dc4c7252f0fcfe39abd6022a201",
+    "last_checked": "2025-06-01T22:31:53.316700"
+  },
+  "https://alastin.com/pages/peptides": {
+    "hash": "58596353fafdc4281fcd7ad1e59a568f",
+    "last_checked": "2025-06-01T22:31:55.420570"
+  },
+  "https://alastin.com/pages/retinol": {
+    "hash": "3602cde35cc1dd2c3a7c5d9d144affb9",
+    "last_checked": "2025-06-01T22:31:57.199418"
+  },
+  "https://alastin.com/pages/glycolic-acid-ingredient": {
+    "hash": "6c1fbea3c8e259ebe2356f942372d9f2",
+    "last_checked": "2025-06-01T22:31:58.980663"
+  },
+  "https://alastin.com/collections/daily-products": {
+    "hash": "395e8100de8c5455ea7cf033465041c2",
+    "last_checked": "2025-06-01T22:32:01.001309"
+  },
+  "https://alastin.com/collections/fine-lines-wrinkles": {
+    "hash": "59a3b31ee54e170892877a420281e728",
+    "last_checked": "2025-06-01T22:32:02.812908"
+  },
+  "https://alastin.com/collections/firmness": {
+    "hash": "d7ad8484eea6600f090cb81c51641798",
+    "last_checked": "2025-06-01T22:32:04.606935"
+  },
+  "https://alastin.com/collections/aging-skin": {
+    "hash": "831a5759e3ab7feb3d81f198acfe0df5",
+    "last_checked": "2025-06-01T22:32:06.529636"
+  },
+  "https://alastin.com/collections/sensitive-skin": {
+    "hash": "e0a6e5dfd554f33d354ab23fad1c28b0",
+    "last_checked": "2025-06-01T22:32:08.472639"
+  },
+  "https://alastin.com/collections/dry-skin": {
+    "hash": "a5a2b30ffb95d0d378d14413d59a3b6e",
+    "last_checked": "2025-06-01T22:32:10.204772"
+  },
+  "https://alastin.com/collections/skin-discoloration": {
+    "hash": "8e5180c9be2cd60eedc805938f4bb85e",
+    "last_checked": "2025-06-01T22:32:11.911812"
+  },
+  "https://alastin.com/collections/crepey-skin": {
+    "hash": "9cd43dac8e6614c005bcb1d011f4d924",
+    "last_checked": "2025-06-01T22:32:13.725134"
+  },
+  "https://alastin.com/collections/build-your-routine": {
+    "hash": "255113fa58edfaaa6dafca4055e277cb",
+    "last_checked": "2025-06-01T22:32:15.660240"
+  },
+  "https://alastin.com/pages/quiz": {
+    "hash": "4c4439c912305b25986775360d45d0b8",
+    "last_checked": "2025-06-01T22:32:17.472211"
+  },
+  "https://alastin.com/pages/alastin-difference": {
+    "hash": "82678c14416eabf6f0a87cee32d90b2c",
+    "last_checked": "2025-06-01T22:32:19.173038"
+  },
+  "https://alastin.com/pages/trihex-technology": {
+    "hash": "ce00e5e16a5ab2a72492328e5d11ee02",
+    "last_checked": "2025-06-01T22:32:20.883544"
+  },
+  "https://alastin.com/pages/testimonials": {
+    "hash": "9278bf6a6f4aec9fdc7519b588552544",
+    "last_checked": "2025-06-01T22:32:22.595661"
+  },
+  "https://alastin.com/pages/before-and-after": {
+    "hash": "aa58486dfbecf3870a025b65ef8c0dd8",
+    "last_checked": "2025-06-01T22:32:24.482299"
+  },
+  "https://alastin.com/blogs/skin-procedures": {
+    "hash": "d4fdcb3dd4380f280e9ede4d3e9a0ab0",
+    "last_checked": "2025-06-01T22:32:26.164822"
+  },
+  "https://alastin.com/blogs/skin-procedures/lasers": {
+    "hash": "12f113c4e15c2d95028f826f6553f17b",
+    "last_checked": "2025-06-01T22:32:27.993436"
+  },
+  "https://alastin.com/blogs/skin-procedures/body-sculpting": {
+    "hash": "b645a5a0f72ca3bf2005211be24d8ecb",
+    "last_checked": "2025-06-01T22:32:29.784950"
+  },
+  "https://alastin.com/blogs/skin-procedures/dermal-filler-injections": {
+    "hash": "2e1ef10b033a77d7a1f30417cd72c1e5",
+    "last_checked": "2025-06-01T22:32:31.689007"
+  },
+  "https://alastin.com/blogs/skin-procedures/microneedling": {
+    "hash": "09d25e5b05ef65048a5a0648b3faeb8d",
+    "last_checked": "2025-06-01T22:32:33.680735"
+  },
+  "https://alastin.com/blogs/skin-procedures/skin-tightening": {
+    "hash": "b22f089699776b591e1fbea926c4cbb9",
+    "last_checked": "2025-06-01T22:32:35.524519"
+  },
+  "https://alastin.com/blogs/skin-procedures/chemical-peels": {
+    "hash": "d0061dcc550d161475893e7630dcb744",
+    "last_checked": "2025-06-01T22:32:37.294407"
+  },
+  "https://alastin.com/blogs/skin-concerns": {
+    "hash": "bc8bb089359328d4769f34401d462dc6",
+    "last_checked": "2025-06-01T22:32:39.092404"
+  },
+  "https://alastin.com/blogs/skin-concerns/aging-skin": {
+    "hash": "8ab828a8502cd6a4ea8e633ef47bcfca",
+    "last_checked": "2025-06-01T22:32:40.885083"
+  },
+  "https://alastin.com/blogs/skin-concerns/sensitive-skin": {
+    "hash": "98da5572ef64469b6c15f70ff41af3c5",
+    "last_checked": "2025-06-01T22:32:42.917724"
+  },
+  "https://alastin.com/blogs/skin-concerns/skin-texture": {
+    "hash": "9ece00b72cd41bbb4efb8c3d34d081dd",
+    "last_checked": "2025-06-01T22:32:44.781823"
+  },
+  "https://alastin.com/blogs/skin-concerns/uneven-skin-tone-pigmentation": {
+    "hash": "7f87f5971aa1875d9c4f34c4839aa925",
+    "last_checked": "2025-06-01T22:32:46.652731"
+  },
+  "https://alastin.com/pages/about-us": {
+    "hash": "0eae4b945fdcf3aa55b8fb83d6635749",
+    "last_checked": "2025-06-01T22:32:48.666427"
+  },
+  "https://alastin.com/blogs/intheglow": {
+    "hash": "cafa832e4989da98d67b3dfa06feda65",
+    "last_checked": "2025-06-01T22:32:50.440252"
+  },
+  "https://alastin.com/pages/contact-us": {
+    "hash": "acdc2c489065018f0d60722c47dcccc5",
+    "last_checked": "2025-06-01T22:32:52.081079"
+  },
+  "https://alastin.com/pages/partner-signup": {
+    "hash": "38dc79fa4a793d1d75b47486b6a76f09",
+    "last_checked": "2025-06-01T22:32:53.812803"
+  },
+  "https://alastin.com/account": {
+    "hash": "6791e70ef661c3ab1824444899979856",
+    "last_checked": "2025-06-01T22:32:55.724888"
+  },
+  "https://alastin.com/search": {
+    "hash": "342852948b1209c1a6dc0d25f987b3ab",
+    "last_checked": "2025-06-01T22:32:57.344923"
+  },
+  "https://alastin.com/cart": {
+    "hash": "a892ed997b656d05caa61e448b8a1b67",
+    "last_checked": "2025-06-01T22:32:59.093270"
+  },
+  "https://alastin.com/products/c-radical-defense-antioxidant-serum": {
+    "hash": "aaa2965a72fb27a7916db1991d783cf8",
+    "last_checked": "2025-06-01T22:33:00.814612"
+  },
+  "https://alastin.com/products/ha-immerse-serum": {
+    "hash": "9d775c3edee6a05bd7c4693960838712",
+    "last_checked": "2025-06-01T22:33:02.685447"
+  },
+  "https://alastin.com/products/restorative-skin-complex": {
+    "hash": "e8cfdf062e6cc843f6ce1db0aaa9880c",
+    "last_checked": "2025-06-01T22:33:04.408590"
+  },
+  "https://alastin.com/products/a-luminate-brightening-serum": {
+    "hash": "017ec208677a49fa31b055a8520a0421",
+    "last_checked": "2025-06-01T22:33:06.243498"
+  },
+  "https://alastin.com/products/transform-body-treatment": {
+    "hash": "6ff2a6165e4ba3dd3b92a28a58e734dc",
+    "last_checked": "2025-06-01T22:33:07.997088"
+  },
+  "https://alastin.com/products/restorative-eye-treatment": {
+    "hash": "6ffe365b17f1b9ee1f6e512e41c69a88",
+    "last_checked": "2025-06-01T22:33:09.970544"
+  },
+  "https://alastin.com/products/hydratint-sunscreen-spf-36": {
+    "hash": "e2d4d037cc5011f92f86e8a4ce73edfd",
+    "last_checked": "2025-06-01T22:33:11.767577"
+  },
+  "https://alastin.com/products/ultra-nourishing-moisturizer": {
+    "hash": "9d53b14ff24b6584ff01898205cc0b1c",
+    "last_checked": "2025-06-01T22:33:13.614503"
+  },
+  "https://alastin.com/products/regenerating-skin-nectar": {
+    "hash": "9a1b9266e34f3cd48f616d779ce1a106",
+    "last_checked": "2025-06-01T22:33:15.467345"
+  },
+  "https://alastin.com/products/gentle-cleanser": {
+    "hash": "4feb509edf5d895d6b5dba325830cd2f",
+    "last_checked": "2025-06-01T22:33:17.338985"
+  },
+  "https://alastin.com/products/resurface-skin-polish": {
+    "hash": "6587a008fd5da9504f93916f99a438ff",
+    "last_checked": "2025-06-01T22:33:19.163517"
+  },
+  "https://alastin.com/collections/limited-edition-bundles": {
+    "hash": "27dccad9e7d18c073fe155a570b057dd",
+    "last_checked": "2025-06-01T22:33:20.958506"
+  },
+  "https://alastin.com/pages/tranexamic-acid-ingredient": {
+    "hash": "d2e9d8dd41d1ca580c2a32f218bf42b4",
+    "last_checked": "2025-06-01T22:33:22.724529"
+  },
+  "https://alastin.com/pages/octapeptide-45": {
+    "hash": "cfea65835e202a58218d8a202377d046",
+    "last_checked": "2025-06-01T22:33:24.586520"
+  },
+  "https://alastin.com/pages/path-3-technology": {
+    "hash": "55929835c5d8d8b07a5d96baab7e3bdc",
+    "last_checked": "2025-06-01T22:33:26.350580"
+  },
+  "https://alastin.com/pages/silver-mushroom": {
+    "hash": "2cffcfbdff2f25ff74bc67304a4005ef",
+    "last_checked": "2025-06-01T22:33:28.169292"
+  },
+  "https://alastin.com/products/renewal-retinol": {
+    "hash": "f43c51dfec19c66e2fc640c97fad6543",
+    "last_checked": "2025-06-01T22:33:29.921179"
+  },
+  "https://alastin.com/products/restorative-neck-complex": {
+    "hash": "bf67d8a8b8e12c30b2ae4448f764996d",
+    "last_checked": "2025-06-01T22:33:31.727630"
+  },
+  "https://alastin.com/pages/authenticity": {
+    "hash": "069d819b36611ad8bbb8e9477742a9a2",
+    "last_checked": "2025-06-01T22:33:33.561767"
+  },
+  "https://alastin.com/pages/affiliate": {
+    "hash": "2c68362a93dcf321c299564b0513e09e",
+    "last_checked": "2025-06-01T22:33:35.248697"
+  },
+  "https://alastin.com/policies/terms-of-service": {
+    "hash": "3b35318f94613dfbbd46d973944f447a",
+    "last_checked": "2025-06-01T22:33:37.027531"
+  },
+  "https://alastin.com/policies/refund-policy": {
+    "hash": "cad1ecc907970bec5a19ca9b6723b07d",
+    "last_checked": "2025-06-01T22:33:38.773619"
+  },
+  "https://alastin.com/pages/health-care-provider": {
+    "hash": "c42fd6576a758babce8d177fcea6556d",
+    "last_checked": "2025-06-01T22:33:40.598739"
+  },
+  "https://alastin.com/tools/recurring/login": {
+    "hash": "61a79367584501b9c7ee028e3a93f14f",
+    "last_checked": "2025-06-01T22:33:43.117305"
+  },
+  "https://alastin.com/pages/sitemap": {
+    "hash": "209242e4fcff65922036c683b215dd4a",
+    "last_checked": "2025-06-01T22:33:45.000227"
+  },
+  "https://alastin.com/pages/terms-of-use": {
+    "hash": "a8833b86506135af4b2386757773703f",
+    "last_checked": "2025-06-01T22:33:46.694188"
+  },
+  "https://alastin.com/pages/cookie-policy": {
+    "hash": "396ea947040ed69f3774bdb72d09a8dd",
+    "last_checked": "2025-06-01T22:33:48.376760"
+  },
+  "https://alastin.com/products/silkshield-all-mineral-sunscreen-spf-30": {
+    "hash": "1efb95e47342aab745f38e37be7ec01f",
+    "last_checked": "2025-06-01T22:33:50.299217"
+  },
+  "https://alastin.com/products/rsvp-ready-bundle": {
+    "hash": "da8acf78f9f3cb9eea5c5ccea605e070",
+    "last_checked": "2025-06-01T22:33:52.107488"
+  },
+  "https://alastin.com/products/brighten-renew-bundle": {
+    "hash": "7a5d447ea693255af09817442292ef91",
+    "last_checked": "2025-06-01T22:33:53.802241"
+  },
+  "https://alastin.com/products/the-seasonal-edit": {
+    "hash": "4786c99df020af42752065d85538ab29",
+    "last_checked": "2025-06-01T22:33:55.505859"
+  },
+  "https://alastin.com/products/ultra-light-moisturizer": {
+    "hash": "81bf014890ab32dcc7ab4870e414a958",
+    "last_checked": "2025-06-01T22:33:57.326751"
+  },
+  "https://alastin.com/products/daily-beauty-regimen": {
+    "hash": "197e737b31ce7efd592a64667106bf8f",
+    "last_checked": "2025-06-01T22:33:59.027918"
+  },
+  "https://alastin.com/products/ultra-calm-cleansing-cream": {
+    "hash": "d87bc837c23e36a385af42f654e3877b",
+    "last_checked": "2025-06-01T22:34:00.722932"
+  },
+  "https://alastin.com/products/reform-repair": {
+    "hash": "f41d11d618c71bc9e6ef62225e949910",
+    "last_checked": "2025-06-01T22:34:02.559472"
+  },
+  "https://alastin.com/products/inhance-post-injection-serum": {
+    "hash": "fa22578a4785c769e17ecdfd01f06bc0",
+    "last_checked": "2025-06-01T22:34:04.580658"
+  },
+  "https://alastin.com/products/soothe-protect-recovery-balm": {
+    "hash": "03df5b1947e4c407c302110351c87e5c",
+    "last_checked": "2025-06-01T22:34:06.350575"
+  },
+  "https://alastin.com/products/procedure-enhancement-system": {
+    "hash": "bdd5ffe0555de2172bef83a682014925",
+    "last_checked": "2025-06-01T22:34:08.170632"
+  },
+  "https://alastin.com/blogs/intheglow/best-eye-cream-tips": {
+    "hash": "b695adb978bbc28a868df16b1c34180a",
+    "last_checked": "2025-06-01T22:34:10.254132"
+  },
+  "https://alastin.com/blogs/intheglow/a-beginners-guide-on-how-to-use-retinol": {
+    "hash": "06e228dbd2e7472f567f487cd837044c",
+    "last_checked": "2025-06-01T22:34:12.059122"
+  },
+  "https://alastin.com/blogs/intheglow/how-to-combine-skincare-products-for-glowing-skin": {
+    "hash": "5606a5006e54ddaf89da886d4c4c7261",
+    "last_checked": "2025-06-01T22:34:13.782409"
+  },
+  "https://alastin.com/blogs/intheglow/what-is-body-sculpting-and-does-it-work": {
+    "hash": "5e41b07ac754a8f90d434fba20b49bd2",
+    "last_checked": "2025-06-01T22:34:15.632763"
+  },
+  "https://alastin.com/blogs/intheglow/skincare-101-which-skincare-products-do-i-put-on-first": {
+    "hash": "1730dc2f268181da314b63f55348008c",
+    "last_checked": "2025-06-01T22:34:17.518312"
+  },
+  "https://alastin.com/blogs/intheglow/silver-mushroom-benefits-for-skin-care": {
+    "hash": "e1c921ee4e77c6da61c6c1adaa514dc2",
+    "last_checked": "2025-06-01T22:34:19.352950"
+  },
+  "https://alastin.com/blogs/intheglow/anti-aging-skincare-routine-by-decade": {
+    "hash": "dfbb37a888a9007a054c9d3303bd3124",
+    "last_checked": "2025-06-01T22:34:21.093077"
+  },
+  "https://alastin.com/blogs/intheglow/5-benefits-of-sunscreen-for-your-face": {
+    "hash": "753e51b8cb33a53e18ebc00f472fbb51",
+    "last_checked": "2025-06-01T22:34:22.827641"
+  },
+  "https://alastin.com/blogs/intheglow/skincare-tips-for-sunburns": {
+    "hash": "db4febb56ffbb25f67c95e3efe3fd91e",
+    "last_checked": "2025-06-01T22:34:24.551354"
+  },
+  "https://alastin.com/collections/laser-procedures": {
+    "hash": "6af0468c07e355f30f9e8fd84830bdef",
+    "last_checked": "2025-06-01T22:34:26.308358"
+  },
+  "https://alastin.com/collections/fillers": {
+    "hash": "858345fcc4b4307c4073b66a1b30410e",
+    "last_checked": "2025-06-01T22:34:28.060216"
+  },
+  "https://alastin.com/collections/microneedling": {
+    "hash": "080d3b0f9cf4e7e60e9e2ee50e9bf94f",
+    "last_checked": "2025-06-01T22:34:29.754580"
+  },
+  "https://alastin.com/collections/skin-tightening": {
+    "hash": "eebfbe65e20c94d79631bcf382604fb6",
+    "last_checked": "2025-06-01T22:34:31.504347"
+  },
+  "https://alastin.com/collections/ipl": {
+    "hash": "300f6ba2b5ea46f2aca92ad6c9000770",
+    "last_checked": "2025-06-01T22:34:33.189254"
+  },
+  "https://alastin.com/collections/chemical-peels": {
+    "hash": "f04738b63339d7d9f30f0d278fcc6638",
+    "last_checked": "2025-06-01T22:34:34.905095"
+  },
+  "https://alastin.com/collections/body-sculpting": {
+    "hash": "bb721a742dc6fe7f55688196a930ce69",
+    "last_checked": "2025-06-01T22:34:36.772792"
+  },
+  "https://alastin.com/pages/antioxidants": {
+    "hash": "426ecc29f219a5d24a0af87343523b5a",
+    "last_checked": "2025-06-01T22:34:38.594126"
+  },
+  "https://alastin.com/pages/lipodrone-technology": {
+    "hash": "b7c495a861fc0dce2e1380940fbb8e5a",
+    "last_checked": "2025-06-01T22:34:40.298473"
+  },
+  "https://alastin.com/pages/oat": {
+    "hash": "ff293494fca9ff0d8f56a14e6affa4af",
+    "last_checked": "2025-06-01T22:34:42.025729"
+  },
+  "https://alastin.com/pages/perlite-ingredient": {
+    "hash": "4569f4beb76bdfef4262d1cd048c9f79",
+    "last_checked": "2025-06-01T22:34:43.755776"
+  },
+  "https://alastin.com/pages/phytoene-phytofluene": {
+    "hash": "889dea95cf832c473149e16a46b1e41d",
+    "last_checked": "2025-06-01T22:34:45.570487"
+  },
+  "https://alastin.com/pages/zinc-oxide": {
+    "hash": "3a06eb3298e48eea445359530d923788",
+    "last_checked": "2025-06-01T22:34:47.352916"
+  },
+  "https://alastin.com/blogs/intheglow/the-benefits-of-hyaluronic-acid": {
+    "hash": "d7f0d251ad4927703d6067118823a7f2",
+    "last_checked": "2025-06-01T22:34:49.128190"
+  },
+  "https://alastin.com/products/silkshield-all-mineral-sunscreen-spf-30?variant=": {
+    "hash": "b14996a059b42a091f7a078f4a336c62",
+    "last_checked": "2025-06-01T22:34:50.880639"
+  },
+  "https://alastin.com/collections/trihex-technology-skincare": {
+    "hash": "05e27d8e332b446e89300ce41eb5a89c",
+    "last_checked": "2025-06-01T22:34:52.648923"
+  },
+  "https://alastin.com/blogs/skin-procedures/ultrasound-skin-tightening": {
+    "hash": "3f5b950162c31690020232057d6cd634",
+    "last_checked": "2025-06-01T22:34:54.359707"
+  },
+  "https://alastin.com/blogs/skin-procedures/neuromodulators": {
+    "hash": "0a655b3f32ddc12b3c77fe99a914ee22",
+    "last_checked": "2025-06-01T22:34:56.094294"
+  },
+  "https://alastin.com/blogs/skin-procedures/injectables": {
+    "hash": "23948c7049d6d7c28b272728b9914c6c",
+    "last_checked": "2025-06-01T22:34:57.854398"
+  },
+  "https://alastin.com/blogs/skin-procedures/skin-resurfacing": {
+    "hash": "389317df7719c05e55deaa78110aad69",
+    "last_checked": "2025-06-01T22:34:59.592475"
+  },
+  "https://alastin.com/blogs/skin-procedures/skincare-beginners-guide-to-ipl-treatments": {
+    "hash": "090a9e227f319c056e7dde281092c58d",
+    "last_checked": "2025-06-01T22:35:01.303078"
+  },
+  "https://alastin.com/blogs/skin-procedures.atom": {
+    "hash": "d769bcb5a85dff6eb277482639088fa6",
+    "last_checked": "2025-06-01T19:46:24.054573"
+  },
+  "https://alastin.com/blogs/skin-concerns/skin-sagginess-elasticity": {
+    "hash": "dcd92908c05dda40efc11594fdb14bd8",
+    "last_checked": "2025-06-01T22:35:04.658127"
+  },
+  "https://alastin.com/blogs/intheglow/skin-care-tips-for-microneedling-aftercare": {
+    "hash": "4ce92f861a986bd297fec6c117d3608c",
+    "last_checked": "2025-06-01T22:35:06.415018"
+  },
+  "https://alastin.com/blogs/intheglow/microdermabrasion-vs-microneedling-sup-1-sup": {
+    "hash": "f21ede9f38fb9fcc2397f465bc2bfeed",
+    "last_checked": "2025-06-01T22:35:08.219878"
+  },
+  "https://alastin.com/blogs/intheglow/how-to-tighten-the-skin-on-your-face": {
+    "hash": "c061bff5502a167fc95a6ae66ab37ec4",
+    "last_checked": "2025-06-01T22:35:09.916777"
+  },
+  "https://alastin.com//products/hydratint-sunscreen-spf-36": {
+    "hash": "e2d4d037cc5011f92f86e8a4ce73edfd",
+    "last_checked": "2025-06-01T22:35:11.542374"
+  },
+  "https://alastin.com/blogs/skin-concerns/loss-of-firmness-plumpness": {
+    "hash": "734472b2403362beeef214a2e7620d98",
+    "last_checked": "2025-06-01T22:35:13.335620"
+  },
+  "https://alastin.com/blogs/skin-concerns/lines-wrinkles": {
+    "hash": "8e23e10022828ea31e9b315afc370c0a",
+    "last_checked": "2025-06-01T22:35:15.084077"
+  },
+  "https://alastin.com/blogs/skin-concerns/dryness": {
+    "hash": "3425ce4ae1b74ac05b2e71e7e6d57077",
+    "last_checked": "2025-06-01T22:35:16.862391"
+  },
+  "https://alastin.com/blogs/skin-concerns.atom": {
+    "hash": "4bbac2d04886178a07274cbd4dc4304c",
+    "last_checked": "2025-06-01T19:46:40.252644"
+  },
+  "https://alastin.com/blogs/intheglow/causes-and-treatments-for-scars": {
+    "hash": "0fe8c0e02b92e0bac28d2eba3e33d936",
+    "last_checked": "2025-06-01T22:35:20.141447"
+  },
+  "https://alastin.com/blogs/intheglow/what-can-be-done-about-cellulite": {
+    "hash": "398a082005075a1abece1aa6f6191165",
+    "last_checked": "2025-06-01T22:35:21.828032"
+  },
+  "https://alastin.com/blogs/intheglow/a-guide-to-stretch-mark-removal": {
+    "hash": "fff07743caf521d8f2c47af0582d75c1",
+    "last_checked": "2025-06-01T22:35:23.600429"
+  },
+  "https://alastin.com/blogs/intheglow/skincare-gift-ideas-for-the-holidays": {
+    "hash": "9799402a8f365957168a94ef70569feb",
+    "last_checked": "2025-06-01T22:35:25.504375"
+  },
+  "https://alastin.com/blogs/intheglow/why-this-brand-new-form-of-vitamin-c-is-a-total-game-changer-for-skin": {
+    "hash": "50edc3959e59242f10fa2c8e15de6ca5",
+    "last_checked": "2025-06-01T22:35:27.247428"
+  },
+  "https://alastin.com/blogs/intheglow/what-to-look-for-in-an-exfoliator": {
+    "hash": "4a77864d518300d17dd643d009482a4e",
+    "last_checked": "2025-06-01T22:35:28.997035"
+  },
+  "https://alastin.com/blogs/intheglow/benefits-of-skin-brightening": {
+    "hash": "650a4e704186c1de1f82af942fc19b59",
+    "last_checked": "2025-06-01T22:35:30.719321"
+  },
+  "https://alastin.com/blogs/intheglow/sensitive-skin-signs-treatments-and-tips": {
+    "hash": "733dec54c39bfcb50dfdd072b7666347",
+    "last_checked": "2025-06-01T22:35:32.486861"
+  },
+  "https://alastin.com/blogs/intheglow/5-powerful-anti-aging-antioxidants-to-include-in-your-skincare-regimen": {
+    "hash": "fd39e595587ce66026338529720f577f",
+    "last_checked": "2025-06-01T22:35:34.217208"
+  },
+  "https://alastin.com/blogs/intheglow/what-is-emsculpt": {
+    "hash": "0bc3a0ae5610ebd6d309a9e9be545579",
+    "last_checked": "2025-06-01T22:35:36.076970"
+  },
+  "https://alastin.com/blogs/intheglow?page=2": {
+    "hash": "fc6ff5cbb75fd21ff698e14db20b6681",
+    "last_checked": "2025-06-01T22:35:37.930142"
+  },
+  "https://alastin.com/blogs/intheglow.atom": {
+    "hash": "e47339b4f37392e6d6ad7dc989a72173",
+    "last_checked": "2025-06-01T19:47:02.673684"
+  },
+  "https://alastin.com/pages/faq": {
+    "hash": "639685f95fd13dc13de089f296992a53",
+    "last_checked": "2025-06-01T22:35:41.302514"
+  },
+  "https://alastin.com/account/register": {
+    "hash": "889f1190ddfba53db15900f35e696ec7",
+    "last_checked": "2025-06-01T22:35:42.935087"
+  },
+  "https://alastin.com/blogs/intheglow/5-tips-for-how-to-improve-skin-elasticity": {
+    "hash": "b44902431bfe5a18ba0481501c836701",
+    "last_checked": "2025-06-01T22:35:44.678981"
+  },
+  "https://alastin.com/blogs/intheglow/transform_body_treatment": {
+    "hash": "54394a5f67d1e2b2b1812288b1252ad7",
+    "last_checked": "2025-06-01T22:35:46.522550"
+  },
+  "https://alastin.com/blogs/intheglow/skincare-101-moisturizers": {
+    "hash": "332d7a796aa4f74f0b36b9326dcad3b7",
+    "last_checked": "2025-06-01T22:35:48.321439"
+  },
+  "https://alastin.com/blogs/intheglow/skin-prep-for-rejuvenating-procedures": {
+    "hash": "0a5f5948dcab8fdd00b3a0f65d684bea",
+    "last_checked": "2025-06-01T22:35:50.064273"
+  },
+  "https://alastin.com/blogs/intheglow/the-order-you-should-use-your-skincare-products-for-day-and-night-regimens": {
+    "hash": "341707ac1851193cb7e3bca3086ae458",
+    "last_checked": "2025-06-01T22:35:52.061984"
+  },
+  "https://alastin.com/blogs/intheglow/how-to-get-rid-of-crepey-skin": {
+    "hash": "b67daf1d748b8733dd8e12bb5f943ce4",
+    "last_checked": "2025-06-01T22:35:53.792962"
+  },
+  "https://alastin.com/blogs/intheglow/how-to-care-for-your-decollete": {
+    "hash": "5729ccf2dac25e448356eb4f92ba745e",
+    "last_checked": "2025-06-01T22:35:55.556408"
+  },
+  "https://alastin.com/product-internet-sales-policy": {
+    "hash": "57699f76a13ab7d74a7644a24355adfb",
+    "last_checked": "2025-06-01T22:35:57.557301"
+  },
+  "https://alastin.com/pages/about-your-skin": {
+    "hash": "80fa5deb98f4d6407689d2c6064e3d65",
+    "last_checked": "2025-06-01T22:35:59.227205"
+  },
+  "https://alastin.com/pages/accessibility": {
+    "hash": "d3f87f949b30fe19a97a760a0fbb653a",
+    "last_checked": "2025-06-01T22:36:00.918972"
+  },
+  "https://alastin.com/pages/aspire-alastin": {
+    "hash": "afd2cc4574d98e3d634a8885d714f20e",
+    "last_checked": "2025-06-01T22:36:02.670835"
+  },
+  "https://alastin.com/pages/become-an-alastin-skincare-partner-perfect-pairing": {
+    "hash": "ca2a5db0fcb96600df76f4cb5cccb197",
+    "last_checked": "2025-06-01T22:36:04.334259"
+  },
+  "https://alastin.com/pages/brightener-teaser": {
+    "hash": "1135959c53097442d4c48d5327a4d84a",
+    "last_checked": "2025-06-01T22:36:06.075633"
+  },
+  "https://alastin.com/pages/careers": {
+    "hash": "fdb3cf0e0c5022f9a1245071e7774fef",
+    "last_checked": "2025-06-01T22:36:07.964085"
+  },
+  "https://alastin.com/pages/ccpa-compliance": {
+    "hash": "f19f51979c74a93cd36572184be39307",
+    "last_checked": "2025-06-01T22:36:09.847291"
+  },
+  "https://alastin.com/pages/customer-reviews": {
+    "hash": "3a433c5265c23a36ddfd56e4da47fa7c",
+    "last_checked": "2025-06-01T22:36:11.528438"
+  },
+  "https://alastin.com/pages/enhance-post-procedure-care-become-a-partner": {
+    "hash": "e33298dc3a51e398ba1f9101ef2f1732",
+    "last_checked": "2025-06-01T22:36:13.209924"
+  },
+  "https://alastin.com/pages/events-calendar": {
+    "hash": "c9b8fd86bd0588f35400100139518a95",
+    "last_checked": "2025-06-01T22:36:14.974239"
+  },
+  "https://alastin.com/pages/gdpr-compliance-1": {
+    "hash": "77b6d7e6934187ad91d2ad26b5e644e4",
+    "last_checked": "2025-06-01T22:36:16.647162"
+  },
+  "https://alastin.com/pages/perfect-pairing": {
+    "hash": "895e30f660650e7851020716c8d49304",
+    "last_checked": "2025-06-01T22:36:18.358890"
+  },
+  "https://alastin.com/pages/perfect-pairing-hcp": {
+    "hash": "5c19b154751b2031df12ec1bc1fbce49",
+    "last_checked": "2025-06-01T22:36:20.164252"
+  },
+  "https://alastin.com/pages/refer": {
+    "hash": "b32220ae195d1e5a9398c02455d5578a",
+    "last_checked": "2025-06-01T22:36:21.883955"
+  },
+  "https://alastin.com/pages/reform-repair": {
+    "hash": "296739848a1d8cf4131acd2c3a0d43fb",
+    "last_checked": "2025-06-01T22:36:23.556401"
+  },
+  "https://alastin.com/pages/sales-policy": {
+    "hash": "6ec9cd0880e6e91aa303bc5e044910ce",
+    "last_checked": "2025-06-01T22:36:25.334236"
+  },
+  "https://alastin.com/pages/skincare-by-skin-type": {
+    "hash": "b97c9ca8563c7de0ee1fe406ec187777",
+    "last_checked": "2025-06-01T22:36:27.107139"
+  },
+  "https://alastin.com/collections/3-steps-to": {
+    "hash": "d2add7c404c3888416cb78a559206e09",
+    "last_checked": "2025-06-01T22:36:28.827184"
+  },
+  "https://alastin.com/collections/skin-goals": {
+    "hash": "b5582916ecb78fab65132ee2d31ddf8a",
+    "last_checked": "2025-06-01T22:36:30.654014"
+  },
+  "https://alastin.com/collections/age-in-reverse": {
+    "hash": "cf1255682d5235353e96832bf6c5638b",
+    "last_checked": "2025-06-01T22:36:32.489092"
+  },
+  "https://alastin.com/collections/ageless-beauty": {
+    "hash": "bffbdca16a37905a7dcbbe6114cdd7e8",
+    "last_checked": "2025-06-01T22:36:34.312756"
+  },
+  "https://alastin.com/collections/aspire-1": {
+    "hash": "0adee0ea95c0ebc3414bf21a441134d0",
+    "last_checked": "2025-06-01T22:36:36.179547"
+  },
+  "https://alastin.com/collections/body-crepiness": {
+    "hash": "45e0bef48c36f07b84fb5f05938c0660",
+    "last_checked": "2025-06-01T22:36:37.994029"
+  },
+  "https://alastin.com/collections/body-needs": {
+    "hash": "840fce488957464f0a56c1b17f6ac1e5",
+    "last_checked": "2025-06-01T22:36:39.728998"
+  },
+  "https://alastin.com/collections/body-skincare": {
+    "hash": "8b091b9b10cd653b695d5f2546100daa",
+    "last_checked": "2025-06-01T22:36:41.563769"
+  },
+  "https://alastin.com/collections/bogo": {
+    "hash": "075f866bebfeb2dd37c1a52e15191f26",
+    "last_checked": "2025-06-01T22:36:43.374706"
+  },
+  "https://alastin.com/collections/bright-eyes": {
+    "hash": "a8973690c26b7ccdeffb8e1c4647f380",
+    "last_checked": "2025-06-01T22:36:45.103946"
+  },
+  "https://alastin.com/collections/3-steps-to-visibly-brighter-skin": {
+    "hash": "b85726dd4900296cd062c0adc1f4dc34",
+    "last_checked": "2025-06-01T22:36:46.806621"
+  },
+  "https://alastin.com/collections/3-steps-to-calm-sensitive-skin": {
+    "hash": "88ff759a4de28ae533cd9db0bb5d1b27",
+    "last_checked": "2025-06-01T22:36:48.569124"
+  },
+  "https://alastin.com/collections/cyberdeals": {
+    "hash": "e6ea7991de66bf05afacc2fb849e04ab",
+    "last_checked": "2025-06-01T22:36:50.494189"
+  },
+  "https://alastin.com/collections/daily-regimen-morning": {
+    "hash": "4f83ae20f82c2d9f2f976b33187c60e2",
+    "last_checked": "2025-06-01T22:36:52.274087"
+  },
+  "https://alastin.com/collections/elevate-essentials": {
+    "hash": "c36c137ad3ee51765b5cfd660822ff81",
+    "last_checked": "2025-06-01T22:36:54.013859"
+  },
+  "https://alastin.com/collections/3-steps-to-erase-fine-lines-and-wrinkles": {
+    "hash": "ff89a046a0cd6f803c65e92b12b13353",
+    "last_checked": "2025-06-01T22:36:55.698435"
+  },
+  "https://alastin.com/collections/eye-care": {
+    "hash": "8ed1dd77f92142f0eecc5c3eed132707",
+    "last_checked": "2025-06-01T22:36:57.429334"
+  },
+  "https://alastin.com/collections/3-steps-to-firmer-skin-on-the-body": {
+    "hash": "1e9ce36ed76255fb635ea2018b7a1014",
+    "last_checked": "2025-06-01T22:36:59.178203"
+  },
+  "https://alastin.com/collections/3-steps-to-fully-hydrated-skin": {
+    "hash": "85f6dbd78fc22c508ce564f7b8ff7b53",
+    "last_checked": "2025-06-01T22:37:00.963899"
+  },
+  "https://alastin.com/collections/gift-finder-kits": {
+    "hash": "eed98a922d98f6798855581f8a4474a1",
+    "last_checked": "2025-06-01T22:37:02.652574"
+  },
+  "https://alastin.com/collections/gift-finder-single-products": {
+    "hash": "15c03d4c8d6027564d66877a6d057dff",
+    "last_checked": "2025-06-01T22:37:04.694147"
+  },
+  "https://alastin.com/collections/gifts-200": {
+    "hash": "76801157501524e3658d2109e7bcd1bf",
+    "last_checked": "2025-06-01T22:37:06.505922"
+  },
+  "https://alastin.com/collections/gifts-under-100": {
+    "hash": "79f5da9c6a95983bbdf3227e649728e1",
+    "last_checked": "2025-06-01T22:37:08.254394"
+  },
+  "https://alastin.com/collections/gifts-under-150": {
+    "hash": "a354602178c06ba88e6db0ec9413c977",
+    "last_checked": "2025-06-01T22:37:10.077584"
+  },
+  "https://alastin.com/collections/gifts-under-200": {
+    "hash": "c04a2be48248fbe6813f4299c8caa5b1",
+    "last_checked": "2025-06-01T22:37:11.882491"
+  },
+  "https://alastin.com/collections/glow-getter": {
+    "hash": "21b2efc7ee96d11f08b15469d21fe4f7",
+    "last_checked": "2025-06-01T22:37:13.664860"
+  },
+  "https://alastin.com/collections/halle-berry-favorites": {
+    "hash": "1a59f0ccd76deb28f4396279966573dc",
+    "last_checked": "2025-06-01T22:37:15.388345"
+  },
+  "https://alastin.com/collections/holiday-hydrators": {
+    "hash": "5b64dc647196d25bb12c19f3aa4da0a6",
+    "last_checked": "2025-06-01T22:37:17.048646"
+  },
+  "https://alastin.com/collections/holiday-gift-guide": {
+    "hash": "33ea76d5748fe35fa6e32c9041576c74",
+    "last_checked": "2025-06-01T22:37:18.814985"
+  },
+  "https://alastin.com/collections/jetsetter": {
+    "hash": "f203ef48f752591ecb4c7a747b3d7337",
+    "last_checked": "2025-06-01T22:37:20.490056"
+  },
+  "https://alastin.com/collections/maximize-treatments": {
+    "hash": "9f16dd4f82a8a27a1efa61ade00ca99d",
+    "last_checked": "2025-06-01T22:37:22.238616"
+  },
+  "https://alastin.com/collections/merry-and-bright": {
+    "hash": "74ba4e70b9e2e6489a1511585e23f909",
+    "last_checked": "2025-06-01T22:37:23.939472"
+  },
+  "https://alastin.com/collections/minimize-hyperpigmentation": {
+    "hash": "3068901de4a1886da89ee213335020f5",
+    "last_checked": "2025-06-01T22:37:25.663867"
+  },
+  "https://alastin.com/collections/new-beauty": {
+    "hash": "daf864f3aec12c7c07e2c3a783d01e73",
+    "last_checked": "2025-06-01T22:37:27.584005"
+  },
+  "https://alastin.com/collections/newsette": {
+    "hash": "99a31d29bac7a1a7c34bed3f6313a24c",
+    "last_checked": "2025-06-01T22:37:29.481690"
+  },
+  "https://alastin.com/collections/normal": {
+    "hash": "ff441ea73329b5de5c4d59046414b090",
+    "last_checked": "2025-06-01T22:37:31.373964"
+  },
+  "https://alastin.com/collections/nourish-dry-skin": {
+    "hash": "59d479580cb4b3e785ff2f77338fab18",
+    "last_checked": "2025-06-01T22:37:33.193633"
+  },
+  "https://alastin.com/collections/offers": {
+    "hash": "4a0da98fb064180972635fddf2025578",
+    "last_checked": "2025-06-01T22:37:35.169409"
+  },
+  "https://alastin.com/collections/oily-and-combo": {
+    "hash": "d9554222dffca5e07a6ea143fa20735d",
+    "last_checked": "2025-06-01T22:37:36.940630"
+  },
+  "https://alastin.com/collections/oprahs-holiday-favorites": {
+    "hash": "2f9512eee9ecbc0f678a9464456224ca",
+    "last_checked": "2025-06-01T22:37:38.644316"
+  },
+  "https://alastin.com/collections/peels": {
+    "hash": "a29693c3749248a8f8063ae303436d0f",
+    "last_checked": "2025-06-01T22:37:40.505747"
+  },
+  "https://alastin.com/collections/daily-regimen-night": {
+    "hash": "ffed24c23163cd73c4ea4744a3a158a0",
+    "last_checked": "2025-06-01T22:37:42.363626"
+  },
+  "https://alastin.com/collections/post-treatment-skin": {
+    "hash": "8bb098cde2722167835df25574717bab",
+    "last_checked": "2025-06-01T22:37:44.191599"
+  },
+  "https://alastin.com/collections/powerful-routine": {
+    "hash": "85184d383e7948669de6eba6ffc55e03",
+    "last_checked": "2025-06-01T22:37:45.859489"
+  },
+  "https://alastin.com/collections/3-steps-to-prevent-skin-aging": {
+    "hash": "2701a163ee42a4d968f331b6cda4c9e2",
+    "last_checked": "2025-06-01T22:37:47.586676"
+  },
+  "https://alastin.com/collections/preventative": {
+    "hash": "fda17ed244ff63c1fce7d380c0a4e78e",
+    "last_checked": "2025-06-01T22:37:49.256796"
+  },
+  "https://alastin.com/collections/procedure-enthusiast": {
+    "hash": "8245ac78b9deb9e94cb261fe47f4408a",
+    "last_checked": "2025-06-01T22:37:50.941809"
+  },
+  "https://alastin.com/collections/product-finder-quiz": {
+    "hash": "8e8dfc97e49ba8171294f9807036644b",
+    "last_checked": "2025-06-01T22:37:52.870987"
+  },
+  "https://alastin.com/collections/protection-power-pair": {
+    "hash": "0a09d31265d882024e0337163a442a32",
+    "last_checked": "2025-06-01T22:37:54.762625"
+  },
+  "https://alastin.com/collections/refresh-eyes": {
+    "hash": "a9d7b5b2473b5e39a702a27a9c811597",
+    "last_checked": "2025-06-01T22:37:56.423791"
+  },
+  "https://alastin.com/collections/retinols": {
+    "hash": "5e531e6f2a89c97b2e5d1197769c7df3",
+    "last_checked": "2025-06-01T22:37:58.214093"
+  },
+  "https://alastin.com/collections/select-your-moisturizer": {
+    "hash": "cdb9c1a39db5e2285acf57aa95d3bfa2",
+    "last_checked": "2025-06-01T22:38:00.003864"
+  },
+  "https://alastin.com/collections/sensitive-beauties": {
+    "hash": "ac479f453130d7e770092dc2b9a1fcd2",
+    "last_checked": "2025-06-01T22:38:01.682702"
+  },
+  "https://alastin.com/collections/skimm": {
+    "hash": "bb6a6e9f5837a99ec2b526251b40ac9b",
+    "last_checked": "2025-06-01T22:38:03.486651"
+  },
+  "https://alastin.com/collections/skincare-featuring-antioxidants": {
+    "hash": "74fd0231bd51bb8fc23f4d2a4c9d54af",
+    "last_checked": "2025-06-01T22:38:05.426946"
+  },
+  "https://alastin.com/collections/skincare-featuring-glycolic-acid": {
+    "hash": "a576d03c4effe10cfc98d84f66dfa95a",
+    "last_checked": "2025-06-01T22:38:07.364769"
+  },
+  "https://alastin.com/collections/skincare-featuring-hyaluronic-acid": {
+    "hash": "be1ef84910d545e381bab383a2b39f90",
+    "last_checked": "2025-06-01T22:38:09.213532"
+  },
+  "https://alastin.com/collections/skincare-featuring-lipodrone": {
+    "hash": "623f8f5b58126a97b0c79f1c338662f9",
+    "last_checked": "2025-06-01T22:38:10.915425"
+  },
+  "https://alastin.com/collections/skincare-featuring-lipodrone-technology": {
+    "hash": "b40ec59dcb69f7cbd641d9846b66eda5",
+    "last_checked": "2025-06-01T22:38:12.681977"
+  },
+  "https://alastin.com/collections/skincare-featuring-niacinamide": {
+    "hash": "0fc721a6dda0fb3d9695ee19faf7a387",
+    "last_checked": "2025-06-01T22:38:14.484780"
+  },
+  "https://alastin.com/collections/skincare-featuring-oat": {
+    "hash": "5410ca6335715f86107640d53a3f2cd1",
+    "last_checked": "2025-06-01T22:38:16.275895"
+  },
+  "https://alastin.com/collections/skincare-featuring-octapeptide-45": {
+    "hash": "0c4b2a75832da9f4c22cc129d17b839f",
+    "last_checked": "2025-06-01T22:38:18.063870"
+  },
+  "https://alastin.com/collections/skincare-featuring-octapeptide-46": {
+    "hash": "a946eceeb2a3e413b62b8c862d61de8c",
+    "last_checked": "2025-06-01T22:38:19.763923"
+  },
+  "https://alastin.com/collections/skincare-featuring-path-3-technology": {
+    "hash": "45534e0734c3ccdd6d1cdfe083db305c",
+    "last_checked": "2025-06-01T22:38:21.640481"
+  },
+  "https://alastin.com/collections/skincare-featuring-path-3-technology-1": {
+    "hash": "f31b507f2ac2f8b2933afc7972cb9dca",
+    "last_checked": "2025-06-01T22:38:23.393867"
+  },
+  "https://alastin.com/collections/skincare-featuring-peptides": {
+    "hash": "4d0a1c2b33d811defc21361b8eca3e81",
+    "last_checked": "2025-06-01T22:38:25.318735"
+  },
+  "https://alastin.com/collections/skincare-featuring-perlite": {
+    "hash": "9a389b7c3bc312eb54a8c306fe0968b9",
+    "last_checked": "2025-06-01T22:38:27.060936"
+  },
+  "https://alastin.com/collections/skincare-featuring-phytoene-phytofluene": {
+    "hash": "c2eea9103bf2ac9449cb76ff73a47eaf",
+    "last_checked": "2025-06-01T22:38:29.038652"
+  },
+  "https://alastin.com/collections/products-with-silver-mushroom": {
+    "hash": "9f02e875eab16e9fb157936c766727ee",
+    "last_checked": "2025-06-01T22:38:30.799036"
+  },
+  "https://alastin.com/collections/skincare-featuring-tranexamic-acid": {
+    "hash": "8304528c42625040b8f8a397bfe0e90d",
+    "last_checked": "2025-06-01T22:38:32.583668"
+  },
+  "https://alastin.com/collections/3-steps-to-solve-hyperpigmentation": {
+    "hash": "9e75855db86f2387783ea3ab60646bd7",
+    "last_checked": "2025-06-01T22:38:34.291289"
+  },
+  "https://alastin.com/collections/stocking-stuffers": {
+    "hash": "b991db0e1f07139e6194dee7d0f0118c",
+    "last_checked": "2025-06-01T22:38:36.128932"
+  },
+  "https://alastin.com/collections/summer": {
+    "hash": "da9874afded118ad099e5c62edb7ae86",
+    "last_checked": "2025-06-01T22:38:37.882085"
+  },
+  "https://alastin.com/collections/sun-protection": {
+    "hash": "1f844011f84d4c0a10ae8751dcc0664d",
+    "last_checked": "2025-06-01T22:38:39.573666"
+  },
+  "https://alastin.com/collections/sun-kissed-glow": {
+    "hash": "64d238ac918893db6403aa661bfc050c",
+    "last_checked": "2025-06-01T22:38:41.326762"
+  },
+  "https://alastin.com/collections/top-rated": {
+    "hash": "9fcd814465fdfb3a0faf7e0c12692315",
+    "last_checked": "2025-06-01T22:38:43.072764"
+  },
+  "https://alastin.com/collections/travel-size-products": {
+    "hash": "3b159aaa535e9e5f88c3224bf0e6d0f4",
+    "last_checked": "2025-06-01T22:38:44.768605"
+  },
+  "https://alastin.com/collections/travel-size-sunscreens": {
+    "hash": "ff0a597d361e79f9354f53653f72e5ca",
+    "last_checked": "2025-06-01T22:38:46.478847"
+  },
+  "https://alastin.com/collections/uneven-skin-tone": {
+    "hash": "e8a23dfaada4e16f33e120703a1e57db",
+    "last_checked": "2025-06-01T22:38:48.308420"
+  },
+  "https://alastin.com/collections/all/products/ultra-nourishing-moisturizer": {
+    "hash": "5d7535ced56e1459c2c4a1b6ceab0ae3",
+    "last_checked": "2025-06-01T22:38:50.152017"
+  },
+  "https://alastin.com/blogs/intheglow/post-procedure-skincare-tips": {
+    "hash": "5e6c0cf11e0d7ea76ffc14462c4e4c17",
+    "last_checked": "2025-06-01T22:38:51.963741"
+  },
+  "https://alastin.com/blogs/intheglow/collagen-and-elastin-aging-skin-basics": {
+    "hash": "94112d79f5fe696492c93f784a22bb62",
+    "last_checked": "2025-06-01T22:38:53.713736"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/botox": {
+    "hash": "291ccbf24ec7e4ca51af5fe1c3b2c90e",
+    "last_checked": "2025-06-01T22:38:55.468132"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/microneedling": {
+    "hash": "929fd9622d013cea1b2ffd5aa0d372b6",
+    "last_checked": "2025-06-01T22:38:57.183566"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/laser-treatments": {
+    "hash": "cb14832457209342eb03ff2586a42b0f",
+    "last_checked": "2025-06-01T22:38:58.913852"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/sunscreen": {
+    "hash": "9326f1475fcf55b5f2375a0b912591ec",
+    "last_checked": "2025-06-01T22:39:00.673720"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/moisturizer": {
+    "hash": "0c5886c4240f3e6a044f0db47383229b",
+    "last_checked": "2025-06-01T22:39:02.358830"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/crows-feet": {
+    "hash": "c299364d538d54736e74fe8c1e476d75",
+    "last_checked": "2025-06-01T22:39:04.025766"
+  },
+  "https://alastin.com/blogs/intheglow/how-to-prepare-and-care-for-your-face-when-having-laser-treatments": {
+    "hash": "02d869c3bb1aa73f9b1278e703a1eaef",
+    "last_checked": "2025-06-01T22:39:05.808769"
+  },
+  "https://alastin.com/blogs/intheglow/the-ultimate-guide-to-self-care-for-women": {
+    "hash": "97ebeab21d3dd4d031aed5a4ff115ef5",
+    "last_checked": "2025-06-01T22:39:07.521747"
+  },
+  "https://alastin.com/blogs/intheglow/sensitive-skin-signs-treatments-and-tips?_pos=2&_sid=d62ad698a&_ss=r": {
+    "hash": "83926bef6e32bb9016429d32069ef84f",
+    "last_checked": "2025-06-01T22:39:09.310834"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/retinol": {
+    "hash": "14333c178cbc417399bb41cad2334bec",
+    "last_checked": "2025-06-01T22:39:10.976380"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/anti-aging": {
+    "hash": "43f905533753675d6426d59c5d9e77a4",
+    "last_checked": "2025-06-01T22:39:12.773546"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/wrinkles": {
+    "hash": "848fecb81086ab4bd6d9d212dd83882e",
+    "last_checked": "2025-06-01T22:39:14.443774"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/collagen": {
+    "hash": "ff3254bcd0acbc3f7bb467faa153fa6d",
+    "last_checked": "2025-06-01T22:39:16.348244"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/sun-damage": {
+    "hash": "20deae2439cc876519d0659c0569cc8a",
+    "last_checked": "2025-06-01T22:39:18.059605"
+  },
+  "https://alastin.com/blogs/intheglow/do-facial-exercises-work-for-anti-aging": {
+    "hash": "10865e56582a31a82a65e70d566ba334",
+    "last_checked": "2025-06-01T22:39:19.793842"
+  },
+  "https://alastin.com/blogs/intheglow/how-to-get-rid-of-crows-feet": {
+    "hash": "c4c4e45dbc23eb4a5ede0f284d61ada5",
+    "last_checked": "2025-06-01T22:39:21.561677"
+  },
+  "https://alastin.com/blogs/intheglow/neck-and-decollete-skincare-treatments": {
+    "hash": "9adde9a4a0581a7eba2c3a6b9ce5b391",
+    "last_checked": "2025-06-01T22:39:23.360312"
+  },
+  "https://alastin.com/blogs/intheglow/tips-for-starting-a-new-skincare-regimen": {
+    "hash": "4cfb9327caaeb6e605642f9106e4ae8f",
+    "last_checked": "2025-06-01T22:39:25.073837"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/fine-lines": {
+    "hash": "67f5f2b6f8941b46a99abd074c987b6c",
+    "last_checked": "2025-06-01T22:39:26.913600"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/glowing-skin": {
+    "hash": "411afef82ace74b476b2a599bccb6d31",
+    "last_checked": "2025-06-01T22:39:28.633830"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/crepey-skin": {
+    "hash": "b2ba8610b80986b0c93b767d82e8428f",
+    "last_checked": "2025-06-01T22:39:30.310581"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/exfoliators": {
+    "hash": "d10885da64a8ae1ee3b1cf2c03c58f1c",
+    "last_checked": "2025-06-01T22:39:32.043743"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/sensitive-skin": {
+    "hash": "fe3e176bbe7f02996801ba543e35992c",
+    "last_checked": "2025-06-01T22:39:33.796173"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/decollete": {
+    "hash": "53342914ccdca0d5a51b7a73c4f7305f",
+    "last_checked": "2025-06-01T22:39:35.673757"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skin-sagginess": {
+    "hash": "d03ae3452362360733c213b795ef5260",
+    "last_checked": "2025-06-01T22:39:37.344083"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/uneven-skin-tone": {
+    "hash": "f23bfe2aedab61f0b2d9c4976058ee5a",
+    "last_checked": "2025-06-01T22:39:39.034934"
+  },
+  "https://alastin.com/blogs": {
+    "hash": "67f831f552f13989c269c24a7a7216bd",
+    "last_checked": "2025-06-01T22:39:40.924971"
+  },
+  "https://alastin.com/blogs/intheglow/sculpsure-vs-coolsculpting-which-is-better?_pos=3&_sid=f8e37ef17&_ss=r": {
+    "hash": "b302540295261be36f3ccbf7a29a91d9",
+    "last_checked": "2025-06-01T22:39:42.648299"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/body-sculpting": {
+    "hash": "806f260b61496c8f7769b35957ee1c3c",
+    "last_checked": "2025-06-01T22:39:44.441752"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/fat-reduction": {
+    "hash": "50669fe72d5ef0ad631bca5031d76a04",
+    "last_checked": "2025-06-01T22:39:46.186969"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/coolsculpting": {
+    "hash": "9dff9d465cdd4d699647657290a0ea5d",
+    "last_checked": "2025-06-01T22:39:47.979301"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/sculpsure": {
+    "hash": "717fdcf5f8384f5dc4219bea2a6082a8",
+    "last_checked": "2025-06-01T22:39:49.779352"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/trihex-technology": {
+    "hash": "7e96966919ea0450ea0504c58558306c",
+    "last_checked": "2025-06-01T22:39:51.459756"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/transform-body-treatment": {
+    "hash": "edc7c276fa51d7ad4a1395d3cee1db5c",
+    "last_checked": "2025-06-01T22:39:53.163438"
+  },
+  "https://alastin.com/blogs/intheglow/sculpsure-vs-coolsculpting-which-is-better": {
+    "hash": "b302540295261be36f3ccbf7a29a91d9",
+    "last_checked": "2025-06-01T22:39:54.717522"
+  },
+  "https://alastin.com/blogs/intheglow/alastin.com": {
+    "hash": "67f831f552f13989c269c24a7a7216bd",
+    "last_checked": "2025-06-01T22:39:56.457513"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/gentle-cleanser": {
+    "hash": "43a37c793059bd62b7e414c092e32e70",
+    "last_checked": "2025-06-01T22:39:58.193760"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/restorative-skin-complex": {
+    "hash": "98866ebaa3f679020b090b79c3eddb6a",
+    "last_checked": "2025-06-01T22:39:59.998347"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/restorative-neck-complex": {
+    "hash": "c23581ddeadb1d410fea3b85033d4c5c",
+    "last_checked": "2025-06-01T22:40:01.735864"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/restorative-eye-treatment": {
+    "hash": "8e6ae876b7e618ee024e3a6caf6a16c4",
+    "last_checked": "2025-06-01T22:40:03.520039"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/makeup": {
+    "hash": "d85100e842f6d7813ee2b6065763f442",
+    "last_checked": "2025-06-01T22:40:05.322240"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/silver-mushroom": {
+    "hash": "3cb6981c0e23e01e1d99c6813099feaa",
+    "last_checked": "2025-06-01T22:40:07.145377"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skin-elasticity": {
+    "hash": "8ae414ab0bde66cc9c1a1f1ba3678f07",
+    "last_checked": "2025-06-01T22:40:08.878699"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/elastin": {
+    "hash": "bb0de7d6d6830a81addd15516bf042f7",
+    "last_checked": "2025-06-01T22:40:10.670734"
+  },
+  "https://alastin.com/blogs/intheglow/5-tips-on-how-to-hydrate-skin": {
+    "hash": "69a4ce4e7bc53c62306e1254ae37f0c3",
+    "last_checked": "2025-06-01T22:40:12.386906"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/20s-skincare": {
+    "hash": "38153961b6c891280ec4058d948b35e0",
+    "last_checked": "2025-06-01T22:40:14.081656"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/30s-skincare": {
+    "hash": "7949b86d6e2a4feafbbb475a186014c5",
+    "last_checked": "2025-06-01T22:40:15.813498"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/40s-skincare": {
+    "hash": "c13231d6fc30c77ad70d9322d6f89fd0",
+    "last_checked": "2025-06-01T22:40:17.516414"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/50s-skincare": {
+    "hash": "836228367bc5230bdede364c11957576",
+    "last_checked": "2025-06-01T22:40:19.201259"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skincare-routine": {
+    "hash": "3b1d6a80f9e62a60dac84953c8990e5a",
+    "last_checked": "2025-06-01T22:40:20.898380"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skincare-regimen": {
+    "hash": "ed4a78735aa97085b9e1fc2673bd5196",
+    "last_checked": "2025-06-01T22:40:22.614422"
+  },
+  "https://alastin.com/blogs/intheglow/peptides-for-skin-benefits-how-they-work": {
+    "hash": "af141844888035b86db20c411b774349",
+    "last_checked": "2025-06-01T22:40:24.350417"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/sunburn": {
+    "hash": "f35c980d8e335041d8de5630cd4a29f6",
+    "last_checked": "2025-06-01T22:40:26.187777"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skin-hydration": {
+    "hash": "a713727b8df9a62b1da20b268fda0c95",
+    "last_checked": "2025-06-01T22:40:27.968523"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/hyaluronic-acid": {
+    "hash": "a6e25928c2aa1014751befe70ec10933",
+    "last_checked": "2025-06-01T22:40:29.744223"
+  },
+  "https://alastin.com/blogs/intheglow/facial-fillers-and-injections": {
+    "hash": "56739bd04f1f3ab303d43122c043d91c",
+    "last_checked": "2025-06-01T22:40:31.759655"
+  },
+  "https://alastin.com/blogs/intheglow/understanding-types-of-chemical-peels-for-different-skin-types": {
+    "hash": "9ea851515dea496b936a79356b5d284b",
+    "last_checked": "2025-06-01T22:40:33.556652"
+  },
+  "https://alastin.com/blogs/intheglow/top-5-face-laser-treatments-and-how-they-can-help": {
+    "hash": "37ea96ad9dc551f503e4069e70f8f62b",
+    "last_checked": "2025-06-01T22:40:35.653535"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/microdermabrasion": {
+    "hash": "1ed618ff58c815c5b7d58c2ffe4b519c",
+    "last_checked": "2025-06-01T22:40:37.380285"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/exfoliant": {
+    "hash": "ccee337368e4acee4c77740e57a31f39",
+    "last_checked": "2025-06-01T22:40:39.154640"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/melasma": {
+    "hash": "6145bdf225a0d8fb2af4efec9b8c1cfa",
+    "last_checked": "2025-06-01T22:40:40.858424"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/acne-scars": {
+    "hash": "18b50983fe595b15567c6b2c06a133f9",
+    "last_checked": "2025-06-01T22:40:42.561489"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/age-spots": {
+    "hash": "ffb77b7e98a1ae550430bbc2834692be",
+    "last_checked": "2025-06-01T22:40:44.276703"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/burns": {
+    "hash": "6846d9788f034d1d56384b2e0b93d4bd",
+    "last_checked": "2025-06-01T22:40:46.028916"
+  },
+  "https://alastin.com/blogs/intheglow/how-to-get-rid-of-forehead-wrinkles": {
+    "hash": "6347cbe749c604bf876da5756acb6cb4",
+    "last_checked": "2025-06-01T22:40:47.873226"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/chemical-peels": {
+    "hash": "095444a65a1b3e7c2ee44b96ed24706a",
+    "last_checked": "2025-06-01T22:40:49.583840"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/laser-resurfacing": {
+    "hash": "d3ea940064d6e442c2474fc4791a5a29",
+    "last_checked": "2025-06-01T22:40:51.275789"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/hydrafacial": {
+    "hash": "9b2c66a0286a89b8ff1cdba51e3ba2f8",
+    "last_checked": "2025-06-01T22:40:52.970861"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/injections": {
+    "hash": "363b29604e3c8bd5867d245783c4cf6a",
+    "last_checked": "2025-06-01T22:40:54.617918"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/peptides": {
+    "hash": "312abcd3d6e3dff3445c67636760c7c6",
+    "last_checked": "2025-06-01T22:40:56.296663"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/scars": {
+    "hash": "739b20c4f3e9ed9bd7fab7d1aff53923",
+    "last_checked": "2025-06-01T22:40:58.128818"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/vitamin-c": {
+    "hash": "179c07c514886303b68e7dfd80039ae0",
+    "last_checked": "2025-06-01T22:40:59.861390"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/cellulite": {
+    "hash": "e2a774f5e8f8cfadf31e1631971bfb70",
+    "last_checked": "2025-06-01T22:41:01.605521"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/post-procedure-products": {
+    "hash": "a502cc3b8b14c782efbd2d48dc4a0aa9",
+    "last_checked": "2025-06-01T22:41:03.329590"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/orange-peel-skin": {
+    "hash": "5076c128c063386890ee240472ad031a",
+    "last_checked": "2025-06-01T22:41:05.106578"
+  },
+  "https://alastin.com/blogs/intheglow/how-to-combat-orange-peel-skin-texture": {
+    "hash": "2ce74fa2f52d496869c74573d2fdcc78",
+    "last_checked": "2025-06-01T22:41:06.859869"
+  },
+  "https://alastin.com/blogs/media": {
+    "hash": "f9c9332ee1f92088745b9497571cea4d",
+    "last_checked": "2025-06-01T22:41:08.934992"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/holiday-gifts": {
+    "hash": "564d4879e9da6563fb6e8fe2702c2a55",
+    "last_checked": "2025-06-01T22:41:10.643150"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skincare-gift-ideas": {
+    "hash": "dd9d436ab74fb35a0db7e694d251f291",
+    "last_checked": "2025-06-01T22:41:12.331787"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/mens-skincare": {
+    "hash": "4e580d83777e08cb5721545ceb4d6135",
+    "last_checked": "2025-06-01T22:41:14.043410"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/gifts-for-mom": {
+    "hash": "f2fed77958cebfe77021c368e8571bf2",
+    "last_checked": "2025-06-01T22:41:15.775890"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/gifts-for-her": {
+    "hash": "a2eb57830052ecef71956767b6cb13d7",
+    "last_checked": "2025-06-01T22:41:17.425124"
+  },
+  "https://alastin.com/blogs/intheglow/beauty-travel-essentials": {
+    "hash": "6bb427b823695657e6b51300018e2da3",
+    "last_checked": "2025-06-01T22:41:19.180101"
+  },
+  "https://alastin.com/blogs/intheglow/best-multitasking-beauty-products-of-2018": {
+    "hash": "32ef903c1dd56324fc1f5f487386c1a5",
+    "last_checked": "2025-06-01T22:41:20.906413"
+  },
+  "https://alastin.com/blogs/intheglow/winter-skincare-tips": {
+    "hash": "9faa9e2ab191f866ea03c3c61cb6bdff",
+    "last_checked": "2025-06-01T22:41:22.679195"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/dry-skin": {
+    "hash": "f2b7e48b6cc69ef49c0cc6bbc46a632e",
+    "last_checked": "2025-06-01T22:41:24.423378"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/antioxidants": {
+    "hash": "ca95ea9e2e94d59da7da204e3888b2e2",
+    "last_checked": "2025-06-01T22:41:26.396270"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skin-brightening": {
+    "hash": "dd5113071a4393641eddbd4c832ab0a1",
+    "last_checked": "2025-06-01T22:41:28.253129"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/signs-of-aging": {
+    "hash": "cc5323c757df6ffe9d8d69d3bd270e72",
+    "last_checked": "2025-06-01T22:41:29.978212"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/pigmentation": {
+    "hash": "183f035d1e37d23a764ba1da790f2430",
+    "last_checked": "2025-06-01T22:41:31.784543"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/breakouts": {
+    "hash": "2b67b2eb81a4eb0393714ba3f3b72dd9",
+    "last_checked": "2025-06-01T22:41:33.448543"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/emsculpt": {
+    "hash": "6f4d90358a9d5b3b4f252e22ebbd7e4e",
+    "last_checked": "2025-06-01T22:41:35.325433"
+  },
+  "https://alastin.com/blogs/intheglow/coolsculpting-results-beauty-blogger-product-review": {
+    "hash": "fcc2900160ee19cbc0c0b9b86498afc2",
+    "last_checked": "2025-06-01T22:41:37.103388"
+  },
+  "https://alastin.com/blogs/intheglow/ipl-vs-fraxel-comparison-guide": {
+    "hash": "1ade5fd23bb17ccea18bb1d4191d6c4a",
+    "last_checked": "2025-06-01T22:41:38.858224"
+  },
+  "https://alastin.com/blogs/intheglow/4-tips-for-chemical-peel-aftercare": {
+    "hash": "63d5ca5412d12bcdb6313e831e6f2a0a",
+    "last_checked": "2025-06-01T22:41:40.619501"
+  },
+  "https://alastin.com/blogs/intheglow?page=1": {
+    "hash": "aa2e0e8ed349183c5d257936e817e08c",
+    "last_checked": "2025-06-01T22:41:42.303374"
+  },
+  "https://alastin.com/blogs/intheglow?page=3": {
+    "hash": "fda4f3dddc43cacc5bfde3c07e9e96a3",
+    "last_checked": "2025-06-01T22:41:44.002561"
+  },
+  "https://alastin.com/blogs/intheglow/types-of-facials-which-one-is-right-for-your-skin": {
+    "hash": "e840eb6c13c2d3084ac1f72b3f1bd025",
+    "last_checked": "2025-06-01T22:43:00.868075"
+  },
+  "https://alastin.com/blogs/intheglow/what-is-dermaplaning-and-its-benefits": {
+    "hash": "5c339d040d1eec2a982bf89dfe272311",
+    "last_checked": "2025-06-01T22:46:52.797145"
+  },
+  "https://alastin.com/blogs/intheglow/what-causes-thin-skin-and-how-to-treat-it": {
+    "hash": "14f7e087f7cbf07c572ea3b5352b054a",
+    "last_checked": "2025-06-01T22:42:19.005937"
+  },
+  "https://alastin.com/blogs/intheglow/post-menopause-beauty-advice": {
+    "hash": "52f1ff3649932c272101ad906b256b25",
+    "last_checked": "2025-06-01T22:42:47.053919"
+  },
+  "https://alastin.com/account/login": {
+    "hash": "40789e49faa433bf75ffd89f93fe42ee",
+    "last_checked": "2025-06-01T22:41:45.662524"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skin-tightening": {
+    "hash": "ed617daabccad15e21eb7ff8add34fdf",
+    "last_checked": "2025-06-01T22:41:47.393230"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/elasticity": {
+    "hash": "ade233fcc618f1fa43364b0bcad9baa4",
+    "last_checked": "2025-06-01T22:41:49.023370"
+  },
+  "https://alastin.com/blogs/intheglow/body-contouring-beauty-trend%20": {
+    "hash": "0e9a3c0de6550aca8b6fd40c9d1710b9",
+    "last_checked": "2025-06-01T22:41:50.796989"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/body-contouring": {
+    "hash": "3f410ff4f3ff24133f3eec3a0b2a8593",
+    "last_checked": "2025-06-01T22:41:52.434657"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/before-and-after-photos": {
+    "hash": "6f3f369e0000f344332c7ec2c2a6f497",
+    "last_checked": "2025-06-01T22:41:54.134217"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skin-laxity": {
+    "hash": "fbdb22c29c1b027118a8df2d477726cb",
+    "last_checked": "2025-06-01T22:41:55.784259"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skin-rejuvenation": {
+    "hash": "c10286f0887e4f1c8568660968ace96a",
+    "last_checked": "2025-06-01T22:41:57.465405"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skin-resurfacing": {
+    "hash": "ae750e4b037114e835a51e112a51d4f3",
+    "last_checked": "2025-06-01T22:41:59.107766"
+  },
+  "https://alastin.com/blogs/intheglow/why-skin-purging-is-a-good-thing": {
+    "hash": "b96fcacc3301734a3eab44ed39f7d195",
+    "last_checked": "2025-06-01T22:42:00.890747"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/saggy-skin": {
+    "hash": "0815a0057170a88edc4a4f3b8f3598fd",
+    "last_checked": "2025-06-01T22:42:02.575210"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/aging-skin": {
+    "hash": "66494aee149eb8e4bee84f9f98ddad50",
+    "last_checked": "2025-06-01T22:42:04.368296"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/neck-area": {
+    "hash": "030feb30a12261b914dd9870d83f913d",
+    "last_checked": "2025-06-01T22:42:06.010672"
+  },
+  "https://alastin.com/pages/privacy-policy": {
+    "hash": "991ebd82246fb7633188073282fa5a59",
+    "last_checked": "2025-06-01T19:53:51.682549"
+  },
+  "https://alastin.com/pages/reform-repair-signup": {
+    "hash": "c746d5453adad0f32b8a4737927d1e3b",
+    "last_checked": "2025-06-01T22:42:09.779248"
+  },
+  "http://alastin.com": {
+    "hash": "075b65409a15c90cff4ddded18ebd878",
+    "last_checked": "2025-06-01T22:42:11.936256"
+  },
+  "https://alastin.com/blogs/intheglow/vampire-facial-blood-facial": {
+    "hash": "1aae8cd9ece8ec585d1bb8db63efe00a",
+    "last_checked": "2025-06-01T22:42:13.699194"
+  },
+  "https://alastin.com/blogs/intheglow/ablative_and_non-ablative_procedure_education": {
+    "hash": "c97aa1a4b59472bd0c509d385e2d005a",
+    "last_checked": "2025-06-01T22:42:15.435748"
+  },
+  "https://alastin.com/blogs/intheglow/best-skin-rejuvenating-treatments-for-healthier-skin": {
+    "hash": "decb014254074b443f4698127d0544e4",
+    "last_checked": "2025-06-01T22:42:17.188281"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/sunscreen?page=2": {
+    "hash": "536200027479063f86ac17f5d70d6acb",
+    "last_checked": "2025-06-01T22:42:20.764924"
+  },
+  "https://alastin.com/blogs/intheglow/how-to-combat-acne-from-face-mask-maskne": {
+    "hash": "b467ece6f1bc4b5707053a34ed26cf84",
+    "last_checked": "2025-06-01T22:42:22.529010"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/moisturizer?page=2": {
+    "hash": "8c631b20139d2ba1c352fdf9c5344209",
+    "last_checked": "2025-06-01T22:42:24.232051"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/ipl": {
+    "hash": "c6828f81541e92b4c99dfdcb06f08d64",
+    "last_checked": "2025-06-01T22:42:25.933483"
+  },
+  "https://alastin.com/blogs/intheglow/skincare-tips-for-men": {
+    "hash": "6c0ef9d8a6a9aa644f7e5fc722b3431a",
+    "last_checked": "2025-06-01T22:42:27.678720"
+  },
+  "https://alastin.com/blogs/intheglow/bridal-beauty-skincare": {
+    "hash": "509c5ce43bdef0862569b5df41f375f7",
+    "last_checked": "2025-06-01T22:42:29.571542"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/retinol?page=2": {
+    "hash": "0e9b105e14b79f1f7a97aa45e4559fff",
+    "last_checked": "2025-06-01T22:42:31.313437"
+  },
+  "https://alastin.com/blogs/intheglow/anti-aging-procedures-for-summer-skin-care": {
+    "hash": "976acbb2b60e7d5ef8245ade37f9a5fc",
+    "last_checked": "2025-06-01T22:42:33.080870"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/anti-aging?page=2": {
+    "hash": "18d9f773a1b42b25d29d21caeb912c41",
+    "last_checked": "2025-06-01T22:42:34.843758"
+  },
+  "https://alastin.com/blogs/intheglow/winter-friendly-skin-rejuvenating-procedures": {
+    "hash": "9a0066597e082b83eb3889554b2af9e6",
+    "last_checked": "2025-06-01T22:42:36.615168"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/wrinkles?page=2": {
+    "hash": "91eb70edcb477355a9ebb31d61ea404f",
+    "last_checked": "2025-06-01T22:42:38.301449"
+  },
+  "https://alastin.com/blogs/intheglow/best-daily-maintenance-skincare-tips": {
+    "hash": "d4d3e3b9c534ab24a11ef684a8652f4b",
+    "last_checked": "2025-06-01T22:42:40.189663"
+  },
+  "https://alastin.com/blogs/intheglow/best-skincare-for-facial-procedures": {
+    "hash": "3b8a871381e032c56b8a255bfef3ad5a",
+    "last_checked": "2025-06-01T22:42:41.969514"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/collagen?page=2": {
+    "hash": "22e8a3d4d583ccce561b64d82ff6136d",
+    "last_checked": "2025-06-01T22:42:43.719171"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/post-menopause": {
+    "hash": "066a677fe227011d93ec2edaa671ab03",
+    "last_checked": "2025-06-01T22:42:48.748985"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/fine-lines?page=2": {
+    "hash": "0ecda13eec22c64cdbbcfb1659a109f4",
+    "last_checked": "2025-06-01T22:42:50.455442"
+  },
+  "https://alastin.com/blogs/intheglow/top-beauty-influencers": {
+    "hash": "285914ad6bf51adcb0ae73b96c27b87e",
+    "last_checked": "2025-06-01T22:42:52.286168"
+  },
+  "https://alastin.com/blogs/intheglow/skincare-beginners-guide-to-body-fat-reduction": {
+    "hash": "4730bfa5fb12a2f2cd1f977e3068282d",
+    "last_checked": "2025-06-01T22:42:54.050540"
+  },
+  "https://alastin.com/blogs/intheglow/body-contouring-beauty-trend": {
+    "hash": "0e9a3c0de6550aca8b6fd40c9d1710b9",
+    "last_checked": "2025-06-01T22:42:55.623208"
+  },
+  "https://alastin.com/blogs/intheglow/cosmetic-treatments-for-men": {
+    "hash": "b390ad91b45c28f458743782e2c58c76",
+    "last_checked": "2025-06-01T22:42:57.348163"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/trihex-technology?page=2": {
+    "hash": "4f3a2ec8bea68b981a3fd02e56fcf371",
+    "last_checked": "2025-06-01T22:42:59.088563"
+  },
+  "https://alastin.com/blogs/intheglow/skincare-tips-for-summer": {
+    "hash": "2b752fdbbdb10d6a70fc9cc1be95420b",
+    "last_checked": "2025-06-01T22:43:02.685162"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/dermal-filler": {
+    "hash": "9258db9041b3b280a69966872be05c05",
+    "last_checked": "2025-06-01T22:43:04.348448"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/facial-filler": {
+    "hash": "3805c452561724fcbf9efd8bf9f3f88b",
+    "last_checked": "2025-06-01T22:43:06.022928"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/injectables": {
+    "hash": "cc6bd961ba7ffabff5de1b70ec09daf7",
+    "last_checked": "2025-06-01T22:43:07.697523"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/plastic-surgery": {
+    "hash": "f0be95440bf30a074c255af466fedfca",
+    "last_checked": "2025-06-01T22:43:09.363078"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/regenerating-skin-nectar-with-trihex-technology": {
+    "hash": "35f9f3101c1495c0e366e4f0bd21d42b",
+    "last_checked": "2025-06-01T22:43:11.084631"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/procedure-enhancement-system": {
+    "hash": "b24b784cfea6de05b218b477e33ce8a1",
+    "last_checked": "2025-06-01T22:43:12.903102"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/ablative": {
+    "hash": "48b68cacad140d7b6588254436078dd3",
+    "last_checked": "2025-06-01T22:43:14.702798"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/non-ablative": {
+    "hash": "cc4244aa8349c5552be94be5bffee49a",
+    "last_checked": "2025-06-01T22:43:16.364802"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/fillers": {
+    "hash": "04b0dd5faccc62ef7e4ed66d4e1a443f",
+    "last_checked": "2025-06-01T22:43:18.106187"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/beauty-blogger": {
+    "hash": "cfe7b11580358c6a2b7adeff7b46d6a9",
+    "last_checked": "2025-06-01T22:43:19.905063"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/eye-cream": {
+    "hash": "6b695d83bc85efd52731f24e10c805c9",
+    "last_checked": "2025-06-01T22:43:21.615172"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skin-firmness": {
+    "hash": "9a02c97a98676ca6479693d1b95c546c",
+    "last_checked": "2025-06-01T22:43:23.298189"
+  },
+  "https://alastin.com/blogs/intheglow/is-anti-aging-a-bad-word": {
+    "hash": "8b45896e4bc605720be3b66650e59c6c",
+    "last_checked": "2025-06-01T22:43:25.142833"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/fraxel-laser": {
+    "hash": "f8ea8e63e4f4132107191eb16dc2c493",
+    "last_checked": "2025-06-01T22:43:26.855940"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/veins": {
+    "hash": "9ff88f38e09b7676757fedb2000ae9ce",
+    "last_checked": "2025-06-01T22:43:28.540469"
+  },
+  "https://alastin.com/blogs/intheglow?page=4": {
+    "hash": "f38fa0255514dafdb756da8046fb3c7c",
+    "last_checked": "2025-06-01T22:43:30.353040"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/cosmetic-surgery": {
+    "hash": "ca81a587fd7996d098ab527973abfbee",
+    "last_checked": "2025-06-01T22:43:32.042727"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/mommy-makeover": {
+    "hash": "acf32063dfe52c03a603f53745e22488",
+    "last_checked": "2025-06-01T22:43:33.732991"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skin-purging": {
+    "hash": "4c3fd630dcbdf18fbf4df04ac992c63e",
+    "last_checked": "2025-06-01T22:43:35.620155"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/acne": {
+    "hash": "00f487477ac1d0391036129696f70af4",
+    "last_checked": "2025-06-01T22:43:37.401488"
+  },
+  "http://alastin.com/collections/anti-aging": {
+    "hash": "84ea548b241a41620f04a8b5d3e07476",
+    "last_checked": "2025-06-01T22:43:39.397841"
+  },
+  "http://alastin.com/collections/all": {
+    "hash": "fd507a7e50953acc66be810ee0d0d66a",
+    "last_checked": "2025-06-01T22:43:41.485181"
+  },
+  "http://alastin.com/collections/best-sellers": {
+    "hash": "f9cc7eb78953808de89830303f934405",
+    "last_checked": "2025-06-01T22:43:43.454287"
+  },
+  "http://alastin.com/collections/award-winners": {
+    "hash": "40b9fcca0d7e0a2ab9ac9e5d3c30c875",
+    "last_checked": "2025-06-01T22:43:45.493000"
+  },
+  "http://alastin.com/collections/subscription": {
+    "hash": "864d9133d7ff85f6a3bde259003682c5",
+    "last_checked": "2025-06-01T22:43:47.685063"
+  },
+  "http://alastin.com/collections/face-and-eye-care": {
+    "hash": "4afd457fa117e210496f50c26196efaf",
+    "last_checked": "2025-06-01T22:43:49.763129"
+  },
+  "http://alastin.com/collections/body-care": {
+    "hash": "2fbc8f58c9e9541b236768b55d040295",
+    "last_checked": "2025-06-01T22:43:51.788957"
+  },
+  "http://alastin.com/collections/cleanser": {
+    "hash": "3e80c399e717ef43be79d7a4a491ec27",
+    "last_checked": "2025-06-01T22:43:53.847983"
+  },
+  "http://alastin.com/collections/moisturizer": {
+    "hash": "687f46e227cbbda693af4f07699ee6b7",
+    "last_checked": "2025-06-01T22:43:56.030799"
+  },
+  "http://alastin.com/collections/sunscreen": {
+    "hash": "3aa4132f9778aad6b18691f35a850838",
+    "last_checked": "2025-06-01T22:43:58.135803"
+  },
+  "http://alastin.com/collections/serums": {
+    "hash": "16271da0367ba50cadcb3c4bf0f5f533",
+    "last_checked": "2025-06-01T22:44:00.171115"
+  },
+  "http://alastin.com/collections/procedure-care": {
+    "hash": "fcf05158071d59b40f4d9c837bda031e",
+    "last_checked": "2025-06-01T22:44:02.268178"
+  },
+  "http://alastin.com/pages/ingredient-glossary": {
+    "hash": "2d298e26fe0f0c3889b5d9288b679b2e",
+    "last_checked": "2025-06-01T22:44:04.328867"
+  },
+  "http://alastin.com/pages/trihex-ingredient": {
+    "hash": "49934879e438ae323371f3b3334cf014",
+    "last_checked": "2025-06-01T22:44:06.460002"
+  },
+  "http://alastin.com/pages/hyaluronic-acid": {
+    "hash": "136918fda261d166b56abc638d878bcb",
+    "last_checked": "2025-06-01T22:44:08.356903"
+  },
+  "http://alastin.com/pages/niacinamide": {
+    "hash": "eb2b5fab8293ba9043a569408521dade",
+    "last_checked": "2025-06-01T22:44:10.391149"
+  },
+  "http://alastin.com/pages/peptides": {
+    "hash": "9821ba96caf0d27f6675a9fa2243389f",
+    "last_checked": "2025-06-01T22:44:12.487668"
+  },
+  "http://alastin.com/pages/retinol": {
+    "hash": "f77dfc56337dfef382c7f110481e4914",
+    "last_checked": "2025-06-01T22:44:14.463282"
+  },
+  "http://alastin.com/pages/glycolic-acid-ingredient": {
+    "hash": "8209eed77212a388e37751bd7916c5a8",
+    "last_checked": "2025-06-01T22:44:16.401511"
+  },
+  "http://alastin.com/collections/daily-products": {
+    "hash": "4f84a87128fd57f50deb06c4965cb9c9",
+    "last_checked": "2025-06-01T22:44:18.744321"
+  },
+  "http://alastin.com/collections/fine-lines-wrinkles": {
+    "hash": "fa21ec4b6c9a9cb9e1cecdc81f7b402e",
+    "last_checked": "2025-06-01T22:44:20.752220"
+  },
+  "http://alastin.com/collections/firmness": {
+    "hash": "c9106b4b2e373929de41fe346ed2e384",
+    "last_checked": "2025-06-01T22:44:22.702199"
+  },
+  "http://alastin.com/collections/aging-skin": {
+    "hash": "737f0c38689724e6466d97895a42fd27",
+    "last_checked": "2025-06-01T22:44:24.620922"
+  },
+  "http://alastin.com/collections/sensitive-skin": {
+    "hash": "d092b675edef13e6980d95c05359aae4",
+    "last_checked": "2025-06-01T22:44:26.635597"
+  },
+  "http://alastin.com/collections/dry-skin": {
+    "hash": "8fd6b00ad77aab12ad94030efabc6c5b",
+    "last_checked": "2025-06-01T22:44:28.608772"
+  },
+  "http://alastin.com/collections/skin-discoloration": {
+    "hash": "d8387f6fe59d02e281cbc77843ba4189",
+    "last_checked": "2025-06-01T22:44:30.527697"
+  },
+  "http://alastin.com/collections/crepey-skin": {
+    "hash": "e105c1cd9c51a81058aca03156d7cda3",
+    "last_checked": "2025-06-01T22:44:32.505241"
+  },
+  "http://alastin.com/collections/build-your-routine": {
+    "hash": "b629ccec899eb05691e1cafebe7f5dff",
+    "last_checked": "2025-06-01T22:44:34.651231"
+  },
+  "http://alastin.com/pages/quiz": {
+    "hash": "20b38fffbe9d21a65edfa27a6f8f8805",
+    "last_checked": "2025-06-01T22:44:36.529732"
+  },
+  "http://alastin.com/pages/alastin-difference": {
+    "hash": "31234cc5fde9a5d25ed77c06c351dca6",
+    "last_checked": "2025-06-01T22:44:38.483143"
+  },
+  "http://alastin.com/pages/trihex-technology": {
+    "hash": "dba28c1035a575ed9785898bbee8c0be",
+    "last_checked": "2025-06-01T22:44:40.427178"
+  },
+  "http://alastin.com/pages/testimonials": {
+    "hash": "c74dca13d231e3b1331ba5ed1dc188d4",
+    "last_checked": "2025-06-01T22:44:42.338165"
+  },
+  "http://alastin.com/pages/before-and-after": {
+    "hash": "c7679eede3925217ff6b626eab369fee",
+    "last_checked": "2025-06-01T22:44:44.500164"
+  },
+  "http://alastin.com/blogs/skin-procedures": {
+    "hash": "15f3e34673fe6a8528c10c5ba7d1cbd9",
+    "last_checked": "2025-06-01T22:44:46.407548"
+  },
+  "http://alastin.com/blogs/skin-procedures/lasers": {
+    "hash": "3f7e9b945bde46d20f9cc26e6b9492f2",
+    "last_checked": "2025-06-01T22:44:48.399598"
+  },
+  "http://alastin.com/blogs/skin-procedures/body-sculpting": {
+    "hash": "92395a59aca39eaad0b0c5034f800138",
+    "last_checked": "2025-06-01T22:44:50.541371"
+  },
+  "http://alastin.com/blogs/skin-procedures/dermal-filler-injections": {
+    "hash": "ea168edda66fc929ec477ef27934f1c1",
+    "last_checked": "2025-06-01T22:44:52.478797"
+  },
+  "http://alastin.com/blogs/skin-procedures/microneedling": {
+    "hash": "30e6101ba9599a5fd246018873651cd5",
+    "last_checked": "2025-06-01T22:44:54.496403"
+  },
+  "http://alastin.com/blogs/skin-procedures/skin-tightening": {
+    "hash": "70b1cd1a3cf9fef4244b03b8a1e35e39",
+    "last_checked": "2025-06-01T22:44:56.504756"
+  },
+  "http://alastin.com/blogs/skin-procedures/chemical-peels": {
+    "hash": "cb9ec8ac7c5cd18d99fb84d517fcaaab",
+    "last_checked": "2025-06-01T22:44:58.487891"
+  },
+  "http://alastin.com/blogs/skin-concerns": {
+    "hash": "8542f4da713a7e781b573c72512be510",
+    "last_checked": "2025-06-01T22:45:00.468414"
+  },
+  "http://alastin.com/blogs/skin-concerns/aging-skin": {
+    "hash": "7009622570c0b7915a8650b0411752a8",
+    "last_checked": "2025-06-01T22:45:02.387894"
+  },
+  "http://alastin.com/blogs/skin-concerns/sensitive-skin": {
+    "hash": "bca16118a9d3c8efa666d180062654fd",
+    "last_checked": "2025-06-01T22:45:04.357775"
+  },
+  "http://alastin.com/blogs/skin-concerns/skin-texture": {
+    "hash": "019596fe36e6a25ed7446f8e4b26b5dd",
+    "last_checked": "2025-06-01T22:45:06.414632"
+  },
+  "http://alastin.com/blogs/skin-concerns/uneven-skin-tone-pigmentation": {
+    "hash": "b7238749af64632944011dba144103ca",
+    "last_checked": "2025-06-01T22:45:08.337773"
+  },
+  "http://alastin.com/pages/about-us": {
+    "hash": "8adfc9f9e86f34cda225a6c2dbf686b5",
+    "last_checked": "2025-06-01T22:45:10.473731"
+  },
+  "http://alastin.com/blogs/intheglow": {
+    "hash": "2cb16f4b7393f309fc3d8eb714825eae",
+    "last_checked": "2025-06-01T22:45:12.463223"
+  },
+  "http://alastin.com/pages/contact-us": {
+    "hash": "7e4053dd5ddac572280968e2688c7f1c",
+    "last_checked": "2025-06-01T22:45:14.400722"
+  },
+  "http://alastin.com/pages/partner-signup": {
+    "hash": "79ca6e7639c5cd9541c2d3e4be22c13f",
+    "last_checked": "2025-06-01T22:45:16.309773"
+  },
+  "http://alastin.com/pages/provider-locator": {
+    "hash": "15266b740a12bd5a2176bc282cd87b1f",
+    "last_checked": "2025-06-01T22:45:18.199557"
+  },
+  "http://alastin.com/account": {
+    "hash": "271ebdba430888e05e21c6a67aec524e",
+    "last_checked": "2025-06-01T22:45:20.270739"
+  },
+  "http://alastin.com/search": {
+    "hash": "c6f2e6bdd7c1977bd1c6704e6305f9b2",
+    "last_checked": "2025-06-01T22:45:22.192391"
+  },
+  "http://alastin.com/cart": {
+    "hash": "98b8969a8a607a76fbc2c606ff1c9363",
+    "last_checked": "2025-06-01T22:45:24.090543"
+  },
+  "http://alastin.com/products/c-radical-defense-antioxidant-serum": {
+    "hash": "f66ea13e3fcfc90b9eabe089dd1cef91",
+    "last_checked": "2025-06-01T22:45:26.119579"
+  },
+  "http://alastin.com/products/ha-immerse-serum": {
+    "hash": "9f4bad40ede94e8d22d251e85a1e747f",
+    "last_checked": "2025-06-01T22:45:28.146993"
+  },
+  "http://alastin.com/products/restorative-skin-complex": {
+    "hash": "f9748a8a52dcf2bd043113cb5c44d614",
+    "last_checked": "2025-06-01T22:45:30.208291"
+  },
+  "http://alastin.com/products/a-luminate-brightening-serum": {
+    "hash": "4a9b59c359697cde1fbbf7062a8e1f78",
+    "last_checked": "2025-06-01T22:45:32.202993"
+  },
+  "http://alastin.com/products/transform-body-treatment": {
+    "hash": "17b10a5a758dc2347f092d737ecf5f91",
+    "last_checked": "2025-06-01T22:45:34.221746"
+  },
+  "http://alastin.com/products/restorative-eye-treatment": {
+    "hash": "cb544dedf142409f285b94cbdaae182a",
+    "last_checked": "2025-06-01T22:45:36.169489"
+  },
+  "http://alastin.com/products/hydratint-sunscreen-spf-36": {
+    "hash": "ee9fe7eade424ae51f9c68d47e336b55",
+    "last_checked": "2025-06-01T22:45:38.276782"
+  },
+  "http://alastin.com/products/ultra-nourishing-moisturizer": {
+    "hash": "31030b1358e615ccc631ebbf520be417",
+    "last_checked": "2025-06-01T22:45:40.326576"
+  },
+  "http://alastin.com/products/regenerating-skin-nectar": {
+    "hash": "c3d97ec427b2fb938e5477e67cc768f4",
+    "last_checked": "2025-06-01T22:45:42.351293"
+  },
+  "http://alastin.com/products/gentle-cleanser": {
+    "hash": "f561215dd1c987057b8513993d9806b8",
+    "last_checked": "2025-06-01T22:45:44.519738"
+  },
+  "http://alastin.com/products/resurface-skin-polish": {
+    "hash": "104d07125abfb253d167fcc34476d112",
+    "last_checked": "2025-06-01T22:45:46.490458"
+  },
+  "http://alastin.com/collections/limited-edition-bundles": {
+    "hash": "51a9b73a30db8d8ba099ad8ccc81ea16",
+    "last_checked": "2025-06-01T22:45:48.524355"
+  },
+  "http://alastin.com/pages/tranexamic-acid-ingredient": {
+    "hash": "ea95432328bdddd5804732d6cd58d28a",
+    "last_checked": "2025-06-01T22:45:50.507958"
+  },
+  "http://alastin.com/pages/octapeptide-45": {
+    "hash": "3b250ba8bfe2bc084098b1d0fd0d8c5d",
+    "last_checked": "2025-06-01T22:45:52.507476"
+  },
+  "http://alastin.com/pages/path-3-technology": {
+    "hash": "103cbcaf193bb0e07a572c51b742fd3c",
+    "last_checked": "2025-06-01T22:45:54.532558"
+  },
+  "http://alastin.com/pages/silver-mushroom": {
+    "hash": "66bf95bc8993c5ba6a4e6e6f53e498b3",
+    "last_checked": "2025-06-01T22:45:56.469346"
+  },
+  "http://alastin.com/products/renewal-retinol": {
+    "hash": "277eb8a547aa7786ed0a9694994b171f",
+    "last_checked": "2025-06-01T22:45:58.484745"
+  },
+  "http://alastin.com/products/restorative-neck-complex": {
+    "hash": "ca66ab1d9975a0a6e64e9c87aa50bed9",
+    "last_checked": "2025-06-01T22:46:00.501389"
+  },
+  "http://alastin.com/pages/authenticity": {
+    "hash": "bd7c7975ec64f33faa3545df29775342",
+    "last_checked": "2025-06-01T22:46:02.526841"
+  },
+  "http://alastin.com/pages/affiliate": {
+    "hash": "e236ab2d938725c1a4ba73d276590fad",
+    "last_checked": "2025-06-01T22:46:04.472807"
+  },
+  "http://alastin.com/policies/terms-of-service": {
+    "hash": "8326307c8a372dd7b02627b5e9203186",
+    "last_checked": "2025-06-01T22:46:06.553787"
+  },
+  "http://alastin.com/policies/refund-policy": {
+    "hash": "82f0ca5c5d59c31f5ceb42db4b3b5c32",
+    "last_checked": "2025-06-01T22:46:08.631874"
+  },
+  "http://alastin.com/pages/health-care-provider": {
+    "hash": "14caedefc111d683a516217e437fe513",
+    "last_checked": "2025-06-01T22:46:10.705200"
+  },
+  "http://alastin.com/tools/recurring/login": {
+    "hash": "0e91f04a0f4e0e588966f1ccea7d0042",
+    "last_checked": "2025-06-01T22:46:13.558183"
+  },
+  "http://alastin.com/pages/sitemap": {
+    "hash": "949c10082937ffcf09ef8424092f1446",
+    "last_checked": "2025-06-01T22:46:15.578693"
+  },
+  "http://alastin.com/pages/terms-of-use": {
+    "hash": "e4ac0082b3f9a6aadc56191280375e01",
+    "last_checked": "2025-06-01T22:46:17.613852"
+  },
+  "http://alastin.com/pages/cookie-policy": {
+    "hash": "b83532af34d824e6f01452d4d6dfb3f8",
+    "last_checked": "2025-06-01T22:46:19.516992"
+  },
+  "https://alastin.com/blogs/intheglow/press-and-media-for-alastin-skincare": {
+    "hash": "61bfb7ed86a86fe06df6374d9fe21dbf",
+    "last_checked": "2025-06-01T22:46:21.234177"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/sunscreen?page=1": {
+    "hash": "7cf14f4bbf60e2f537e1ab8bc509369f",
+    "last_checked": "2025-06-01T22:46:23.032822"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/sunscreen?page=3": {
+    "hash": "44b504cb07ba0ce7ba13f886208eed5d",
+    "last_checked": "2025-06-01T22:46:24.666778"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/maskne": {
+    "hash": "b9e6564b1c907fb74746797d92167297",
+    "last_checked": "2025-06-01T22:46:26.331604"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/moisturizer?page=1": {
+    "hash": "4f4d06fe5935f76bcec4d1f300556852",
+    "last_checked": "2025-06-01T22:46:28.094284"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/men": {
+    "hash": "165da1a8f209b36e413361ff13f1e670",
+    "last_checked": "2025-06-01T22:46:29.899625"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/bridal-skin": {
+    "hash": "b05880503f383a63f7f8f8476573f4ac",
+    "last_checked": "2025-06-01T22:46:31.532869"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/retinol?page=1": {
+    "hash": "9150ef815a54e26d5b8201491bfdac22",
+    "last_checked": "2025-06-01T22:46:33.332394"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/summer-skin-care": {
+    "hash": "e37a5c2e84d279d1a32da0aebf20fa3d",
+    "last_checked": "2025-06-01T22:46:35.023881"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/anti-aging?page=1": {
+    "hash": "0272a0b8212b9a28190538d4984ce2ff",
+    "last_checked": "2025-06-01T22:46:36.721022"
+  },
+  "https://alastin.com/collections/all/products/gentle-cleanser": {
+    "hash": "3303d2e3c5957cacb9d23ab00f3545ee",
+    "last_checked": "2025-06-01T22:46:38.560053"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/skin-texture": {
+    "hash": "a030083552a7114a76c04a99bd3601d9",
+    "last_checked": "2025-06-01T22:46:40.260102"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/dull-skin": {
+    "hash": "e16f1d4df98136b87d46a03846254f4d",
+    "last_checked": "2025-06-01T22:46:41.916032"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/wrinkles?page=1": {
+    "hash": "61dc8831e0bb2ee6a0c9edfa51361767",
+    "last_checked": "2025-06-01T22:46:43.651029"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/collagen?page=1": {
+    "hash": "08f0f8867ab99ed7ad18c40341f09f8c",
+    "last_checked": "2025-06-01T22:46:45.466566"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/fine-lines?page=1": {
+    "hash": "46cb63c300c9924be5bfd1d9785dc869",
+    "last_checked": "2025-06-01T22:46:47.221339"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/trihex-technology?page=1": {
+    "hash": "b45d8b548b85c4df7f76910a5b6ae754",
+    "last_checked": "2025-06-01T22:46:49.079375"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/trihex-technology?page=3": {
+    "hash": "3eb1ede76f9e865a0f10ec14244a1c43",
+    "last_checked": "2025-06-01T22:46:50.815762"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/summer-beauty": {
+    "hash": "3fedeba28f971ec0a809cbf71b8d6820",
+    "last_checked": "2025-06-01T22:46:54.656081"
+  },
+  "https://alastin.com/blogs/intheglow?page=5": {
+    "hash": "603dc9b6645346378acc21b744a72b2a",
+    "last_checked": "2025-06-01T22:46:56.369068"
+  },
+  "http://alastin.com/products/silkshield-all-mineral-sunscreen-spf-30": {
+    "hash": "2b60e8beb0db5d3884db80509098a821",
+    "last_checked": "2025-06-01T22:46:58.485903"
+  },
+  "http://alastin.com/products/rsvp-ready-bundle": {
+    "hash": "391b3792e91123439160fea0e0daa7f9",
+    "last_checked": "2025-06-01T22:47:00.447695"
+  },
+  "http://alastin.com/products/brighten-renew-bundle": {
+    "hash": "e532ae65827200b954c06af9d40e269d",
+    "last_checked": "2025-06-01T22:47:02.566357"
+  },
+  "http://alastin.com/products/the-seasonal-edit": {
+    "hash": "27d908ea9040f6f11f46b4d0b09a50d1",
+    "last_checked": "2025-06-01T22:47:04.520986"
+  },
+  "http://alastin.com/products/ultra-light-moisturizer": {
+    "hash": "d2739d8fef27f175cb3470981f0fa552",
+    "last_checked": "2025-06-01T22:47:06.715256"
+  },
+  "http://alastin.com/products/daily-beauty-regimen": {
+    "hash": "7db998d7a2e75ae52272bccddd308347",
+    "last_checked": "2025-06-01T22:47:08.695610"
+  },
+  "http://alastin.com/products/ultra-calm-cleansing-cream": {
+    "hash": "d64e292c72e17ada963fedf516d8e9be",
+    "last_checked": "2025-06-01T22:47:10.782727"
+  },
+  "http://alastin.com/products/reform-repair": {
+    "hash": "9c1e2d5c5abedc34106e4b6742e2d4f3",
+    "last_checked": "2025-06-01T22:47:12.749388"
+  },
+  "http://alastin.com/products/inhance-post-injection-serum": {
+    "hash": "78c6d87c47c2595da4b26d1695b44743",
+    "last_checked": "2025-06-01T22:47:14.708996"
+  },
+  "http://alastin.com/products/soothe-protect-recovery-balm": {
+    "hash": "aa9087449a4b8885446b267a74ab3c29",
+    "last_checked": "2025-06-01T22:47:16.613569"
+  },
+  "http://alastin.com/products/procedure-enhancement-system": {
+    "hash": "0e34f79d5a6e26fa142fc4ae30a5426d",
+    "last_checked": "2025-06-01T22:47:18.603244"
+  },
+  "http://alastin.com/collections/laser-procedures": {
+    "hash": "5432e3f57b850b7614f263ad522e2f2e",
+    "last_checked": "2025-06-01T22:47:20.630783"
+  },
+  "http://alastin.com/collections/fillers": {
+    "hash": "101a353e9850577b0e3575a049e67a77",
+    "last_checked": "2025-06-01T22:47:22.565856"
+  },
+  "http://alastin.com/collections/microneedling": {
+    "hash": "2673aeddf6a07b417e719f0fba7999fc",
+    "last_checked": "2025-06-01T22:47:24.555126"
+  },
+  "http://alastin.com/collections/skin-tightening": {
+    "hash": "ad9cf59a7e7193bb5fe1f857503d33ee",
+    "last_checked": "2025-06-01T22:47:26.482328"
+  },
+  "http://alastin.com/collections/ipl": {
+    "hash": "7c5abe0b27e7be5309e421355c1c6e63",
+    "last_checked": "2025-06-01T22:47:28.457210"
+  },
+  "http://alastin.com/collections/chemical-peels": {
+    "hash": "d63bef1ad8753b0f2288818343d5cfd1",
+    "last_checked": "2025-06-01T22:47:30.408757"
+  },
+  "http://alastin.com/collections/body-sculpting": {
+    "hash": "6ba8b0ee9ae77a542bd46b80857e8489",
+    "last_checked": "2025-06-01T22:47:32.416553"
+  },
+  "http://alastin.com/pages/antioxidants": {
+    "hash": "8997abeb3c89925f231db86133a6db03",
+    "last_checked": "2025-06-01T22:47:34.396897"
+  },
+  "http://alastin.com/pages/lipodrone-technology": {
+    "hash": "0f7262e872ad70b77d87f6437954107b",
+    "last_checked": "2025-06-01T22:47:36.313584"
+  },
+  "http://alastin.com/pages/oat": {
+    "hash": "a91999aab83bcc3f951f001738cd8bf5",
+    "last_checked": "2025-06-01T22:47:38.227007"
+  },
+  "http://alastin.com/pages/perlite-ingredient": {
+    "hash": "fd7c586ef8bc6b5c8991b3fc3c3d7d2f",
+    "last_checked": "2025-06-01T22:47:40.261145"
+  },
+  "http://alastin.com/pages/phytoene-phytofluene": {
+    "hash": "75516c0a0f2b874d239286f345892751",
+    "last_checked": "2025-06-01T22:47:42.415697"
+  },
+  "http://alastin.com/pages/zinc-oxide": {
+    "hash": "46f7ac0e4fcd7f0ae31facf3b7391e6d",
+    "last_checked": "2025-06-01T22:47:44.379321"
+  },
+  "http://alastin.com/blogs/skin-procedures/ultrasound-skin-tightening": {
+    "hash": "aab38b1a82d9dce70c005e6ee405f441",
+    "last_checked": "2025-06-01T22:47:46.346236"
+  },
+  "http://alastin.com/blogs/skin-procedures/neuromodulators": {
+    "hash": "4a47964276ce26e032ddcf4726f672e1",
+    "last_checked": "2025-06-01T22:47:48.300367"
+  },
+  "http://alastin.com/blogs/skin-procedures/injectables": {
+    "hash": "cd9c66140c8244ddc4867f86f2da1c32",
+    "last_checked": "2025-06-01T22:47:50.230668"
+  },
+  "http://alastin.com/blogs/skin-procedures/skin-resurfacing": {
+    "hash": "80e670f41e149d8aa430f2a24ce616ae",
+    "last_checked": "2025-06-01T22:47:52.219428"
+  },
+  "http://alastin.com/blogs/skin-procedures/skincare-beginners-guide-to-ipl-treatments": {
+    "hash": "4ef76567319fb248cd2e9fe2a07b6b45",
+    "last_checked": "2025-06-01T22:47:54.196058"
+  },
+  "http://alastin.com/blogs/skin-concerns/skin-sagginess-elasticity": {
+    "hash": "14cc739c24c925126652a5e789860b9d",
+    "last_checked": "2025-06-01T22:47:56.229579"
+  },
+  "http://alastin.com/blogs/intheglow/how-to-tighten-the-skin-on-your-face": {
+    "hash": "800dcd58fd83573ff8a752bd93794394",
+    "last_checked": "2025-06-01T22:47:58.212307"
+  },
+  "http://alastin.com/blogs/skin-concerns/loss-of-firmness-plumpness": {
+    "hash": "e7cc2249a569e471f3fc6a038bc63927",
+    "last_checked": "2025-06-01T22:48:00.137581"
+  },
+  "http://alastin.com/blogs/skin-concerns/lines-wrinkles": {
+    "hash": "04c52f68e2548e0146872fcb5397d14a",
+    "last_checked": "2025-06-01T22:48:02.245358"
+  },
+  "http://alastin.com/blogs/skin-concerns/dryness": {
+    "hash": "ef15f15e09350bf96564a46465157ede",
+    "last_checked": "2025-06-01T22:48:04.290656"
+  },
+  "http://alastin.com/blogs/intheglow/causes-and-treatments-for-scars": {
+    "hash": "34277648222ad825c521dd5856ca94e9",
+    "last_checked": "2025-06-01T22:48:06.650399"
+  },
+  "http://alastin.com/blogs/intheglow/what-can-be-done-about-cellulite": {
+    "hash": "286af6782804a83b7a1f944f896967ce",
+    "last_checked": "2025-06-01T22:48:08.878259"
+  },
+  "http://alastin.com/blogs/intheglow/a-guide-to-stretch-mark-removal": {
+    "hash": "7026f80f12eaef0769ad763fdc0e3bac",
+    "last_checked": "2025-06-01T22:48:10.934526"
+  },
+  "http://alastin.com/blogs/intheglow/anti-aging-skincare-routine-by-decade": {
+    "hash": "e7290ab39e9805f7d13d74122cac3f9e",
+    "last_checked": "2025-06-01T22:48:12.917917"
+  },
+  "http://alastin.com/blogs/intheglow/skincare-gift-ideas-for-the-holidays": {
+    "hash": "c04e037366746e91b11657e2c83604ab",
+    "last_checked": "2025-06-01T22:48:14.985388"
+  },
+  "http://alastin.com/blogs/intheglow/why-this-brand-new-form-of-vitamin-c-is-a-total-game-changer-for-skin": {
+    "hash": "cf31707df861db9096b98a466f635018",
+    "last_checked": "2025-06-01T22:48:16.935370"
+  },
+  "http://alastin.com/blogs/intheglow/what-to-look-for-in-an-exfoliator": {
+    "hash": "b2d0083ec60c74cadf4022ad67f155bb",
+    "last_checked": "2025-06-01T22:48:18.969081"
+  },
+  "http://alastin.com/blogs/intheglow/benefits-of-skin-brightening": {
+    "hash": "8a3a00e97a4233436e822d5b6a2d561e",
+    "last_checked": "2025-06-01T22:48:21.036926"
+  },
+  "http://alastin.com/blogs/intheglow/the-benefits-of-hyaluronic-acid": {
+    "hash": "acb225559b5e091e6deb36f4f62d2f0a",
+    "last_checked": "2025-06-01T22:48:23.002772"
+  },
+  "http://alastin.com/blogs/intheglow/sensitive-skin-signs-treatments-and-tips": {
+    "hash": "581c1fc8520207f6ad3525285ff0637a",
+    "last_checked": "2025-06-01T22:48:24.994567"
+  },
+  "http://alastin.com/blogs/intheglow/5-powerful-anti-aging-antioxidants-to-include-in-your-skincare-regimen": {
+    "hash": "bbc37d7a2f9e98148d5a0b192ea2125a",
+    "last_checked": "2025-06-01T22:48:26.933503"
+  },
+  "http://alastin.com/blogs/intheglow/what-is-emsculpt": {
+    "hash": "ff921fe567e27805fc77fe3f0ac482dc",
+    "last_checked": "2025-06-01T22:48:28.919283"
+  },
+  "http://alastin.com/blogs/intheglow?page=2": {
+    "hash": "88e6d85d56cdb75d42fd64a408f6d0cf",
+    "last_checked": "2025-06-01T22:48:30.843988"
+  },
+  "http://alastin.com/account/register": {
+    "hash": "ff711c4c2c61bdddf02a0c24978c8bf8",
+    "last_checked": "2025-06-01T22:48:32.770943"
+  },
+  "http://alastin.com/pages/faq": {
+    "hash": "7b1aed73d1a9f7fb3a2638c97b3457a1",
+    "last_checked": "2025-06-01T22:48:34.686749"
+  },
+  "http://alastin.com/pages/about-your-skin": {
+    "hash": "d2716343c33e946cea89c1163a322e01",
+    "last_checked": "2025-06-01T22:48:36.688709"
+  },
+  "http://alastin.com/pages/accessibility": {
+    "hash": "173099b1e434e74ecd987963086f44cd",
+    "last_checked": "2025-06-01T22:48:38.577237"
+  },
+  "http://alastin.com/pages/aspire-alastin": {
+    "hash": "f50f69ee4dc6333be23368881ac7c06a",
+    "last_checked": "2025-06-01T22:48:40.658586"
+  },
+  "http://alastin.com/pages/become-an-alastin-skincare-partner-perfect-pairing": {
+    "hash": "fc0627c21a6e49da524c57f883a1a984",
+    "last_checked": "2025-06-01T22:48:42.581326"
+  },
+  "http://alastin.com/pages/brightener-teaser": {
+    "hash": "3683e5dc863bdbc1fe0680f0bef2299b",
+    "last_checked": "2025-06-01T22:48:44.522503"
+  },
+  "http://alastin.com/pages/careers": {
+    "hash": "98a1894bf79a9f4cd3be6325f95a0b1c",
+    "last_checked": "2025-06-01T22:48:46.480856"
+  },
+  "http://alastin.com/pages/ccpa-compliance": {
+    "hash": "6c6d14596f475cf050654fe98b453e7c",
+    "last_checked": "2025-06-01T22:48:48.422407"
+  },
+  "http://alastin.com/pages/customer-reviews": {
+    "hash": "324e3d5a8229ac08fbae77ecc402184a",
+    "last_checked": "2025-06-01T22:48:50.359271"
+  },
+  "http://alastin.com/pages/enhance-post-procedure-care-become-a-partner": {
+    "hash": "4531a39858e73f810cbabf4678a20b37",
+    "last_checked": "2025-06-01T22:48:52.293006"
+  },
+  "http://alastin.com/pages/events-calendar": {
+    "hash": "84ea8d65d34acbbc7c9a6aaccf821eb2",
+    "last_checked": "2025-06-01T22:48:54.429293"
+  },
+  "http://alastin.com/pages/gdpr-compliance-1": {
+    "hash": "29c695d480832d4f1750af4e9d599572",
+    "last_checked": "2025-06-01T22:48:56.308374"
+  },
+  "http://alastin.com/pages/perfect-pairing": {
+    "hash": "b79c5e41c411f60b7092c442ef6181c4",
+    "last_checked": "2025-06-01T22:48:58.275841"
+  },
+  "http://alastin.com/pages/perfect-pairing-hcp": {
+    "hash": "fdc1724b643accc2ca824f739f9921ff",
+    "last_checked": "2025-06-01T22:49:00.310072"
+  },
+  "http://alastin.com/pages/refer": {
+    "hash": "4cfdb258f268b6045767eb11469c43b1",
+    "last_checked": "2025-06-01T22:49:02.206898"
+  },
+  "http://alastin.com/pages/reform-repair": {
+    "hash": "7392678170febcaf1c303ea6fbb57e9a",
+    "last_checked": "2025-06-01T22:49:04.256308"
+  },
+  "http://alastin.com/pages/sales-policy": {
+    "hash": "095fedb2f539af80e31aff21851fe02f",
+    "last_checked": "2025-06-01T22:49:06.116083"
+  },
+  "http://alastin.com/pages/skincare-by-skin-type": {
+    "hash": "5b678969dcf3189ed28715b8f9a7a27c",
+    "last_checked": "2025-06-01T22:49:08.132590"
+  },
+  "http://alastin.com/collections/3-steps-to": {
+    "hash": "37ad53b5ebe908a0b4137c38f913e295",
+    "last_checked": "2025-06-01T22:49:10.223104"
+  },
+  "http://alastin.com/collections/skin-goals": {
+    "hash": "abd967abfc1bb96bb870411583ed2bbc",
+    "last_checked": "2025-06-01T22:49:12.225399"
+  },
+  "http://alastin.com/collections/age-in-reverse": {
+    "hash": "211e74f310e7f32178f0c5031b38e6f4",
+    "last_checked": "2025-06-01T22:49:14.256141"
+  },
+  "http://alastin.com/collections/ageless-beauty": {
+    "hash": "e3c5fc898a8a1f64aeb5647bb3e6eda2",
+    "last_checked": "2025-06-01T22:49:16.218634"
+  },
+  "http://alastin.com/collections/aspire-1": {
+    "hash": "03aa6b5174735987b5cb77556b112e26",
+    "last_checked": "2025-06-01T22:49:18.498008"
+  },
+  "http://alastin.com/collections/body-crepiness": {
+    "hash": "c40de630dd490e725d04c42e2ded3f8f",
+    "last_checked": "2025-06-01T22:49:20.475266"
+  },
+  "http://alastin.com/collections/body-needs": {
+    "hash": "0df7ca77e51fbd07e39e94c73782735f",
+    "last_checked": "2025-06-01T22:49:22.389630"
+  },
+  "http://alastin.com/collections/body-skincare": {
+    "hash": "70b953d8b60c7ecb524b3a408fc793b4",
+    "last_checked": "2025-06-01T22:49:24.382072"
+  },
+  "http://alastin.com/collections/bogo": {
+    "hash": "115d07636b04c319a3e4ff0b7874d4e4",
+    "last_checked": "2025-06-01T22:49:26.474592"
+  },
+  "http://alastin.com/collections/bright-eyes": {
+    "hash": "5ae1cc915db2ece0569fc109cc2cece6",
+    "last_checked": "2025-06-01T22:49:28.446363"
+  },
+  "http://alastin.com/collections/3-steps-to-visibly-brighter-skin": {
+    "hash": "2dcdbf14fdb363c2ff4b6e1f8a05d502",
+    "last_checked": "2025-06-01T22:49:30.408586"
+  },
+  "http://alastin.com/collections/3-steps-to-calm-sensitive-skin": {
+    "hash": "66a6354f9260c4e0c5bdd3b680448bc5",
+    "last_checked": "2025-06-01T22:49:32.412474"
+  },
+  "http://alastin.com/collections/cyberdeals": {
+    "hash": "db413f87261c65df7c69f70aac993505",
+    "last_checked": "2025-06-01T22:49:34.476104"
+  },
+  "http://alastin.com/collections/daily-regimen-morning": {
+    "hash": "a0b5fb809536b5301941f6c5754de29a",
+    "last_checked": "2025-06-01T22:49:36.726429"
+  },
+  "http://alastin.com/collections/elevate-essentials": {
+    "hash": "9391eb31539547f27dbe9f7a91969246",
+    "last_checked": "2025-06-01T22:49:38.707423"
+  },
+  "http://alastin.com/collections/3-steps-to-erase-fine-lines-and-wrinkles": {
+    "hash": "2056e44144d96cf1cdbd6dc07dcc5c8f",
+    "last_checked": "2025-06-01T22:49:40.668895"
+  },
+  "http://alastin.com/collections/eye-care": {
+    "hash": "e268758a0ddf7a4d91e9e78b1a3bc876",
+    "last_checked": "2025-06-01T22:49:42.677201"
+  },
+  "http://alastin.com/collections/3-steps-to-firmer-skin-on-the-body": {
+    "hash": "1958b3c248b823144148f6ecc90ae7a9",
+    "last_checked": "2025-06-01T22:49:44.759012"
+  },
+  "http://alastin.com/collections/3-steps-to-fully-hydrated-skin": {
+    "hash": "313a77a8c06cf6880263fec9f6beba18",
+    "last_checked": "2025-06-01T22:49:46.824929"
+  },
+  "http://alastin.com/collections/gift-finder-kits": {
+    "hash": "4e7e5fc64915d8886ff291671b730b9d",
+    "last_checked": "2025-06-01T22:49:48.816610"
+  },
+  "http://alastin.com/collections/gift-finder-single-products": {
+    "hash": "c6e560542b0161de29ffd308edc4a2f2",
+    "last_checked": "2025-06-01T22:49:50.940089"
+  },
+  "http://alastin.com/collections/gifts-200": {
+    "hash": "7bf27732fb954c6c32a40e5f4e76604d",
+    "last_checked": "2025-06-01T22:49:52.901794"
+  },
+  "http://alastin.com/collections/gifts-under-100": {
+    "hash": "ece8a4d3370527c3eb9ce16b23c5a586",
+    "last_checked": "2025-06-01T22:49:54.963158"
+  },
+  "http://alastin.com/collections/gifts-under-150": {
+    "hash": "8e5625d2ae93467c34a0c69f05e19e12",
+    "last_checked": "2025-06-01T22:49:57.007771"
+  },
+  "http://alastin.com/collections/gifts-under-200": {
+    "hash": "d327da622c1f96477370fc960747708d",
+    "last_checked": "2025-06-01T22:49:58.970343"
+  },
+  "http://alastin.com/collections/glow-getter": {
+    "hash": "77adc4a0b2775b3535f33c200b5fd52f",
+    "last_checked": "2025-06-01T22:50:00.917891"
+  },
+  "http://alastin.com/collections/halle-berry-favorites": {
+    "hash": "8edbd1d87b603abfefef182f8897ef27",
+    "last_checked": "2025-06-01T22:50:02.934962"
+  },
+  "http://alastin.com/collections/holiday-hydrators": {
+    "hash": "3bf925250b51b05d4675347c2c1e5e87",
+    "last_checked": "2025-06-01T22:50:05.084504"
+  },
+  "http://alastin.com/collections/holiday-gift-guide": {
+    "hash": "ef80186bf5612e83c7786a0581670da7",
+    "last_checked": "2025-06-01T22:50:07.126913"
+  },
+  "http://alastin.com/collections/jetsetter": {
+    "hash": "b345dbd534790ec4d6c78338fdde1b12",
+    "last_checked": "2025-06-01T22:50:09.043949"
+  },
+  "http://alastin.com/collections/maximize-treatments": {
+    "hash": "f8c1bc9ea9e7244a2f68c4d04d90525c",
+    "last_checked": "2025-06-01T22:50:10.997462"
+  },
+  "http://alastin.com/collections/merry-and-bright": {
+    "hash": "f7292f2f200e5dfde01c11a3a3213c73",
+    "last_checked": "2025-06-01T22:50:12.960550"
+  },
+  "http://alastin.com/collections/minimize-hyperpigmentation": {
+    "hash": "72738748f70ad7f6d37fa2153f51effd",
+    "last_checked": "2025-06-01T22:50:15.034314"
+  },
+  "http://alastin.com/collections/new-beauty": {
+    "hash": "325a711c7ee3dc7e9ecdbbf018153fd6",
+    "last_checked": "2025-06-01T22:50:17.254371"
+  },
+  "http://alastin.com/collections/newsette": {
+    "hash": "307fae999649b7a4f662e39f36ed722b",
+    "last_checked": "2025-06-01T22:50:19.467412"
+  },
+  "http://alastin.com/collections/normal": {
+    "hash": "983cf23765a14fad7ebaf73cf07965f0",
+    "last_checked": "2025-06-01T22:50:21.471304"
+  },
+  "http://alastin.com/collections/nourish-dry-skin": {
+    "hash": "b28e5a19e619357e67333c2ecccf6ae4",
+    "last_checked": "2025-06-01T22:50:23.422284"
+  },
+  "http://alastin.com/collections/offers": {
+    "hash": "b54245bcdffd93b5094baf6658d6ccd1",
+    "last_checked": "2025-06-01T22:50:25.560474"
+  },
+  "http://alastin.com/collections/oily-and-combo": {
+    "hash": "fb051efb03a1d410f4cd8cd98ab01fd3",
+    "last_checked": "2025-06-01T22:50:27.661729"
+  },
+  "http://alastin.com/collections/oprahs-holiday-favorites": {
+    "hash": "d76f16101697fbdbd0ef4c83aeea94c2",
+    "last_checked": "2025-06-01T22:50:29.638082"
+  },
+  "http://alastin.com/collections/peels": {
+    "hash": "0cf162e300282659a819255101e22be1",
+    "last_checked": "2025-06-01T22:50:31.672086"
+  },
+  "http://alastin.com/collections/daily-regimen-night": {
+    "hash": "39795b1c625d51486947c1274cd50fad",
+    "last_checked": "2025-06-01T22:50:33.732203"
+  },
+  "http://alastin.com/collections/post-treatment-skin": {
+    "hash": "23381660e7fdd78d7dbe77b7bf500e84",
+    "last_checked": "2025-06-01T22:50:35.762255"
+  },
+  "http://alastin.com/collections/powerful-routine": {
+    "hash": "c6f8acb6e6d2139c778af581692ffe31",
+    "last_checked": "2025-06-01T22:50:37.670895"
+  },
+  "http://alastin.com/collections/3-steps-to-prevent-skin-aging": {
+    "hash": "5536db8b557bf3afb94535e2062b4f32",
+    "last_checked": "2025-06-01T22:50:39.611752"
+  },
+  "http://alastin.com/collections/preventative": {
+    "hash": "b18ee6651b8a3bd4c3d2684677111495",
+    "last_checked": "2025-06-01T22:50:41.525252"
+  },
+  "http://alastin.com/collections/procedure-enthusiast": {
+    "hash": "baf1aa300e2ddc74eabf6bee6e575f8a",
+    "last_checked": "2025-06-01T22:50:43.456725"
+  },
+  "http://alastin.com/collections/product-finder-quiz": {
+    "hash": "0457828da73fba22c19e26f6e12ef443",
+    "last_checked": "2025-06-01T22:50:45.519506"
+  },
+  "http://alastin.com/collections/protection-power-pair": {
+    "hash": "b377dcf11cbfad32911a922e9c75e06d",
+    "last_checked": "2025-06-01T22:50:47.404106"
+  },
+  "http://alastin.com/collections/refresh-eyes": {
+    "hash": "09d93210ca6da4c93fad8611dbeaf2bf",
+    "last_checked": "2025-06-01T22:50:49.288205"
+  },
+  "http://alastin.com/collections/retinols": {
+    "hash": "37bc8940b744a8dc09a1d6b4e11e06af",
+    "last_checked": "2025-06-01T22:50:51.153001"
+  },
+  "http://alastin.com/collections/select-your-moisturizer": {
+    "hash": "3d6fe62c1dc1019956cc8295f8a1bc60",
+    "last_checked": "2025-06-01T22:50:53.142428"
+  },
+  "http://alastin.com/collections/sensitive-beauties": {
+    "hash": "55caf7ae7d20f3342a9589e95c1c99b9",
+    "last_checked": "2025-06-01T22:50:55.157984"
+  },
+  "http://alastin.com/collections/skimm": {
+    "hash": "d302eba7007eb51bb6f230b8ab497172",
+    "last_checked": "2025-06-01T22:50:57.269533"
+  },
+  "http://alastin.com/collections/skincare-featuring-antioxidants": {
+    "hash": "5d531c102a250aa2e8928ded54666d68",
+    "last_checked": "2025-06-01T22:50:59.336084"
+  },
+  "http://alastin.com/collections/skincare-featuring-glycolic-acid": {
+    "hash": "04e933d994e8ef97740cf85f68c03763",
+    "last_checked": "2025-06-01T22:51:01.255789"
+  },
+  "http://alastin.com/collections/skincare-featuring-hyaluronic-acid": {
+    "hash": "979c9c2dee4ac739cb25f85fd864f0d7",
+    "last_checked": "2025-06-01T22:51:03.173063"
+  },
+  "http://alastin.com/collections/skincare-featuring-lipodrone": {
+    "hash": "8751482480cb52c66c205fe4239cde75",
+    "last_checked": "2025-06-01T22:51:05.108048"
+  },
+  "http://alastin.com/collections/skincare-featuring-lipodrone-technology": {
+    "hash": "635db613250c191229a35d4d30511e5b",
+    "last_checked": "2025-06-01T22:51:07.117244"
+  },
+  "http://alastin.com/collections/skincare-featuring-niacinamide": {
+    "hash": "4659f5bce52227a6795fdcbfe5fe5681",
+    "last_checked": "2025-06-01T22:51:09.401187"
+  },
+  "http://alastin.com/collections/skincare-featuring-oat": {
+    "hash": "baf6a060d1acbcb10baf7e125e8ef1d9",
+    "last_checked": "2025-06-01T22:51:11.339150"
+  },
+  "http://alastin.com/collections/skincare-featuring-octapeptide-45": {
+    "hash": "bbea5305d44e30b27e88dc27e40031c4",
+    "last_checked": "2025-06-01T22:51:13.355466"
+  },
+  "http://alastin.com/collections/skincare-featuring-octapeptide-46": {
+    "hash": "ed3e521b6862e165095586ce3c86e555",
+    "last_checked": "2025-06-01T22:51:15.492593"
+  },
+  "http://alastin.com/collections/skincare-featuring-path-3-technology": {
+    "hash": "320e3cad9e1b734eee997ab12d225df0",
+    "last_checked": "2025-06-01T22:51:17.431409"
+  },
+  "http://alastin.com/collections/skincare-featuring-path-3-technology-1": {
+    "hash": "df131cc3a6e12179a10dc402ed3ad453",
+    "last_checked": "2025-06-01T22:51:19.533562"
+  },
+  "http://alastin.com/collections/skincare-featuring-peptides": {
+    "hash": "ed04ad82ad6f758ff1a6cf6afcad6883",
+    "last_checked": "2025-06-01T22:51:22.010285"
+  },
+  "http://alastin.com/collections/skincare-featuring-perlite": {
+    "hash": "d047654b10452303cafdfd1cf2b188ed",
+    "last_checked": "2025-06-01T22:51:24.057511"
+  },
+  "http://alastin.com/collections/skincare-featuring-phytoene-phytofluene": {
+    "hash": "ede727c7e96fa9672e96e4279555341f",
+    "last_checked": "2025-06-01T22:51:26.286169"
+  },
+  "http://alastin.com/collections/products-with-silver-mushroom": {
+    "hash": "b36b9f052c61f6361018c95921893172",
+    "last_checked": "2025-06-01T22:51:28.424196"
+  },
+  "http://alastin.com/collections/skincare-featuring-tranexamic-acid": {
+    "hash": "34850d2778e0dc810249d25ed0d8f4c6",
+    "last_checked": "2025-06-01T22:51:30.460064"
+  },
+  "http://alastin.com/collections/3-steps-to-solve-hyperpigmentation": {
+    "hash": "0d729d5a7dfff616fd3e1e123c947e53",
+    "last_checked": "2025-06-01T22:51:32.439960"
+  },
+  "http://alastin.com/collections/stocking-stuffers": {
+    "hash": "84090d2a048902dd16b039441d9c7eb1",
+    "last_checked": "2025-06-01T22:51:34.542670"
+  },
+  "http://alastin.com/collections/summer": {
+    "hash": "87a3bcc97e44f257d60d4ea4f9e4c75b",
+    "last_checked": "2025-06-01T22:51:36.651962"
+  },
+  "http://alastin.com/collections/sun-protection": {
+    "hash": "bf135ddf771f07e1bb706999cee5ecd5",
+    "last_checked": "2025-06-01T22:51:38.610723"
+  },
+  "http://alastin.com/collections/sun-kissed-glow": {
+    "hash": "6aa0bd2216f08334300f051e86f23b6f",
+    "last_checked": "2025-06-01T22:51:40.534897"
+  },
+  "http://alastin.com/collections/top-rated": {
+    "hash": "61dffb96140481b70c9efdacf6be3da8",
+    "last_checked": "2025-06-01T22:51:42.424641"
+  },
+  "http://alastin.com/collections/travel-size-products": {
+    "hash": "76d49124e972414f613b4bab22e8ed02",
+    "last_checked": "2025-06-01T22:51:44.406933"
+  },
+  "http://alastin.com/collections/travel-size-sunscreens": {
+    "hash": "e1f45c5f9b451c40811044e00d75c15e",
+    "last_checked": "2025-06-01T22:51:46.401484"
+  },
+  "http://alastin.com/collections/trihex-technology-skincare": {
+    "hash": "f8fe2183cf85ae5fedbd57c967301900",
+    "last_checked": "2025-06-01T22:51:48.384542"
+  },
+  "http://alastin.com/collections/uneven-skin-tone": {
+    "hash": "0d87be9702adeb0d22d8f41f07d79da9",
+    "last_checked": "2025-06-01T22:51:50.504484"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/product-review": {
+    "hash": "76e97e21eb8e38e1a4b5601244ac5349",
+    "last_checked": "2025-06-01T22:51:52.176511"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/testimonials": {
+    "hash": "32dcde9d5cbb4e8aa8d8caaa479e3fcd",
+    "last_checked": "2025-06-01T22:51:54.012115"
+  },
+  "https://alastin.com/blogs/intheglow/alastin-skincare-product-reviews": {
+    "hash": "678f8dad972fc9145f8c956da950015f",
+    "last_checked": "2025-06-01T22:51:55.828525"
+  },
+  "https://alastin.com/blogs/intheglow?page=6": {
+    "hash": "4b9d064a8975eacc8a0115877211001c",
+    "last_checked": "2025-06-01T22:51:57.468725"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/chemical-peels": {
+    "hash": "01472ffea7dff38bc6a7627abe2d5b8d",
+    "last_checked": "2025-06-01T22:51:59.417771"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/wrinkles": {
+    "hash": "4f0da439ecd00bef3935ec2ed96e0f81",
+    "last_checked": "2025-06-01T22:52:01.404898"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/laser-resurfacing": {
+    "hash": "a8a211f4062688d44f144911ed3b3063",
+    "last_checked": "2025-06-01T22:52:03.415705"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/microneedling": {
+    "hash": "8ba611e96253ee8ccc138f9818f8a811",
+    "last_checked": "2025-06-01T22:52:05.484331"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/hydrafacial": {
+    "hash": "66e23da4691c9fde7ba2582ba5851532",
+    "last_checked": "2025-06-01T22:52:07.411986"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/injections": {
+    "hash": "e026637424ad03f12b2018ab7344dc5a",
+    "last_checked": "2025-06-01T22:52:09.287563"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/peptides": {
+    "hash": "91ca936004bbb618ff71f1758de86a4c",
+    "last_checked": "2025-06-01T22:52:11.227990"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/scars": {
+    "hash": "51a16d5756827fee81c878b7983f06c5",
+    "last_checked": "2025-06-01T22:52:13.486572"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/collagen": {
+    "hash": "072828c6a1c1138e6e1cc71a246ab57e",
+    "last_checked": "2025-06-01T22:52:15.359426"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/vitamin-c": {
+    "hash": "741a794bcb7987df956ddca7337dec27",
+    "last_checked": "2025-06-01T22:52:17.314761"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/cellulite": {
+    "hash": "1e8a00926f02157eb9364a990870ed5a",
+    "last_checked": "2025-06-01T22:52:19.210246"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/post-procedure-products": {
+    "hash": "a14a35ac6b7bd0487d3c4d4e8d737707",
+    "last_checked": "2025-06-01T22:52:21.097614"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/transform-body-treatment": {
+    "hash": "352ee33d7eba66e65efd6e92c34cfee8",
+    "last_checked": "2025-06-01T22:52:23.038668"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/trihex-technology": {
+    "hash": "e7e9739c356bae6d3fe292f0ff53806c",
+    "last_checked": "2025-06-01T22:52:25.005873"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/orange-peel-skin": {
+    "hash": "5afba3ff62338eddae9e705128901885",
+    "last_checked": "2025-06-01T22:52:27.051077"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skin-hydration": {
+    "hash": "8b6f6ccb74c2c84445097034aa5ce95a",
+    "last_checked": "2025-06-01T22:52:28.991270"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/hyaluronic-acid": {
+    "hash": "87bad1d8a3c33f4880839e3ec141bf91",
+    "last_checked": "2025-06-01T22:52:30.982686"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skin-elasticity": {
+    "hash": "1a6ce15180aaa7f4ae70e946f63e1f39",
+    "last_checked": "2025-06-01T22:52:32.879069"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/anti-aging": {
+    "hash": "0cc549c20a0ac3b69a56e4917eb05b29",
+    "last_checked": "2025-06-01T22:52:34.815642"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/20s-skincare": {
+    "hash": "e432267cdb9144c93dcc7339aae746e9",
+    "last_checked": "2025-06-01T22:52:36.799704"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/30s-skincare": {
+    "hash": "958f586a65a1d7e73fda1a96442ca711",
+    "last_checked": "2025-06-01T22:52:38.930102"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/40s-skincare": {
+    "hash": "0ea8b9b3f715bace7765daa7ac4620e6",
+    "last_checked": "2025-06-01T22:52:40.833111"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/50s-skincare": {
+    "hash": "5161d0efda5ee2cc7e370a90a6081924",
+    "last_checked": "2025-06-01T22:52:42.795328"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skincare-routine": {
+    "hash": "4214c1c908d3d508850044335d33e977",
+    "last_checked": "2025-06-01T22:52:44.707011"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skincare-regimen": {
+    "hash": "a6a724606544f39c20d9878014780c16",
+    "last_checked": "2025-06-01T22:52:46.632336"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/holiday-gifts": {
+    "hash": "46d534acfeb8e92dad82dc46ad5ebd8d",
+    "last_checked": "2025-06-01T22:52:48.546969"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skincare-gift-ideas": {
+    "hash": "dff5c80b576d116b979af0d4350e958c",
+    "last_checked": "2025-06-01T22:52:50.719990"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/mens-skincare": {
+    "hash": "adf95b8161127c03f0129f653c971d2f",
+    "last_checked": "2025-06-01T22:52:52.699710"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/gifts-for-mom": {
+    "hash": "7004acf912534a20d4af78c02e31cd08",
+    "last_checked": "2025-06-01T22:52:54.791929"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/gifts-for-her": {
+    "hash": "e09f0c8f4f94bc2bc40fc42b8860b2e3",
+    "last_checked": "2025-06-01T22:52:56.976504"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/sensitive-skin": {
+    "hash": "29c7876dda7c883407941099ba4e9350",
+    "last_checked": "2025-06-01T22:52:58.981073"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/dry-skin": {
+    "hash": "f94998fce4376d34bbd9451aa9ec8a2d",
+    "last_checked": "2025-06-01T22:53:00.955560"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/sun-damage": {
+    "hash": "6b537187f8f9df9aec2f494d66fb6a83",
+    "last_checked": "2025-06-01T22:53:02.918479"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/antioxidants": {
+    "hash": "2085b5613b59503983a4eb4840416146",
+    "last_checked": "2025-06-01T22:53:04.885411"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/exfoliant": {
+    "hash": "81b3bc87c2f4e1d301f616408ce4f73c",
+    "last_checked": "2025-06-01T22:53:06.833885"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skin-brightening": {
+    "hash": "4faf7d3246e24e0df76952318d2a649b",
+    "last_checked": "2025-06-01T22:53:08.963067"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/exfoliators": {
+    "hash": "23c35edd1033e6081f98ef5fc5db808e",
+    "last_checked": "2025-06-01T22:53:10.972480"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/signs-of-aging": {
+    "hash": "a4376a45d5df5c3fc5742d60872fcef9",
+    "last_checked": "2025-06-01T22:53:12.852503"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/glowing-skin": {
+    "hash": "d11da44d7f3d0df8eb45b389a3ebbd2d",
+    "last_checked": "2025-06-01T22:53:14.821935"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/sunscreen": {
+    "hash": "8eef2c640e9619ffe7213b810a9e5e28",
+    "last_checked": "2025-06-01T22:53:16.806766"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/pigmentation": {
+    "hash": "fd800ccaf1e6aec089a44b603e0bc8ea",
+    "last_checked": "2025-06-01T22:53:18.826755"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/elastin": {
+    "hash": "a04f73be0fe04d943e9768879e548f92",
+    "last_checked": "2025-06-01T22:53:20.761376"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/fine-lines": {
+    "hash": "59b154b2e88958bc37fde2a4f1dae40b",
+    "last_checked": "2025-06-01T22:53:22.759745"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/breakouts": {
+    "hash": "aa0c9e8104e4f28b5fd138c9da6886ea",
+    "last_checked": "2025-06-01T22:53:24.717316"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/gentle-cleanser": {
+    "hash": "12494f43206c302694b118842ca1e48d",
+    "last_checked": "2025-06-01T22:53:26.663111"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/moisturizer": {
+    "hash": "d03a304f2a85de3b5327dad6d296efeb",
+    "last_checked": "2025-06-01T22:53:28.625438"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/restorative-skin-complex": {
+    "hash": "2a3f57fc72a4f836bd5d72ec9b4dee68",
+    "last_checked": "2025-06-01T22:53:30.632918"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/restorative-neck-complex": {
+    "hash": "30c29733c1fcf6f30b8f041ddc9a4ea5",
+    "last_checked": "2025-06-01T22:53:32.768178"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/retinol": {
+    "hash": "93a6fd21f803a9c279cf83fbdc434930",
+    "last_checked": "2025-06-01T22:53:34.703786"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/emsculpt": {
+    "hash": "fd12ac7c634af1b094c08710bee40815",
+    "last_checked": "2025-06-01T22:53:36.655642"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/body-sculpting": {
+    "hash": "1f988ac991240ef29e6eab1d5b95c390",
+    "last_checked": "2025-06-01T22:53:38.625523"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/coolsculpting": {
+    "hash": "59aec30e0a6a0fb9fa9f7558c838f6da",
+    "last_checked": "2025-06-01T22:53:40.558717"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/sculpsure": {
+    "hash": "18e151497af28fd7f434c139a3a3d474",
+    "last_checked": "2025-06-01T22:53:42.547884"
+  },
+  "http://alastin.com/blogs/intheglow/5-tips-on-how-to-hydrate-skin": {
+    "hash": "c40d24d2e64f93297ed3f9c1eb4fcb18",
+    "last_checked": "2025-06-01T22:53:44.646702"
+  },
+  "http://alastin.com/blogs/intheglow/5-benefits-of-sunscreen-for-your-face": {
+    "hash": "5b4227e0e7335326552b2c0e64509361",
+    "last_checked": "2025-06-01T22:53:46.781227"
+  },
+  "http://alastin.com/blogs/intheglow/peptides-for-skin-benefits-how-they-work": {
+    "hash": "0de83622ec6486a8b65ee334d3ac22a5",
+    "last_checked": "2025-06-01T22:53:48.858509"
+  },
+  "http://alastin.com/blogs/intheglow/a-beginners-guide-on-how-to-use-retinol": {
+    "hash": "a89274cf10a3768cfc4d24112b8e2214",
+    "last_checked": "2025-06-01T22:53:51.016254"
+  },
+  "http://alastin.com/blogs/intheglow/5-tips-for-how-to-improve-skin-elasticity": {
+    "hash": "c8ec6dd580ab3c141385218f4b097df5",
+    "last_checked": "2025-06-01T22:53:53.122443"
+  },
+  "http://alastin.com/blogs/intheglow/silver-mushroom-benefits-for-skin-care": {
+    "hash": "de814f80fc7eec009b5c438908002036",
+    "last_checked": "2025-06-01T22:53:55.111004"
+  },
+  "http://alastin.com/blogs/intheglow/sculpsure-vs-coolsculpting-which-is-better": {
+    "hash": "27cd374a4f4b216bf64f7921147ff9fb",
+    "last_checked": "2025-06-01T22:53:57.324696"
+  },
+  "http://alastin.com/blogs/intheglow/microdermabrasion-vs-microneedling-sup-1-sup": {
+    "hash": "187800fe3b391ab87509652b004642ce",
+    "last_checked": "2025-06-01T22:53:59.366350"
+  },
+  "http://alastin.com/blogs/intheglow/what-is-body-sculpting-and-does-it-work": {
+    "hash": "cd613407b96d670d0ec1f94dad85fb40",
+    "last_checked": "2025-06-01T22:54:01.405490"
+  },
+  "http://alastin.com/blogs/intheglow/ipl-vs-fraxel-comparison-guide": {
+    "hash": "b45b7756e52a3e167bfe19088b92d376",
+    "last_checked": "2025-06-01T22:54:03.530643"
+  },
+  "http://alastin.com/blogs/intheglow/4-tips-for-chemical-peel-aftercare": {
+    "hash": "99237f6ff5e0f7aa30418c703aa33583",
+    "last_checked": "2025-06-01T22:54:05.468946"
+  },
+  "http://alastin.com/blogs/intheglow/skin-care-tips-for-microneedling-aftercare": {
+    "hash": "136aa97d2b459fc68bc667100fbd4d7d",
+    "last_checked": "2025-06-01T22:54:07.793206"
+  },
+  "http://alastin.com/blogs/intheglow?page=1": {
+    "hash": "834fd74d9690da46f2f6b3006ef95a2f",
+    "last_checked": "2025-06-01T22:54:09.814964"
+  },
+  "http://alastin.com/blogs/intheglow?page=3": {
+    "hash": "1f6d3f264c95c784c2d3095e19c54bd5",
+    "last_checked": "2025-06-01T22:54:11.816025"
+  },
+  "http://alastin.com/account/login": {
+    "hash": "0fcf157dd1fe71ba8d27a7049a2208e9",
+    "last_checked": "2025-06-01T22:54:13.811341"
+  },
+  "http://alastin.com/pages/reform-repair-signup": {
+    "hash": "d79bfc3285133c119b1853387c822744",
+    "last_checked": "2025-06-01T22:54:15.951980"
+  },
+  "https://alastin.com/blogs/intheglow/tagged/reviews": {
+    "hash": "1d5539ef0b31d7431c9923f05aaf7bde",
+    "last_checked": "2025-06-01T22:54:17.711307"
+  },
+  "http://alastin.com/blogs/intheglow/understanding-types-of-chemical-peels-for-different-skin-types": {
+    "hash": "946f004c4dc9f815757f648a500c6c3f",
+    "last_checked": "2025-06-01T22:54:19.778081"
+  },
+  "http://alastin.com/blogs/intheglow/winter-friendly-skin-rejuvenating-procedures": {
+    "hash": "62406507d352a270e543aecafe0158f0",
+    "last_checked": "2025-06-01T22:54:21.953882"
+  },
+  "http://alastin.com/blogs/intheglow/post-procedure-skincare-tips": {
+    "hash": "a77bb2c80f6ab16062235fc5b3054f4b",
+    "last_checked": "2025-06-01T22:54:24.099743"
+  },
+  "http://alastin.com/blogs/intheglow/best-skin-rejuvenating-treatments-for-healthier-skin": {
+    "hash": "94b97e513ea8f7bef29264a6e8aea63b",
+    "last_checked": "2025-06-01T22:54:26.160080"
+  },
+  "http://alastin.com/blogs/intheglow/how-to-get-rid-of-forehead-wrinkles": {
+    "hash": "7de8b5f2fdae7d9da56fde8de253b97a",
+    "last_checked": "2025-06-01T22:54:28.129325"
+  },
+  "http://alastin.com/blogs/intheglow/do-facial-exercises-work-for-anti-aging": {
+    "hash": "3c1dd596c1be9ff82ca1646a27f6b4eb",
+    "last_checked": "2025-06-01T22:54:30.131165"
+  },
+  "http://alastin.com/blogs/intheglow/neck-and-decollete-skincare-treatments": {
+    "hash": "66c82ca1c0fc7f354c83f33658a22812",
+    "last_checked": "2025-06-01T22:54:32.132883"
+  },
+  "http://alastin.com/blogs/intheglow/how-to-combine-skincare-products-for-glowing-skin": {
+    "hash": "cbc20bf37737b1d12534bdc5a7f3a07c",
+    "last_checked": "2025-06-01T22:54:34.149142"
+  },
+  "http://alastin.com/blogs/intheglow/tips-for-starting-a-new-skincare-regimen": {
+    "hash": "69848953b572451b65e1111e6e4f6ed5",
+    "last_checked": "2025-06-01T22:54:36.208651"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/wrinkles?page=2": {
+    "hash": "bfd85652e507c0bd066595e90578aac7",
+    "last_checked": "2025-06-01T22:54:38.112986"
+  },
+  "http://alastin.com/blogs/intheglow/winter-skincare-tips": {
+    "hash": "477c0c55c78a681b21c8461e2fb3875c",
+    "last_checked": "2025-06-01T22:54:40.153621"
+  },
+  "http://alastin.com/blogs/intheglow/ablative_and_non-ablative_procedure_education": {
+    "hash": "6056a5a76e52f86a2459b51f41e3a231",
+    "last_checked": "2025-06-01T22:54:42.142941"
+  },
+  "http://alastin.com/blogs/intheglow/how-to-get-rid-of-crows-feet": {
+    "hash": "1d67d8f35f0583dff563b65148e2fb6b",
+    "last_checked": "2025-06-01T22:54:44.228407"
+  },
+  "http://alastin.com/blogs/intheglow/what-causes-thin-skin-and-how-to-treat-it": {
+    "hash": "9186bd940f2af551b525b0151c2d471f",
+    "last_checked": "2025-06-01T22:54:46.375401"
+  },
+  "http://alastin.com/blogs/intheglow/how-to-care-for-your-decollete": {
+    "hash": "7355fd18352d90a17973aa6e8c773a6a",
+    "last_checked": "2025-06-01T22:54:48.440539"
+  },
+  "http://alastin.com/blogs/intheglow/collagen-and-elastin-aging-skin-basics": {
+    "hash": "71c6c1da1ec88a1716517ca46612c214",
+    "last_checked": "2025-06-01T22:54:50.389662"
+  },
+  "http://alastin.com/blogs/intheglow/best-daily-maintenance-skincare-tips": {
+    "hash": "34085aa87e9e9bff64a4d3b36e584ee3",
+    "last_checked": "2025-06-01T22:54:52.424126"
+  },
+  "http://alastin.com/blogs/intheglow/best-skincare-for-facial-procedures": {
+    "hash": "a2c35a731096a6a2cf58355418075506",
+    "last_checked": "2025-06-01T22:54:54.481061"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/collagen?page=2": {
+    "hash": "7c938dc59ff1069893a767578ea5ee42",
+    "last_checked": "2025-06-01T22:54:56.463972"
+  },
+  "http://alastin.com/blogs/intheglow/how-to-prepare-and-care-for-your-face-when-having-laser-treatments": {
+    "hash": "aa8ab650b053486a51c020358027e55d",
+    "last_checked": "2025-06-01T22:54:58.537131"
+  },
+  "http://alastin.com/blogs/intheglow/skin-prep-for-rejuvenating-procedures": {
+    "hash": "6b4ae11ac3c02e4287e63d6e482d0935",
+    "last_checked": "2025-06-01T22:55:00.533556"
+  },
+  "http://alastin.com/blogs/intheglow/coolsculpting-results-beauty-blogger-product-review": {
+    "hash": "2891e576167d767171771ee2bdad5c29",
+    "last_checked": "2025-06-01T22:55:02.725338"
+  },
+  "http://alastin.com/blogs/intheglow/skincare-101-which-skincare-products-do-i-put-on-first": {
+    "hash": "61cc7dca31b350d73203ef6b2f986031",
+    "last_checked": "2025-06-01T22:55:04.865611"
+  },
+  "http://alastin.com/blogs/intheglow/transform_body_treatment": {
+    "hash": "8131341ce2195d337f269a486fe129be",
+    "last_checked": "2025-06-01T22:55:06.892506"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/trihex-technology?page=2": {
+    "hash": "93971333de6a274fdc4155e916137eab",
+    "last_checked": "2025-06-01T22:55:08.836210"
+  },
+  "http://alastin.com/blogs/intheglow/how-to-combat-orange-peel-skin-texture": {
+    "hash": "562450ce840c7e206e013717499ea11c",
+    "last_checked": "2025-06-01T22:55:10.854510"
+  },
+  "http://alastin.com/blogs/intheglow/why-skin-purging-is-a-good-thing": {
+    "hash": "ac44258efb3307ba8f4970e0987bdf03",
+    "last_checked": "2025-06-01T22:55:12.950235"
+  },
+  "http://alastin.com/blogs/intheglow/skincare-tips-for-sunburns": {
+    "hash": "ba0edc415be70cfa14a1051cfac74765",
+    "last_checked": "2025-06-01T22:55:15.014579"
+  },
+  "http://alastin.com/blogs/intheglow/skincare-tips-for-summer": {
+    "hash": "ca3d787ada76f10d9b9d3f403bfa1395",
+    "last_checked": "2025-06-01T22:55:17.041017"
+  },
+  "http://alastin.com/blogs/intheglow/beauty-travel-essentials": {
+    "hash": "13993e516ef5fc2dfbaa96fa902e24ff",
+    "last_checked": "2025-06-01T22:55:19.054935"
+  },
+  "http://alastin.com/blogs/intheglow/post-menopause-beauty-advice": {
+    "hash": "2312dcd295f6d79108c27040fadb3838",
+    "last_checked": "2025-06-01T22:55:21.286299"
+  },
+  "http://alastin.com/blogs/intheglow/anti-aging-procedures-for-summer-skin-care": {
+    "hash": "b95fa26d325d166b4b842a57adb545d5",
+    "last_checked": "2025-06-01T22:55:23.330385"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/anti-aging?page=2": {
+    "hash": "02e30d1345344eaacf4f856822365c5a",
+    "last_checked": "2025-06-01T22:55:25.264551"
+  },
+  "http://alastin.com/blogs/intheglow/the-ultimate-guide-to-self-care-for-women": {
+    "hash": "e9454f7a0dea897d1a5b0d4307d0e32f",
+    "last_checked": "2025-06-01T22:55:27.300525"
+  },
+  "http://alastin.com/blogs/intheglow/the-order-you-should-use-your-skincare-products-for-day-and-night-regimens": {
+    "hash": "2649130bce5f42fe684ccf4bee186a22",
+    "last_checked": "2025-06-01T22:55:29.302528"
+  },
+  "http://alastin.com/blogs/intheglow/skincare-tips-for-men": {
+    "hash": "cd76f3867cae08d380a497ee89c117b3",
+    "last_checked": "2025-06-01T22:55:31.338917"
+  },
+  "http://alastin.com/blogs/intheglow/cosmetic-treatments-for-men": {
+    "hash": "8a2b21ca179201f5e11dcd34360222ed",
+    "last_checked": "2025-06-01T22:55:33.451290"
+  },
+  "http://alastin.com/blogs/intheglow/skincare-101-moisturizers": {
+    "hash": "30f5e809b56d2fefc0dc505593d96521",
+    "last_checked": "2025-06-01T22:55:35.444650"
+  },
+  "http://alastin.com/blogs/intheglow/bridal-beauty-skincare": {
+    "hash": "284f88069db172ab2851d3a07693a9b9",
+    "last_checked": "2025-06-01T22:55:37.477741"
+  },
+  "http://alastin.com/blogs/intheglow/is-anti-aging-a-bad-word": {
+    "hash": "deef5c929bd0fad3655e9aa03f003431",
+    "last_checked": "2025-06-01T22:55:39.498654"
+  },
+  "http://alastin.com/blogs/intheglow/top-beauty-influencers": {
+    "hash": "8ef67ee9299161090be66549c0fd0b20",
+    "last_checked": "2025-06-01T22:55:41.483114"
+  },
+  "http://alastin.com/blogs/intheglow/how-to-get-rid-of-crepey-skin": {
+    "hash": "435e3b4183d9ddcf8622fa28dd91e0ce",
+    "last_checked": "2025-06-01T22:55:43.486452"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/sunscreen?page=2": {
+    "hash": "8cfcbaa7daf4d8f0a22f8009c71ca665",
+    "last_checked": "2025-06-01T22:55:45.667633"
+  },
+  "http://alastin.com/blogs/intheglow/vampire-facial-blood-facial": {
+    "hash": "d2484f61e770118ffd42a8cd079ccf87",
+    "last_checked": "2025-06-01T22:55:47.646378"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/fine-lines?page=2": {
+    "hash": "3019cf3da2f6f91c6c4eef521c795da6",
+    "last_checked": "2025-06-01T22:55:49.542277"
+  },
+  "http://alastin.com/blogs/intheglow/how-to-combat-acne-from-face-mask-maskne": {
+    "hash": "e98e52559fe47c00ccfe3674ad78ef4f",
+    "last_checked": "2025-06-01T22:55:51.576544"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/moisturizer?page=2": {
+    "hash": "cd92885098b049a4b2ff7365803228d4",
+    "last_checked": "2025-06-01T22:55:53.827964"
+  },
+  "http://alastin.com/blogs/intheglow/types-of-facials-which-one-is-right-for-your-skin": {
+    "hash": "186c488b675fba5abda9de44f34c4c83",
+    "last_checked": "2025-06-01T22:55:55.792487"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/retinol?page=2": {
+    "hash": "f346f2343cf6437f607b864eb152478d",
+    "last_checked": "2025-06-01T22:55:57.717133"
+  },
+  "http://alastin.com/blogs/intheglow/body-contouring-beauty-trend": {
+    "hash": "5b5e0805b1723cfb8ba4627e1e1590c1",
+    "last_checked": "2025-06-01T22:55:59.679551"
+  },
+  "http://alastin.com/blogs/intheglow/skincare-beginners-guide-to-body-fat-reduction": {
+    "hash": "205e6ccc7e1c4ac432abd0a484d09760",
+    "last_checked": "2025-06-01T22:56:01.706453"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/silver-mushroom": {
+    "hash": "a28c477d8d83536d79ee06c9bd23d646",
+    "last_checked": "2025-06-01T22:56:03.731095"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/sunburn": {
+    "hash": "8b6fd12ad92ee5bc885c4d94851aa34a",
+    "last_checked": "2025-06-01T22:56:05.940390"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skin-tightening": {
+    "hash": "40071baadb8ed75f48379080e494993a",
+    "last_checked": "2025-06-01T22:56:07.980381"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/elasticity": {
+    "hash": "5387cafce72610b80bfcf764aad955fa",
+    "last_checked": "2025-06-01T22:56:10.071552"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/body-contouring": {
+    "hash": "4faae67a6f0eb777611958132f1da4bd",
+    "last_checked": "2025-06-01T22:56:12.167580"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/microdermabrasion": {
+    "hash": "942b805678a89468ecf2cd7dce8c3b5f",
+    "last_checked": "2025-06-01T22:56:14.304317"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/melasma": {
+    "hash": "2f755fbe1a36651307802dc5d57e02f6",
+    "last_checked": "2025-06-01T22:56:16.315077"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/acne-scars": {
+    "hash": "f43de80caced29b4ab1a7023667140c2",
+    "last_checked": "2025-06-01T22:56:18.306195"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/age-spots": {
+    "hash": "27a82417e596acd1995117e2d35941a3",
+    "last_checked": "2025-06-01T22:56:20.721316"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/burns": {
+    "hash": "d4b923b1d9e17b775faa765788a3e85d",
+    "last_checked": "2025-06-01T22:56:22.857453"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/fat-reduction": {
+    "hash": "9a8083f973ca6bfc13ad0f17646ec9ab",
+    "last_checked": "2025-06-01T22:56:24.806785"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/ipl": {
+    "hash": "daa12bec8401501aeab7444381da11bd",
+    "last_checked": "2025-06-01T22:56:26.770939"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/fraxel-laser": {
+    "hash": "677ffafc422c77bc68b0fcebaa921317",
+    "last_checked": "2025-06-01T22:56:28.714340"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/laser-treatments": {
+    "hash": "f7e76055e0745fe2e3930c772f92fab8",
+    "last_checked": "2025-06-01T22:56:30.681029"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/veins": {
+    "hash": "da72a47921292a7c50e81099ba4a2223",
+    "last_checked": "2025-06-01T22:56:32.876985"
+  },
+  "http://alastin.com/blogs/intheglow?page=4": {
+    "hash": "b8be1458ff9d4c14d5872ae51fd69595",
+    "last_checked": "2025-06-01T22:56:34.779301"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skin-texture": {
+    "hash": "4edaa153bb75d9c151dcf4f402ec547b",
+    "last_checked": "2025-06-01T22:56:36.714712"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/dull-skin": {
+    "hash": "6b24d551f8a87f5c49bb1ff70e8b5f04",
+    "last_checked": "2025-06-01T22:56:38.658158"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/uneven-skin-tone": {
+    "hash": "a919fe4709aa2cfdb138a54ba9d09116",
+    "last_checked": "2025-06-01T22:56:40.612295"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/aging-skin": {
+    "hash": "85826c9c8e07a19c18bad4876d3262a7",
+    "last_checked": "2025-06-01T22:56:42.586582"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/dermal-filler": {
+    "hash": "8e798afb8cb93df2af6839abe3ad757b",
+    "last_checked": "2025-06-01T22:56:44.494446"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/crows-feet": {
+    "hash": "1c17e1cbee6f664d9e4af48e0f65eb03",
+    "last_checked": "2025-06-01T22:56:46.436243"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skin-sagginess": {
+    "hash": "d3888836f77c90264f6f1605c96713f3",
+    "last_checked": "2025-06-01T22:56:48.532075"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/decollete": {
+    "hash": "78a5b20ac7748a73ee2dda5344bed84d",
+    "last_checked": "2025-06-01T22:56:50.472535"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/crepey-skin": {
+    "hash": "a67ce9ea1f99971a005346d4766cb293",
+    "last_checked": "2025-06-01T22:56:52.382311"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/post-menopause": {
+    "hash": "7235b48017c22534e43269e34474c989",
+    "last_checked": "2025-06-01T22:56:54.319592"
+  },
+  "http://alastin.com/blogs/intheglow/facial-fillers-and-injections": {
+    "hash": "025aa67abc1a488af8678a667a6d8ebf",
+    "last_checked": "2025-06-01T22:56:56.371926"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/wrinkles?page=1": {
+    "hash": "6416d7dbbe9278ef83a4230807ec40e0",
+    "last_checked": "2025-06-01T22:56:58.442115"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skin-firmness": {
+    "hash": "3e2ca204e4e7071df441e9696a95664f",
+    "last_checked": "2025-06-01T22:57:00.629517"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/regenerating-skin-nectar-with-trihex-technology": {
+    "hash": "eac803cb5e20dc89c072db4796db79ff",
+    "last_checked": "2025-06-01T22:57:02.582655"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/injectables": {
+    "hash": "0beea5a99b0ac9eff6d6148533dfef5e",
+    "last_checked": "2025-06-01T22:57:04.593044"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/procedure-enhancement-system": {
+    "hash": "9b7325928fd255dcca75f02b32bf1df5",
+    "last_checked": "2025-06-01T22:57:06.741893"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/ablative": {
+    "hash": "da126843380c05f3db17b998e0a29ef3",
+    "last_checked": "2025-06-01T22:57:08.719563"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/non-ablative": {
+    "hash": "4c77fa32e0d72d6e42882c900e244b5d",
+    "last_checked": "2025-06-01T22:57:10.657776"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/fillers": {
+    "hash": "fde9b0d726d3e5ca709cb143d4572bf7",
+    "last_checked": "2025-06-01T22:57:12.906762"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/botox": {
+    "hash": "1793b8f4c0158f0c38914e93cba9d81c",
+    "last_checked": "2025-06-01T22:57:14.953936"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/neck-area": {
+    "hash": "84e105e9e5729be25631fd7692421638",
+    "last_checked": "2025-06-01T22:57:16.892043"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/before-and-after-photos": {
+    "hash": "0e23c6711e1647c97792b7063f09d708",
+    "last_checked": "2025-06-01T22:57:18.895636"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skin-rejuvenation": {
+    "hash": "46493aa73b46c948a69bc4d1e883047e",
+    "last_checked": "2025-06-01T22:57:20.795892"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/collagen?page=1": {
+    "hash": "5b7270e0393832e1035996e4ed1c1859",
+    "last_checked": "2025-06-01T22:57:22.708901"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skin-resurfacing": {
+    "hash": "a2d02a7244f90eb0f65ba4d41fc86e97",
+    "last_checked": "2025-06-01T22:57:24.707959"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/beauty-blogger": {
+    "hash": "1fcc27c6caea07bdb8cd69ffc66290f5",
+    "last_checked": "2025-06-01T22:57:26.623198"
+  },
+  "http://alastin.com/blogs/intheglow/alastin.com": {
+    "hash": "96223ade0d85019cace4f5a935210abc",
+    "last_checked": "2025-06-01T22:57:28.904072"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/restorative-eye-treatment": {
+    "hash": "91bb22605c83e9139d1c4e5c95e9a273",
+    "last_checked": "2025-06-01T22:57:30.913763"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/makeup": {
+    "hash": "711b6cbf15212f576a1a7967df3c4f4c",
+    "last_checked": "2025-06-01T22:57:32.843740"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skin-laxity": {
+    "hash": "e8ef3e222e1404b332a849024dc4bebe",
+    "last_checked": "2025-06-01T22:57:34.835130"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/trihex-technology?page=1": {
+    "hash": "47c43da8a16ef57273f888eb77755afd",
+    "last_checked": "2025-06-01T22:57:36.755943"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/trihex-technology?page=3": {
+    "hash": "4162f89e978b3d49a6cb5d49d8003f37",
+    "last_checked": "2025-06-01T22:57:38.894230"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/skin-purging": {
+    "hash": "6c8a08324a168aa195aad4d3197b03c9",
+    "last_checked": "2025-06-01T22:57:40.837379"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/acne": {
+    "hash": "dbda7f936329a87e0065527419ac9918",
+    "last_checked": "2025-06-01T22:57:42.800880"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/summer-beauty": {
+    "hash": "5911675bf996d9697f0e22ca894bfd31",
+    "last_checked": "2025-06-01T22:57:44.730120"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/summer-skin-care": {
+    "hash": "3b374d40e877a6c9b4bd494e1b9cb9ff",
+    "last_checked": "2025-06-01T22:57:46.662993"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/eye-cream": {
+    "hash": "f4fc6c11f906882bb296fffa1fcb5651",
+    "last_checked": "2025-06-01T22:57:48.666419"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/anti-aging?page=1": {
+    "hash": "a07d8e0902670ea0039f978030dcf1d9",
+    "last_checked": "2025-06-01T22:57:50.602502"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/men": {
+    "hash": "37271864316b51ac4232747b43a66ed0",
+    "last_checked": "2025-06-01T22:57:52.506787"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/cosmetic-surgery": {
+    "hash": "4d50f123fdda740ae43e300893117322",
+    "last_checked": "2025-06-01T22:57:54.612778"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/plastic-surgery": {
+    "hash": "7a71541097476b5013255b308a3e0575",
+    "last_checked": "2025-06-01T22:57:56.575443"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/bridal-skin": {
+    "hash": "b9a612817a1e0e4bc2edd4369b64e384",
+    "last_checked": "2025-06-01T22:57:58.551505"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/saggy-skin": {
+    "hash": "913247ac6280fc5798b771acaadc113b",
+    "last_checked": "2025-06-01T22:58:00.687831"
+  },
+  "http://alastin.com/blogs/intheglow/press-and-media-for-alastin-skincare": {
+    "hash": "a7286d80f5fd597ffaa58a89a7ea54fa",
+    "last_checked": "2025-06-01T22:58:02.728451"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/sunscreen?page=1": {
+    "hash": "098eaef2a70c247db12cc91e664f1d1b",
+    "last_checked": "2025-06-01T22:58:04.703379"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/sunscreen?page=3": {
+    "hash": "71c8a5ec6145a9f2253a4cd5c78fb9ab",
+    "last_checked": "2025-06-01T22:58:06.710564"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/fine-lines?page=1": {
+    "hash": "eea421b90307ca09d04ee64b7de85f88",
+    "last_checked": "2025-06-01T22:58:08.658908"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/maskne": {
+    "hash": "a3a53330f4a9e56ceee32d6e927eb5d7",
+    "last_checked": "2025-06-01T22:58:10.773944"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/moisturizer?page=1": {
+    "hash": "7bb54cb979b9ca717fabad64b9d4dae6",
+    "last_checked": "2025-06-01T22:58:12.858405"
+  },
+  "http://alastin.com/blogs/intheglow/best-multitasking-beauty-products-of-2018": {
+    "hash": "a473cc34f1a054fcd3bae69f50477449",
+    "last_checked": "2025-06-01T22:58:14.894087"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/retinol?page=1": {
+    "hash": "043a8e59902ba5f591ca203a97f6f746",
+    "last_checked": "2025-06-01T22:58:16.958073"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/mommy-makeover": {
+    "hash": "a0b12f5df540bae80a848723b33e64b9",
+    "last_checked": "2025-06-01T22:58:18.871885"
+  },
+  "http://alastin.com/blogs/intheglow?page=5": {
+    "hash": "b246caaa11f8e51a511a7729b3035ac4",
+    "last_checked": "2025-06-01T22:58:20.838852"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/facial-filler": {
+    "hash": "72ccc96d0b761e4adfcd889427c1e012",
+    "last_checked": "2025-06-01T22:58:22.824686"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/product-review": {
+    "hash": "95b70c48fe5f7dc47e437b6f0b84156e",
+    "last_checked": "2025-06-01T22:58:24.812113"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/testimonials": {
+    "hash": "a1a176099375be176582054bc741d535",
+    "last_checked": "2025-06-01T22:58:26.759149"
+  },
+  "http://alastin.com/blogs/intheglow/alastin-skincare-product-reviews": {
+    "hash": "115143ac37035f26ff41a2f76f203331",
+    "last_checked": "2025-06-01T22:58:28.814024"
+  },
+  "http://alastin.com/blogs/intheglow?page=6": {
+    "hash": "0a750a3be78c6d638f3d16286ec74ad1",
+    "last_checked": "2025-06-01T22:58:30.769746"
+  },
+  "http://alastin.com/blogs/intheglow/tagged/reviews": {
+    "hash": "0d3c1f0d4ff955d5f29770034baf1d29",
+    "last_checked": "2025-06-01T22:58:32.721620"
+  },
+  "https://alastin.com/products/trihex-transition-duo": {
+    "hash": "bf91e15ba7b6b244c7ce5e132a450954",
+    "last_checked": "2025-06-01T22:42:45.353101"
+  }
+}

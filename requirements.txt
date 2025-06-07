@@ -1,0 +1,16 @@
+# requirements.txt - SEO Analyzer Ultra Corrigido
+
+# Core dependencies
+requests>=2.31.0           # HTTP requests para crawling
+beautifulsoup4>=4.12.0     # HTML parsing
+pandas>=2.0.0              # Data manipulation para relatórios
+xlsxwriter>=3.1.0          # Excel generation com formatação
+
+# Optional but recommended
+lxml>=4.9.0                # Faster HTML parsing
+urllib3>=2.0.0             # HTTP client (usado pelo requests)
+
+# Development dependencies (opcional)
+# pytest>=7.4.0            # Para testes
+# black>=23.0.0             # Code formatting
+# flake8>=6.0.0             # Linting
