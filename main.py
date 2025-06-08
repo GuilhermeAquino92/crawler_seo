@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
-# main.py - SEO Analyzer Modularizado - VERSÃO SIMPLIFICADA
+# main.py - SEO Analyzer Integrado Completo
 
 """
-🏷️ SEO ANALYZER ULTRA CORRIGIDO - VERSÃO SIMPLES
+🏷️ SEO ANALYZER ULTRA COMPLETO - VERSÃO FINAL
 
-Analisador de SEO modularizado com todas as correções implementadas:
-✅ Hierarquia de headings corrigida (ignora headings problemáticos)
-✅ Detecção expandida de headings ocultos (cores invisíveis)
-✅ Consolidação em aba única para headings problemáticos  
-✅ Gravidade diferenciada (H1s = CRÍTICO, outros = MÉDIO)
-✅ Sequências separadas (completa vs. válida)
+Integra TODOS os analyzers:
+✅ HeadingsAnalyzer (com correções)
+✅ MetatagsAnalyzer (title, description, SEO)
+✅ StatusAnalyzer (HTTP status, mixed content)
 
-🚀 USO SIMPLES:
-    python main.py                    # Usa URL padrão
+🚀 USO:
+    python main.py                    # URL padrão
     python main.py --url https://exemplo.com
     python main.py --max-urls 500     # Análise rápida
 """
@@ -24,7 +22,9 @@ from urllib.parse import urlparse
 # Imports dos módulos modularizados
 from config.settings import get_config, DEFAULT_URL, MAX_URLS_DEFAULT, MAX_THREADS_DEFAULT
 from core.crawler import create_crawler
-from analyzers.metatags_analyzer import create_metatags_analyzer
+from analyzers.metatags_analyzer import MetatagsAnalyzer
+from analyzers.headings_analyzer import HeadingsAnalyzer
+from analyzers.status_analyzer import StatusAnalyzer
 from reports.excel_generator import create_report_generator
 from utils.constants import (
     MSG_CRAWLER_START, MSG_ANALYSIS_START, MSG_ANALYSIS_COMPLETE,
@@ -32,39 +32,178 @@ from utils.constants import (
 )
 
 
+class IntegratedAnalyzer:
+    """🔥 Analyzer integrado que combina todos os analyzers"""
+    
+    def __init__(self, config=None):
+        self.config = config or {}
+        
+        # Instancia todos os analyzers
+        self.metatags_analyzer = MetatagsAnalyzer(self.config)
+        self.headings_analyzer = HeadingsAnalyzer(self.config)
+        self.status_analyzer = StatusAnalyzer(self.config)
+        
+        self.stats = {
+            'urls_processadas': 0,
+            'urls_com_erro': 0
+        }
+    
+    def analyze(self, soup, url, response=None):
+        """🎯 Análise integrada completa"""
+        try:
+            # Resultado base
+            resultado = {
+                'url': url,
+                'processed': True
+            }
+            
+            # 1. ANÁLISE DE METATAGS (inclui headings internamente)
+            metatags_data = self.metatags_analyzer.analyze(soup, url)
+            resultado.update(metatags_data)
+            
+            # 2. ANÁLISE DE STATUS E MIXED CONTENT
+            status_data = self.status_analyzer.analyze(soup, url, response)
+            resultado.update(status_data)
+            
+            # 3. CONSOLIDAÇÃO FINAL
+            resultado = self._consolidate_results(resultado)
+            
+            self.stats['urls_processadas'] += 1
+            
+            return resultado
+            
+        except Exception as e:
+            print(f"Erro na análise integrada de {url}: {e}")
+            self.stats['urls_com_erro'] += 1
+            
+            return {
+                'url': url,
+                'processed': False,
+                'error': str(e),
+                'Status_Code': 'ERROR',
+                'metatags_score': 0
+            }
+    
+    def _consolidate_results(self, resultado):
+        """🔧 Consolida resultados de todos os analyzers"""
+        
+        # Garante que campos obrigatórios existem
+        if 'Warnings' not in resultado:
+            resultado['Warnings'] = []
+        
+        if 'mixed_content_resources' not in resultado:
+            resultado['mixed_content_resources'] = []
+        
+        # Consolida warnings de diferentes sources
+        all_warnings = []
+        
+        # Warnings de status
+        if resultado.get('Warnings'):
+            all_warnings.extend(resultado['Warnings'])
+        
+        # Warnings de metatags
+        if resultado.get('warnings'):
+            all_warnings.extend(resultado['warnings'])
+        
+        # Warnings de headings críticos
+        if resultado.get('critical_issues'):
+            all_warnings.extend([f"CRÍTICO: {issue}" for issue in resultado['critical_issues']])
+        
+        resultado['Warnings'] = all_warnings
+        
+        # Padroniza campos para Excel
+        resultado = self._standardize_excel_fields(resultado)
+        
+        return resultado
+    
+    def _standardize_excel_fields(self, resultado):
+        """📊 Padroniza campos para o Excel"""
+        
+        # Campos obrigatórios com valores padrão
+        excel_fields = {
+            'URL': resultado.get('url', ''),
+            'Status_Code': resultado.get('Status_Code', 'UNKNOWN'),
+            'Response_Time_ms': resultado.get('Response_Time', 0),
+            'Title': resultado.get('title', ''),
+            'Title_Length': resultado.get('title_length', 0),
+            'Title_Status': resultado.get('title_status', 'Ausente'),
+            'Title_Duplicado': 'SIM' if resultado.get('title_duplicado', False) else 'NÃO',
+            'Meta_Description': resultado.get('meta_description', ''),
+            'Description_Length': resultado.get('description_length', 0),
+            'Description_Status': resultado.get('description_status', 'Ausente'),
+            'Description_Duplicada': 'SIM' if resultado.get('description_duplicada', False) else 'NÃO',
+            'H1_Count': resultado.get('h1_count', 0),
+            'H1_Text': resultado.get('h1_text', ''),
+            'H1_Ausente': 'SIM' if resultado.get('h1_ausente', True) else 'NÃO',
+            'H1_Multiple': 'SIM' if resultado.get('h1_multiple', False) else 'NÃO',
+            'Hierarquia_Correta': 'SIM' if resultado.get('hierarquia_correta', True) else 'NÃO',
+            'Headings_Problematicos_Total': resultado.get('headings_problematicos_count', 0),
+            'Headings_Vazios': resultado.get('headings_vazios_count', 0),
+            'Headings_Ocultos': resultado.get('headings_ocultos_count', 0),
+            'Headings_Criticos': resultado.get('headings_gravidade_critica', 0),
+            'Heading_Sequence_Completa': ' → '.join(resultado.get('heading_sequence', [])),
+            'Heading_Sequence_Valida': ' → '.join(resultado.get('heading_sequence_valida', [])),
+            'Total_Problemas_Headings': resultado.get('total_problemas_headings', 0),
+            'Metatags_Score': resultado.get('metatags_score', 0),
+            'Critical_Issues': ' | '.join(resultado.get('critical_issues', [])),
+            'Warnings': ' | '.join(resultado.get('Warnings', [])),
+            'Has_Mixed_Content': 'SIM' if resultado.get('has_mixed_content', False) else 'NÃO',
+            'Mixed_Content_Count': resultado.get('mixed_content_count', 0),
+            'Canonical_URL': resultado.get('canonical_url', ''),
+            'Meta_Viewport': resultado.get('meta_viewport', ''),
+            'Has_Open_Graph': 'SIM' if resultado.get('has_open_graph', False) else 'NÃO'
+        }
+        
+        # Atualiza resultado com campos padronizados
+        resultado.update(excel_fields)
+        
+        return resultado
+    
+    def get_stats(self):
+        """📊 Estatísticas consolidadas"""
+        metatags_stats = self.metatags_analyzer.get_stats()
+        status_stats = self.status_analyzer.get_stats()
+        
+        return {
+            'integrated': self.stats.copy(),
+            'metatags': metatags_stats,
+            'status': status_stats,
+            'summary': {
+                'total_urls_processadas': self.stats['urls_processadas'],
+                'total_urls_com_erro': self.stats['urls_com_erro'],
+                'success_rate': (self.stats['urls_processadas'] / max(self.stats['urls_processadas'] + self.stats['urls_com_erro'], 1)) * 100
+            }
+        }
+
+
 def parse_arguments():
-    """📋 Parse argumentos da linha de comando (TODOS OPCIONAIS)"""
+    """📋 Parse argumentos da linha de comando"""
     parser = argparse.ArgumentParser(
-        description='🏷️ SEO Analyzer Ultra Corrigido - Análise completa de metatags',
+        description='🏷️ SEO Analyzer Ultra Completo - Análise integrada',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-🚀 USO SIMPLIFICADO:
-  python main.py                           # Análise completa da URL padrão
-  python main.py --url https://seusite.com # Análise de domínio específico
-  python main.py --max-urls 100            # Análise rápida (100 URLs)
-  python main.py --threads 10              # Usar 10 threads
+🚀 ANÁLISE COMPLETA INTEGRADA:
+  • HeadingsAnalyzer: hierarquia, h1s, sequências (COM CORREÇÕES)
+  • MetatagsAnalyzer: title, description, duplicados, scores
+  • StatusAnalyzer: códigos HTTP, mixed content, redirects
 
-✅ TODAS AS CORREÇÕES IMPLEMENTADAS:
-  • Headings vazios/ocultos ignorados na análise hierárquica
-  • Detecção expandida de headings ocultos (cores invisíveis)
-  • Consolidação em aba única "Headings_Problematicos"
-  • Gravidade diferenciada (H1s = CRÍTICO, outros = MÉDIO)
-  • Sequências separadas (Completa vs. Válida)
+✅ GERA PLANILHA EXCEL COMPLETA COM TODAS AS ABAS:
+  • Metatags_Ultra_Complete: dados principais
+  • Headings_Problematicos: headings vazios/ocultos consolidados
+  • Title_Duplicados: títulos duplicados
+  • Desc_Duplicadas: descriptions duplicadas  
+  • Mixed_Content: recursos HTTP em páginas HTTPS
+  • Score_Ranking: páginas ordenadas por score
+  • Resumo: estatísticas gerais
 
 🎯 URL PADRÃO: {default_url}
-📊 CONFIGURAÇÃO PADRÃO: {max_urls} URLs, {threads} threads, profundidade máxima
-        """.format(
-            default_url=DEFAULT_URL,
-            max_urls=MAX_URLS_DEFAULT,
-            threads=MAX_THREADS_DEFAULT
-        )
+        """.format(default_url=DEFAULT_URL)
     )
     
-    # TODOS OS ARGUMENTOS SÃO OPCIONAIS
     parser.add_argument(
         '--url',
         type=str,
-        default=DEFAULT_URL,  # 🔥 USA URL PADRÃO
+        default=DEFAULT_URL,
         help=f'URL inicial para análise (padrão: {DEFAULT_URL})'
     )
     
@@ -106,20 +245,14 @@ def parse_arguments():
     parser.add_argument(
         '--filename',
         type=str,
-        default='METATAGS_ULTRA',
-        help='Prefixo do nome do arquivo de relatório (padrão: METATAGS_ULTRA)'
+        default='SEO_ANALYSIS_COMPLETE',
+        help='Prefixo do nome do arquivo de relatório'
     )
     
     parser.add_argument(
         '--quick',
         action='store_true',
         help='Análise rápida (100 URLs, 5 threads)'
-    )
-    
-    parser.add_argument(
-        '--verbose',
-        action='store_true',
-        help='Modo verboso com mais detalhes'
     )
     
     return parser.parse_args()
@@ -141,9 +274,6 @@ def validate_arguments(args):
     if args.max_urls <= 0:
         errors.append("❌ max-urls deve ser maior que 0")
     
-    if args.max_depth <= 0:
-        errors.append("❌ max-depth deve ser maior que 0")
-    
     if args.threads <= 0 or args.threads > 50:
         errors.append("❌ threads deve estar entre 1 e 50")
     
@@ -155,8 +285,8 @@ def apply_quick_mode(args):
     if args.quick:
         args.max_urls = min(args.max_urls, 100)
         args.threads = min(args.threads, 5)
-        args.max_depth = min(args.max_depth, 5)
-        print("⚡ MODO RÁPIDO ativado: 100 URLs máx, 5 threads, profundidade 5")
+        args.max_depth = min(args.max_depth, 3)
+        print("⚡ MODO RÁPIDO ativado: 100 URLs máx, 5 threads, profundidade 3")
 
 
 def create_config_from_args(args):
@@ -178,32 +308,21 @@ def create_config_from_args(args):
         'filename_prefix': args.filename
     })
     
-    # Configurações específicas do crawler
-    if args.crawler == 'smart':
-        config['priority_patterns'] = [
-            '/produto/', '/product/', '/categoria/', '/category/',
-            '/servico/', '/service/', '/sobre/', '/about/',
-            '/contato/', '/contact/', '/planos/', '/plan'
-        ]
-    elif args.crawler == 'batch':
-        config['batch_size'] = 50
-    
     return config
 
 
-def print_startup_info(args, config):
+def print_startup_info(args):
     """📢 Exibe informações de inicialização"""
     domain = urlparse(args.url).netloc
     
     print("=" * 80)
-    print("🏷️  SEO ANALYZER ULTRA CORRIGIDO - ANÁLISE COMPLETA")
+    print("🏷️  SEO ANALYZER ULTRA COMPLETO - ANÁLISE INTEGRADA")
     print("=" * 80)
     
-    print("🔥 CONFIGURAÇÃO OTIMIZADA:")
-    print("   ✅ Busca TODAS as páginas possíveis do domínio")
-    print("   ✅ Crawler inteligente com priorização automática")
-    print("   ✅ Multi-threading para alta velocidade")
-    print("   ✅ Filtros automáticos para URLs relevantes")
+    print("🔥 ANALYZERS INTEGRADOS:")
+    print("   ✅ HeadingsAnalyzer: hierarquia, H1s, sequências (COM CORREÇÕES)")
+    print("   ✅ MetatagsAnalyzer: title, description, duplicados, scores")
+    print("   ✅ StatusAnalyzer: códigos HTTP, mixed content, redirects")
     
     print(MSG_CORRECTIONS_IMPLEMENTED)
     print(MSG_IMPROVEMENTS)
@@ -217,14 +336,64 @@ def print_startup_info(args, config):
     print(f"   🕷️ Tipo de crawler: {args.crawler}")
     print(f"   📁 Pasta de saída: {args.output}")
     
-    print(f"\n🚀 Iniciando análise do domínio: {domain}")
+    print(f"\n🚀 Iniciando análise COMPLETA do domínio: {domain}")
     print("=" * 80)
+
+
+class ModifiedCrawler:
+    """🔧 Wrapper do crawler para passar response para analyzers"""
+    
+    def __init__(self, crawler, integrated_analyzer):
+        self.crawler = crawler
+        self.integrated_analyzer = integrated_analyzer
+    
+    def crawl(self, start_url, max_urls=None, analyzers=None):
+        """🔥 Crawl modificado que passa response para analyzers"""
+        
+        # Substitui o método _process_single_url do crawler
+        original_process = self.crawler._process_single_url
+        
+        def modified_process_single_url(url, depth, analyzers_ignored):
+            # Chama o processo original para obter response
+            result = original_process(url, depth, [])  # Sem analyzers no original
+            
+            # Se foi bem-sucedido, faz nossa análise integrada
+            if result.get('status_code') == 200 and 'text/html' in result.get('content_type', '').lower():
+                try:
+                    # Faz nova requisição para obter soup
+                    response = self.crawler.session_manager.get(url)
+                    
+                    if response.status_code == 200:
+                        from bs4 import BeautifulSoup
+                        soup = BeautifulSoup(response.text, 'html.parser')
+                        
+                        # Análise integrada com soup, url E response
+                        analysis_result = self.integrated_analyzer.analyze(soup, url, response)
+                        
+                        # Merge com resultado original
+                        result.update(analysis_result)
+                
+                except Exception as e:
+                    print(f"Erro na análise integrada de {url}: {e}")
+                    result['analysis_error'] = str(e)
+            
+            return result
+        
+        # Substitui método temporariamente
+        self.crawler._process_single_url = modified_process_single_url
+        
+        # Executa crawl
+        try:
+            return self.crawler.crawl(start_url, max_urls, [])  # Sem analyzers externos
+        finally:
+            # Restaura método original
+            self.crawler._process_single_url = original_process
 
 
 def main():
     """🚀 Função principal"""
     try:
-        # 1. Parse e validação de argumentos (TODOS OPCIONAIS)
+        # 1. Parse e validação de argumentos
         args = parse_arguments()
         
         # 2. Aplica modo rápido se solicitado
@@ -242,28 +411,34 @@ def main():
         config = create_config_from_args(args)
         
         # 5. Exibe informações de inicialização
-        print_startup_info(args, config)
+        print_startup_info(args)
         
-        # 6. Cria componentes modulares
-        print("🔧 Inicializando componentes...")
+        # 6. Cria componentes integrados
+        print("🔧 Inicializando componentes integrados...")
         
-        crawler = create_crawler(args.crawler, config)
+        # Crawler base
+        base_crawler = create_crawler(args.crawler, config)
         print(f"   ✅ Crawler '{args.crawler}' criado")
         
-        analyzer = create_metatags_analyzer('default', config)
-        print(f"   ✅ Analisador de metatags criado")
+        # Analyzer integrado
+        integrated_analyzer = IntegratedAnalyzer(config)
+        print(f"   ✅ Analyzer integrado criado (Metatags + Headings + Status)")
         
+        # Crawler modificado
+        crawler = ModifiedCrawler(base_crawler, integrated_analyzer)
+        print(f"   ✅ Crawler integrado configurado")
+        
+        # Gerador de relatórios
         report_generator = create_report_generator('default', config['output'])
         print(f"   ✅ Gerador de relatórios criado")
         
-        # 7. Executa crawling e análise
-        print("\n🕷️ FASE 1: CRAWLING E ANÁLISE")
+        # 7. Executa crawling e análise integrada
+        print("\n🕷️ FASE 1: CRAWLING E ANÁLISE INTEGRADA")
         print(MSG_CRAWLER_START.format(domain=urlparse(args.url).netloc))
         
         results = crawler.crawl(
             start_url=args.url,
-            max_urls=args.max_urls,
-            analyzers=[analyzer]
+            max_urls=args.max_urls
         )
         
         if not results:
@@ -272,12 +447,12 @@ def main():
         
         print(MSG_ANALYSIS_COMPLETE.format(total_urls=len(results)))
         
-        # 8. Gera relatório
-        print("\n📊 FASE 2: GERAÇÃO DE RELATÓRIOS")
+        # 8. Gera relatório completo
+        print("\n📊 FASE 2: GERAÇÃO DE RELATÓRIOS INTEGRADOS")
         
         filepath, df_principal = report_generator.generate_complete_report(
             results=results,
-            crawlers_data=analyzer,
+            crawlers_data=integrated_analyzer,
             filename_prefix=args.filename
         )
         
@@ -286,24 +461,36 @@ def main():
             sys.exit(1)
         
         # 9. Exibe estatísticas finais
-        print("\n📈 FASE 3: ESTATÍSTICAS FINAIS")
+        print("\n📈 FASE 3: ESTATÍSTICAS FINAIS INTEGRADAS")
         print("=" * 80)
         
         # Estatísticas do crawler
-        crawler_stats = crawler.get_stats()
+        crawler_stats = base_crawler.get_stats()
         print("🕷️ ESTATÍSTICAS DO CRAWLER:")
         print(f"   URLs encontradas: {crawler_stats['crawling']['urls_found']}")
         print(f"   URLs processadas: {crawler_stats['crawling']['urls_processed']}")
         print(f"   Taxa de sucesso: {crawler_stats['summary']['success_rate']:.1f}%")
         print(f"   Tempo total: {crawler_stats['summary']['total_crawling_time']:.2f}s")
-        print(f"   URLs/segundo: {crawler_stats['summary']['urls_per_second']:.2f}")
         
-        # Estatísticas do analisador
-        analyzer_stats = analyzer.get_stats()
-        print(f"\n🏷️ ESTATÍSTICAS DO ANALISADOR:")
-        print(f"   URLs analisadas: {analyzer_stats['processing']['urls_processadas']}")
-        print(f"   Titles duplicados únicos: {analyzer_stats['duplicates']['total_duplicate_titles']}")
-        print(f"   Descriptions duplicadas únicas: {analyzer_stats['duplicates']['total_duplicate_descriptions']}")
+        # Estatísticas integradas
+        integrated_stats = integrated_analyzer.get_stats()
+        print(f"\n🔥 ESTATÍSTICAS INTEGRADAS:")
+        print(f"   URLs analisadas: {integrated_stats['integrated']['urls_processadas']}")
+        print(f"   URLs com erro: {integrated_stats['integrated']['urls_com_erro']}")
+        print(f"   Taxa de sucesso análise: {integrated_stats['summary']['success_rate']:.1f}%")
+        
+        # Estatísticas específicas
+        metatags_stats = integrated_stats['metatags']
+        status_stats = integrated_stats['status']
+        
+        print(f"\n🏷️ METATAGS & HEADINGS:")
+        print(f"   Titles duplicados únicos: {metatags_stats['duplicates']['total_duplicate_titles']}")
+        print(f"   Descriptions duplicadas únicas: {metatags_stats['duplicates']['total_duplicate_descriptions']}")
+        
+        print(f"\n🚨 STATUS & MIXED CONTENT:")
+        print(f"   Páginas com status errors: {status_stats['processing']['status_errors']}")
+        print(f"   Páginas com mixed content: {status_stats['processing']['mixed_content_found']}")
+        print(f"   Redirects encontrados: {status_stats['processing']['redirects_found']}")
         
         # Estatísticas do relatório
         if not df_principal.empty:
@@ -318,44 +505,25 @@ def main():
             criticos = len(df_principal[df_principal['Critical_Issues'] != ''])
             print(f"   URLs com problemas críticos: {criticos}")
             
-            # 🆕 Headings problemáticos (NOVA MÉTRICA)
+            # Headings problemáticos
             headings_problematicos = len(df_principal[df_principal['Headings_Problematicos_Total'] > 0])
-            print(f"   🆕 URLs com headings problemáticos: {headings_problematicos}")
+            print(f"   URLs com headings problemáticos: {headings_problematicos}")
             
-            # Top 3 problemas
-            if criticos > 0:
-                top_issues = []
-                
-                # Title ausente
-                title_ausente = len(df_principal[df_principal['Title_Status'] == 'Ausente'])
-                if title_ausente > 0:
-                    top_issues.append(f"Titles ausentes ({title_ausente})")
-                
-                # Description ausente
-                desc_ausente = len(df_principal[df_principal['Description_Status'] == 'Ausente'])
-                if desc_ausente > 0:
-                    top_issues.append(f"Descriptions ausentes ({desc_ausente})")
-                
-                # H1 ausente
-                h1_ausente = len(df_principal[df_principal['H1_Ausente'] == 'SIM'])
-                if h1_ausente > 0:
-                    top_issues.append(f"H1s ausentes ({h1_ausente})")
-                
-                if top_issues:
-                    print(f"   Top problemas: {', '.join(top_issues[:3])}")
+            # Mixed content
+            mixed_content = len(df_principal[df_principal['Has_Mixed_Content'] == 'SIM'])
+            print(f"   URLs com mixed content: {mixed_content}")
         
         # 10. Informações finais
-        print("\n🎯 ANÁLISE CONCLUÍDA COM SUCESSO!")
+        print("\n🎯 ANÁLISE INTEGRADA CONCLUÍDA COM SUCESSO!")
         print("=" * 80)
-        print(f"📁 Relatório gerado: {filepath}")
-        print("\n💡 PRINCIPAIS CORREÇÕES IMPLEMENTADAS:")
-        print("   ✅ Headings vazios/ocultos IGNORADOS na análise hierárquica")
-        print("   ✅ Detecção EXPANDIDA de headings ocultos (cores invisíveis)")
-        print("   ✅ Consolidação em aba única 'Headings_Problematicos'")
-        print("   ✅ Gravidade diferenciada (H1s = CRÍTICO, outros = MÉDIO)")
-        print("   ✅ Sequências separadas (Completa vs. Válida)")
+        print(f"📁 Relatório completo gerado: {filepath}")
+        print("\n💡 ANÁLISES REALIZADAS:")
+        print("   ✅ Headings: hierarquia, H1s, vazios/ocultos (COM CORREÇÕES)")
+        print("   ✅ Metatags: title, description, duplicados, scores")
+        print("   ✅ Status: códigos HTTP, redirects, mixed content")
+        print("   ✅ Consolidação: uma planilha com todas as abas")
         
-        print(f"\n🔥 Abra o arquivo Excel para ver todas as 8 abas com as correções!")
+        print(f"\n🔥 Abra o arquivo Excel para ver TODAS as análises integradas!")
         print("=" * 80)
         
     except KeyboardInterrupt:
@@ -364,37 +532,9 @@ def main():
         
     except Exception as e:
         print(f"\n❌ ERRO INESPERADO: {str(e)}")
-        if hasattr(args, 'verbose') and args.verbose:
-            import traceback
-            traceback.print_exc()
+        import traceback
+        traceback.print_exc()
         sys.exit(1)
-
-
-def quick_analysis(url=None, max_urls=1000):
-    """⚡ Função para análise rápida (uso programático)"""
-    if url is None:
-        url = DEFAULT_URL
-    
-    config = get_config()
-    config['crawler']['max_urls'] = max_urls
-    config['crawler']['max_depth'] = 5
-    config['crawler']['max_threads'] = 10
-    
-    # Componentes com configuração otimizada
-    crawler = create_crawler('smart', config)
-    analyzer = create_metatags_analyzer('default', config)
-    report_generator = create_report_generator('default', config['output'])
-    
-    # Execução
-    results = crawler.crawl(url, max_urls, [analyzer])
-    
-    if results:
-        filepath, df = report_generator.generate_complete_report(
-            results, analyzer, "QUICK_ANALYSIS"
-        )
-        return filepath, df, analyzer.get_stats()
-    
-    return None, None, None
 
 
 if __name__ == "__main__":

@@ -1,3 +1,5 @@
+# analyzers/metatags_analyzer.py - Analisador de Metatags (LIMPO)
+
 from bs4 import BeautifulSoup
 from .headings_analyzer import HeadingsAnalyzer, HeadingsScoreCalculator
 from config.settings import (
@@ -34,7 +36,7 @@ class MetatagsAnalyzer:
         }
     
     def analyze(self, soup, url):
-        """🎯 Método principal que integra TODAS as análises"""
+        """🎯 Método principal que integra análises de metatags e headings"""
         try:
             resultado = {
                 'url': url,
