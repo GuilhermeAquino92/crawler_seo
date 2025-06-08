@@ -1,9 +1,8 @@
-# reports/__init__.py - Módulo de relatórios
+# reports/__init__.py - Módulo de relatórios (CORRIGIDO)
 
-from .excel_generator import ExcelReportGenerator, StatusReportGenerator, create_report_generator
+from .excel_generator import ExcelReportGenerator, create_report_generator
 
 __all__ = [
     'ExcelReportGenerator',
-    'StatusReportGenerator', 
     'create_report_generator'
 ]

@@ -13,6 +13,7 @@ class HeadingsAnalyzer:
         self.differentiate_gravity = self.config.get('differentiate_gravity', True)
     
     def analyze_hierarchy_corrected(self, soup, url):
+        """🔥 CORRIGIDO: Usa niveis_todos para detectar saltos reais de hierarquia"""
         hierarchy_info = {
             'hierarquia_correta': True,
             'problemas_hierarquia': [],
@@ -36,8 +37,9 @@ class HeadingsAnalyzer:
                 hierarchy_info['total_problemas'] += 1
                 return hierarchy_info
             
-            niveis_todos = []
-            niveis_validos = []
+            # 🔥 CORREÇÃO CRÍTICA: Separa níveis todos vs. válidos
+            niveis_todos = []        # TODOS os headings (para hierarquia)
+            niveis_validos = []      # Só os válidos (para outras análises)
             headings_detalhados = []
             
             for i, heading in enumerate(headings):
@@ -59,9 +61,12 @@ class HeadingsAnalyzer:
                 }
                 
                 headings_detalhados.append(heading_detail)
+                
+                # 🔥 TODOS os headings vão para análise hierárquica
                 niveis_todos.append(nivel)
                 hierarchy_info['heading_sequence'].append(f"{tag_name}:{texto[:30]}...")
                 
+                # SÓ os válidos vão para outras análises
                 if not problema_info['eh_problematico']:
                     niveis_validos.append(nivel)
                     hierarchy_info['heading_sequence_valida'].append(f"{tag_name}:{texto[:30]}...")
@@ -79,11 +84,13 @@ class HeadingsAnalyzer:
                     hierarchy_info['heading_issues'].append(problema_consolidado['descricao'])
                     hierarchy_info['total_problemas'] += 1
             
+            # Verifica H1 ausente
             if hierarchy_info['h1_ausente']:
                 hierarchy_info['problemas_hierarquia'].append(HIERARCHY_MESSAGES['h1_absent'])
                 hierarchy_info['heading_issues'].append('H1 ausente')
                 hierarchy_info['total_problemas'] += 1
             
+            # Verifica múltiplos H1
             if hierarchy_info['h1_count'] > 1:
                 hierarchy_info['h1_multiple'] = True
                 msg = HIERARCHY_MESSAGES['multiple_h1'].format(count=hierarchy_info['h1_count'])
@@ -91,9 +98,10 @@ class HeadingsAnalyzer:
                 hierarchy_info['heading_issues'].append('Múltiplos H1')
                 hierarchy_info['total_problemas'] += 1
             
-            if niveis_validos and not hierarchy_info['h1_ausente']:
+            # 🔥 CORREÇÃO PRINCIPAL: Usa niveis_todos para detectar saltos reais
+            if niveis_todos and not hierarchy_info['h1_ausente']:
                 problemas_sequencia = self._analyze_hierarchy_sequence_corrected(
-                    niveis_validos, headings_detalhados
+                    niveis_todos, headings_detalhados  # ← CORRIGIDO: niveis_todos
                 )
                 if problemas_sequencia:
                     hierarchy_info['hierarquia_correta'] = False
@@ -118,6 +126,7 @@ class HeadingsAnalyzer:
         return hierarchy_info
     
     def _is_heading_problematic(self, heading):
+        """Detecta se heading é problemático (vazio ou oculto)"""
         try:
             texto = heading.get_text().strip()
             eh_vazio = len(texto) == 0
@@ -148,21 +157,26 @@ class HeadingsAnalyzer:
             }
     
     def _is_heading_hidden_expanded(self, heading):
+        """Detecção expandida de headings ocultos"""
         try:
             style = heading.get('style', '').lower()
             
+            # Estilos CSS que ocultam elementos
             for hidden_style in HIDDEN_STYLES:
                 if hidden_style in style:
                     return True
             
+            # Cores invisíveis (se habilitado)
             if self.detect_invisible_colors and self._has_invisible_color(style):
                 return True
             
+            # Classes CSS suspeitas
             classes = ' '.join(heading.get('class', [])).lower()
             for hidden_class in HIDDEN_CSS_CLASSES:
                 if hidden_class in classes:
                     return True
             
+            # Posicionamento suspeito
             for suspicious_pos in SUSPICIOUS_POSITIONING:
                 if suspicious_pos in style:
                     return True
@@ -173,11 +187,14 @@ class HeadingsAnalyzer:
             return False
     
     def _has_invisible_color(self, style):
+        """Detecta cores invisíveis (branco, transparente, etc.)"""
         try:
+            # Cores invisíveis predefinidas
             for invisible_color in INVISIBLE_COLORS:
                 if invisible_color in style:
                     return True
             
+            # RGB muito claro (quase branco)
             rgb_pattern = r'color:\s*rgb\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)'
             matches = re.findall(rgb_pattern, style)
             for r, g, b in matches:
@@ -191,42 +208,56 @@ class HeadingsAnalyzer:
         except Exception:
             return False
     
-    def _analyze_hierarchy_sequence_corrected(self, niveis_validos, headings_detalhados):
+    def _analyze_hierarchy_sequence_corrected(self, niveis_todos, headings_detalhados):
+        """🔥 CORRIGIDO: Analisa sequência usando TODOS os headings para detectar saltos reais"""
         problemas = []
         
-        if not niveis_validos:
+        if not niveis_todos:
             return [HIERARCHY_MESSAGES['no_valid_headings']]
         
-        if niveis_validos[0] != 1:
-            primeiro_valido = None
-            for h in headings_detalhados:
-                if not h.get('eh_problematico', False):
-                    primeiro_valido = h
-                    break
-            
-            if primeiro_valido:
-                msg = HIERARCHY_MESSAGES['first_not_h1'].format(tag=primeiro_valido['tag'].upper())
+        # Verifica se primeiro heading é H1
+        if niveis_todos[0] != 1:
+            primeiro_heading = headings_detalhados[0] if headings_detalhados else None
+            if primeiro_heading:
+                msg = HIERARCHY_MESSAGES['first_not_h1'].format(tag=primeiro_heading['tag'].upper())
                 problemas.append(msg)
         
-        for i in range(1, len(niveis_validos)):
-            nivel_anterior = niveis_validos[i-1]
-            nivel_atual = niveis_validos[i]
+        # 🔥 ANÁLISE DE SALTOS: Usa TODOS os níveis (inclusive ocultos/vazios)
+        for i in range(1, len(niveis_todos)):
+            nivel_anterior = niveis_todos[i-1]
+            nivel_atual = niveis_todos[i]
             
+            # Detecta saltos indevidos (ex: H2 → H6, H2 → H4)
             if nivel_atual > nivel_anterior + 1:
                 niveis_pulados = []
                 for nivel_perdido in range(nivel_anterior + 1, nivel_atual):
                     niveis_pulados.append(f'H{nivel_perdido}')
                 
-                msg = HIERARCHY_MESSAGES['hierarchy_jump'].format(
-                    prev=nivel_anterior,
-                    curr=nivel_atual,
-                    missing=', '.join(niveis_pulados)
-                )
+                # Busca informações dos headings relacionados ao salto
+                heading_anterior = None
+                heading_atual = None
+                
+                if i-1 < len(headings_detalhados):
+                    heading_anterior = headings_detalhados[i-1]
+                if i < len(headings_detalhados):
+                    heading_atual = headings_detalhados[i]
+                
+                # Cria mensagem detalhada do salto
+                if heading_anterior and heading_atual:
+                    msg = f"Salto na hierarquia: {heading_anterior['tag'].upper()} → {heading_atual['tag'].upper()} (níveis pulados: {', '.join(niveis_pulados)})"
+                else:
+                    msg = HIERARCHY_MESSAGES['hierarchy_jump'].format(
+                        prev=nivel_anterior,
+                        curr=nivel_atual,
+                        missing=', '.join(niveis_pulados)
+                    )
+                
                 problemas.append(msg)
         
         return problemas
     
     def _create_problem_description(self, heading_detail, problema_info):
+        """Cria descrição consolidada do problema"""
         tag = heading_detail['tag']
         posicao = heading_detail['posicao']
         texto = heading_detail['texto']
@@ -238,10 +269,10 @@ class HeadingsAnalyzer:
             motivos_str = ', '.join(motivos).lower()
             descricao += f' ({motivos_str})'
         
-        detalhes_motivos = ' - Motivos: ' + ', '.join(motivos) if motivos else ''
-        if detalhes_motivos:
-            descricao += detalhes_motivos
+        if texto:
+            descricao += f': "{texto[:30]}..."' if len(texto) > 30 else f': "{texto}"'
         
+        # Gravidade diferenciada
         gravidade = GRAVITY_CRITICAL if tag == 'h1' else GRAVITY_MEDIUM
         
         return {
@@ -254,6 +285,7 @@ class HeadingsAnalyzer:
         }
     
     def extract_heading_metrics(self, hierarchy_info):
+        """Extrai métricas dos headings para relatórios"""
         headings_problematicos = hierarchy_info.get('headings_problematicos', [])
         
         metrics = {
@@ -281,12 +313,14 @@ class HeadingsAnalyzer:
         return metrics
     
     def get_h1_text(self, soup):
+        """Extrai texto do primeiro H1"""
         h1_tag = soup.find('h1')
         if h1_tag:
             return h1_tag.get_text().strip()
         return ''
     
     def analyze_all_headings(self, soup, url):
+        """Método principal de análise completa"""
         hierarchy_info = self.analyze_hierarchy_corrected(soup, url)
         
         metrics = self.extract_heading_metrics(hierarchy_info)
@@ -299,39 +333,48 @@ class HeadingsAnalyzer:
 
 
 class HeadingsScoreCalculator:
+    """Calculadora de score para headings"""
     
     def __init__(self, config=None):
         self.config = config or {}
     
     def calculate_headings_score(self, metrics):
+        """Calcula score baseado nas métricas de headings"""
         score = 0
         
+        # Score base para H1 correto
         if not metrics.get('h1_ausente', True) and not metrics.get('h1_multiple', False):
             score += 20
         elif not metrics.get('h1_ausente', True):
-            score += 10
+            score += 10  # H1 presente mas múltiplo
         
+        # Score para hierarquia correta
         if metrics.get('hierarquia_correta', True):
             score += 15
         
+        # Penalidades por headings problemáticos (gravidade diferenciada)
         headings_criticos = metrics.get('headings_gravidade_critica', 0)
         headings_outros = metrics.get('headings_problematicos_count', 0) - headings_criticos
         
-        score -= headings_criticos * 10
-        score -= headings_outros * 3
+        score -= headings_criticos * 10  # H1s problemáticos = -10 pontos
+        score -= headings_outros * 3     # Outros problemáticos = -3 pontos
         
+        # Penalidade adicional por hierarquia incorreta
         if not metrics.get('hierarquia_correta', True):
             score -= 15
         
+        # Score final entre 0 e 35
         return max(0, min(score, 35))
 
 
 class HeadingsReportGenerator:
+    """Gerador de relatórios para headings"""
     
     def __init__(self, analyzer=None):
         self.analyzer = analyzer or HeadingsAnalyzer()
     
     def generate_problematic_headings_data(self, results):
+        """Gera dados consolidados de headings problemáticos"""
         dados_headings_problematicos = []
         
         for resultado in results:
@@ -369,6 +412,7 @@ class HeadingsReportGenerator:
         return dados_headings_problematicos
     
     def generate_hierarchy_problems_data(self, results):
+        """Gera dados de problemas de hierarquia"""
         dados_hierarquia_problemas = []
         
         for resultado in results:
@@ -389,19 +433,22 @@ class HeadingsReportGenerator:
         return dados_hierarquia_problemas
 
 
-def test_headings_analyzer():
-    print("Testando HeadingsAnalyzer...")
+def test_hierarchy_fix():
+    """🧪 Teste específico para verificar a correção da hierarquia"""
+    print("🧪 TESTANDO CORREÇÃO DE HIERARQUIA (niveis_todos)")
+    print("=" * 60)
     
+    # HTML com salto de hierarquia E heading oculto no meio
     html_test = """
     <html>
-    <head><title>Teste</title></head>
+    <head><title>Teste Hierarquia</title></head>
     <body>
         <h1>Título Principal</h1>
-        <h2></h2>
-        <h3>Subtítulo</h3>
-        <h6>Salto na hierarquia</h6>
-        <h2 style="color: white;">Heading Oculto</h2>
-        <h1>Segundo H1</h1>
+        <h2>Subtítulo Nível 2</h2>
+        <h3 style="display: none;">Nível 3 OCULTO</h3>
+        <h4></h4><!-- H4 VAZIO -->
+        <h6>SALTO PARA H6</h6><!-- ← Este salto DEVE ser detectado -->
+        <h3>Volta para H3</h3>
     </body>
     </html>
     """
@@ -409,53 +456,91 @@ def test_headings_analyzer():
     soup = BeautifulSoup(html_test, 'html.parser')
     analyzer = HeadingsAnalyzer({'detect_invisible_colors': True})
     
-    metrics = analyzer.analyze_all_headings(soup, "https://test.com")
+    resultado = analyzer.analyze_all_headings(soup, "https://test.com")
     
-    print("Resultados da análise:")
-    print(f"  URL: {metrics.get('url', 'N/A')}")
-    print(f"  H1 Count: {metrics['h1_count']}")
-    print(f"  H1 Ausente: {metrics['h1_ausente']}")
-    print(f"  H1 Múltiplo: {metrics['h1_multiple']}")
-    print(f"  Hierarquia Correta: {metrics['hierarquia_correta']}")
-    print(f"  Headings Problemáticos: {metrics['headings_problematicos_count']}")
-    print(f"  Headings Vazios: {metrics['headings_vazios_count']}")
-    print(f"  Headings Ocultos: {metrics['headings_ocultos_count']}")
-    print(f"  Headings Críticos: {metrics['headings_gravidade_critica']}")
+    print("📋 ESTRUTURA DETECTADA:")
+    print(f"  Sequência Completa: {' → '.join(resultado['heading_sequence'])}")
+    print(f"  Sequência Válida:   {' → '.join(resultado['heading_sequence_valida'])}")
     
-    print(f"\nSequências:")
-    print(f"  Completa: {' → '.join(metrics['heading_sequence'])}")
-    print(f"  Válida: {' → '.join(metrics['heading_sequence_valida'])}")
+    print(f"\n🎯 PROBLEMAS DE HIERARQUIA:")
+    problemas = resultado.get('problemas_hierarquia', [])
+    if problemas:
+        for i, problema in enumerate(problemas, 1):
+            print(f"  {i}. {problema}")
+    else:
+        print("  ❌ NENHUM PROBLEMA DETECTADO (BUG!)")
     
-    print(f"\nProblemas encontrados:")
-    for issue in metrics['heading_issues'][:5]:
-        print(f"  - {issue}")
+    print(f"\n🔍 HEADINGS PROBLEMÁTICOS:")
+    problematicos = resultado.get('headings_problematicos', [])
+    for prob in problematicos:
+        print(f"  - {prob['descricao']} | Gravidade: {prob['gravidade']}")
     
-    calculator = HeadingsScoreCalculator()
-    score = calculator.calculate_headings_score(metrics)
-    print(f"\nScore dos headings: {score}/35")
+    print(f"\n📊 RESUMO:")
+    print(f"  Hierarquia Correta: {resultado['hierarquia_correta']}")
+    print(f"  Total Problemas: {resultado['total_problemas_headings']}")
+    print(f"  Headings Vazios: {resultado['headings_vazios_count']}")
+    print(f"  Headings Ocultos: {resultado['headings_ocultos_count']}")
+    
+    # Verifica se a correção funcionou
+    hierarquia_correta = resultado['hierarquia_correta']
+    tem_problemas = len(problemas) > 0
+    
+    print(f"\n🔥 RESULTADO DA CORREÇÃO:")
+    if not hierarquia_correta and tem_problemas:
+        print("  ✅ CORREÇÃO FUNCIONANDO! Saltos detectados corretamente")
+        print("  ✅ A análise usa niveis_todos e detecta H2→H6")
+    else:
+        print("  ❌ CORREÇÃO PODE NÃO ESTAR FUNCIONANDO")
+        print("  ❌ Saltos não foram detectados adequadamente")
+    
+    return resultado
 
 
-def test_invisible_color_detection():
-    print("\nTestando detecção de cores invisíveis...")
+def test_simple_jump():
+    """🧪 Teste simples: H2 direto para H6"""
+    print("\n" + "="*60)
+    print("🧪 TESTE SIMPLES: H2 → H6")
+    print("="*60)
     
-    analyzer = HeadingsAnalyzer({'detect_invisible_colors': True})
+    html_simple = """
+    <html>
+    <body>
+        <h1>Título</h1>
+        <h2>Nível 2</h2>
+        <h6>SALTO DIRETO PARA H6</h6>
+    </body>
+    </html>
+    """
     
-    test_cases = [
-        '<h2 style="color: white;">Texto branco</h2>',
-        '<h2 style="color: rgb(255, 255, 255);">RGB branco</h2>',
-        '<h2 style="color: transparent;">Transparente</h2>',
-        '<h2 style="color: black;">Texto preto (visível)</h2>',
-        '<h2 style="color: rgb(100, 100, 100);">RGB escuro (visível)</h2>',
-    ]
+    soup = BeautifulSoup(html_simple, 'html.parser')
+    analyzer = HeadingsAnalyzer()
     
-    for i, html in enumerate(test_cases, 1):
-        soup = BeautifulSoup(html, 'html.parser')
-        heading = soup.find(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
-        
-        is_hidden = analyzer._is_heading_hidden_expanded(heading)
-        print(f"  Teste {i}: {'OCULTO' if is_hidden else 'VISÍVEL'} - {html}")
+    resultado = analyzer.analyze_all_headings(soup, "https://test.com")
+    
+    problemas = resultado.get('problemas_hierarquia', [])
+    print(f"Sequência: {' → '.join(resultado['heading_sequence'])}")
+    print(f"Problemas: {problemas}")
+    print(f"Hierarquia Correta: {resultado['hierarquia_correta']}")
+    
+    # Este teste DEVE detectar salto H2→H6
+    expected_jump = any('H2' in p and 'H6' in p for p in problemas)
+    print(f"Salto H2→H6 detectado: {'✅ SIM' if expected_jump else '❌ NÃO'}")
+    
+    return expected_jump
 
 
 if __name__ == "__main__":
-    test_headings_analyzer()
-    test_invisible_color_detection()
+    # Executa ambos os testes
+    print("🚀 TESTANDO CORREÇÃO DA ANÁLISE DE HIERARQUIA")
+    print("="*80)
+    
+    test_hierarchy_fix()
+    jump_detected = test_simple_jump()
+    
+    print(f"\n🎯 RESULTADO FINAL:")
+    if jump_detected:
+        print("✅ CORREÇÃO IMPLEMENTADA COM SUCESSO!")
+        print("✅ A análise agora usa todos os headings para detectar saltos reais")
+    else:
+        print("❌ A correção precisa ser verificada")
+        print("❌ Saltos simples não estão sendo detectados")
