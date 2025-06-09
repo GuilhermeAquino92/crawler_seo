@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# main.py - SEO Analyzer Integrado CORRIGIDO
+# main.py - SEO Analyzer Integrado CORRIGIDO COMPLETO
 
 """
 🏷️ SEO ANALYZER ULTRA COMPLETO - VERSÃO CORRIGIDA
@@ -17,7 +17,9 @@ Integra TODOS os analyzers:
 
 import argparse
 import sys
+import time
 from urllib.parse import urlparse
+from datetime import datetime
 
 # Imports dos módulos modularizados
 from config.settings import get_config, DEFAULT_URL, MAX_URLS_DEFAULT, MAX_THREADS_DEFAULT
@@ -174,6 +176,56 @@ class IntegratedAnalyzer:
                 'success_rate': (self.stats['urls_processadas'] / max(self.stats['urls_processadas'] + self.stats['urls_com_erro'], 1)) * 100
             }
         }
+
+
+class ModifiedCrawler:
+    """🔧 Wrapper do crawler para passar response para analyzers"""
+    
+    def __init__(self, crawler, integrated_analyzer):
+        self.crawler = crawler
+        self.integrated_analyzer = integrated_analyzer
+    
+    def crawl(self, start_url, max_urls=None, analyzers=None):
+        """🔥 Crawl modificado que passa response para analyzers"""
+        
+        # Substitui o método _process_single_url do crawler
+        original_process = self.crawler._process_single_url
+        
+        def modified_process_single_url(url, depth, analyzers_ignored):
+            # Chama o processo original para obter response
+            result = original_process(url, depth, [])  # Sem analyzers no original
+            
+            # Se foi bem-sucedido, faz nossa análise integrada
+            if result.get('status_code') == 200 and 'text/html' in result.get('content_type', '').lower():
+                try:
+                    # Faz nova requisição para obter soup
+                    response = self.crawler.session_manager.get(url)
+                    
+                    if response.status_code == 200:
+                        from bs4 import BeautifulSoup
+                        soup = BeautifulSoup(response.text, 'html.parser')
+                        
+                        # Análise integrada com soup, url E response
+                        analysis_result = self.integrated_analyzer.analyze(soup, url, response)
+                        
+                        # Merge com resultado original
+                        result.update(analysis_result)
+                
+                except Exception as e:
+                    print(f"Erro na análise integrada de {url}: {e}")
+                    result['analysis_error'] = str(e)
+            
+            return result
+        
+        # Substitui método temporariamente
+        self.crawler._process_single_url = modified_process_single_url
+        
+        # Executa crawl
+        try:
+            return self.crawler.crawl(start_url, max_urls, [])  # Sem analyzers externos
+        finally:
+            # Restaura método original
+            self.crawler._process_single_url = original_process
 
 
 def parse_arguments():
@@ -340,56 +392,6 @@ def print_startup_info(args):
     print("=" * 80)
 
 
-class ModifiedCrawler:
-    """🔧 Wrapper do crawler para passar response para analyzers"""
-    
-    def __init__(self, crawler, integrated_analyzer):
-        self.crawler = crawler
-        self.integrated_analyzer = integrated_analyzer
-    
-    def crawl(self, start_url, max_urls=None, analyzers=None):
-        """🔥 Crawl modificado que passa response para analyzers"""
-        
-        # Substitui o método _process_single_url do crawler
-        original_process = self.crawler._process_single_url
-        
-        def modified_process_single_url(url, depth, analyzers_ignored):
-            # Chama o processo original para obter response
-            result = original_process(url, depth, [])  # Sem analyzers no original
-            
-            # Se foi bem-sucedido, faz nossa análise integrada
-            if result.get('status_code') == 200 and 'text/html' in result.get('content_type', '').lower():
-                try:
-                    # Faz nova requisição para obter soup
-                    response = self.crawler.session_manager.get(url)
-                    
-                    if response.status_code == 200:
-                        from bs4 import BeautifulSoup
-                        soup = BeautifulSoup(response.text, 'html.parser')
-                        
-                        # Análise integrada com soup, url E response
-                        analysis_result = self.integrated_analyzer.analyze(soup, url, response)
-                        
-                        # Merge com resultado original
-                        result.update(analysis_result)
-                
-                except Exception as e:
-                    print(f"Erro na análise integrada de {url}: {e}")
-                    result['analysis_error'] = str(e)
-            
-            return result
-        
-        # Substitui método temporariamente
-        self.crawler._process_single_url = modified_process_single_url
-        
-        # Executa crawl
-        try:
-            return self.crawler.crawl(start_url, max_urls, [])  # Sem analyzers externos
-        finally:
-            # Restaura método original
-            self.crawler._process_single_url = original_process
-
-
 def main():
     """🚀 Função principal CORRIGIDA"""
     try:
@@ -447,10 +449,10 @@ def main():
         
         print(MSG_ANALYSIS_COMPLETE.format(total_urls=len(results)))
         
-        # 8. Gera relatório completo - CORREÇÃO APLICADA
+        # 8. Gera relatório completo - 🔥 CORREÇÃO APLICADA
         print("\n📊 FASE 2: GERAÇÃO DE RELATÓRIOS INTEGRADOS")
         
-        # 🔥 CORREÇÃO: Usar apenas os parâmetros corretos
+        # 🔥 CORREÇÃO: Usar apenas os parâmetros corretos para generate_complete_report
         filepath, df_principal = report_generator.generate_complete_report(
             results=results,
             filename_prefix=args.filename
@@ -498,20 +500,48 @@ def main():
             print(f"   Páginas no relatório: {len(df_principal)}")
             
             # Score médio
-            score_medio = df_principal['Metatags_Score'].mean()
-            print(f"   Score médio: {score_medio:.1f}/100")
+            score_col = None
+            for col in ['Metatags_Score', 'metatags_score']:
+                if col in df_principal.columns:
+                    score_col = col
+                    break
+            
+            if score_col:
+                score_medio = df_principal[score_col].mean()
+                print(f"   Score médio: {score_medio:.1f}/100")
             
             # Problemas críticos
-            criticos = len(df_principal[df_principal['Critical_Issues'] != ''])
-            print(f"   URLs com problemas críticos: {criticos}")
+            critical_col = None
+            for col in ['Critical_Issues', 'critical_issues']:
+                if col in df_principal.columns:
+                    critical_col = col
+                    break
+            
+            if critical_col:
+                criticos = len(df_principal[df_principal[critical_col] != ''])
+                print(f"   URLs com problemas críticos: {criticos}")
             
             # Headings problemáticos
-            headings_problematicos = len(df_principal[df_principal['Headings_Problematicos_Total'] > 0])
-            print(f"   URLs com headings problemáticos: {headings_problematicos}")
+            headings_col = None
+            for col in ['Headings_Problematicos_Total', 'headings_problematicos_count']:
+                if col in df_principal.columns:
+                    headings_col = col
+                    break
+            
+            if headings_col:
+                headings_problematicos = len(df_principal[df_principal[headings_col] > 0])
+                print(f"   URLs com headings problemáticos: {headings_problematicos}")
             
             # Mixed content
-            mixed_content = len(df_principal[df_principal['Has_Mixed_Content'] == 'SIM'])
-            print(f"   URLs com mixed content: {mixed_content}")
+            mixed_col = None
+            for col in ['Has_Mixed_Content', 'has_mixed_content']:
+                if col in df_principal.columns:
+                    mixed_col = col
+                    break
+            
+            if mixed_col:
+                mixed_content = len(df_principal[df_principal[mixed_col] == 'SIM'])
+                print(f"   URLs com mixed content: {mixed_content}")
         
         # 10. Informações finais
         print("\n🎯 ANÁLISE INTEGRADA CONCLUÍDA COM SUCESSO!")
@@ -538,7 +568,7 @@ def main():
 
 
 def quick_analysis(url, max_urls=100, output_folder="output"):
-    """🚀 Função de conveniência para análise rápida"""
+    """🚀 Função de conveniência para análise rápida - CORRIGIDA"""
     try:
         config = get_config()
         config['crawler'].update({
@@ -560,8 +590,9 @@ def quick_analysis(url, max_urls=100, output_folder="output"):
         results = modified_crawler.crawl(url, max_urls)
         
         if results:
+            # 🔥 CORREÇÃO: Usar apenas parâmetros corretos
             filepath, df = reporter.generate_complete_report(
-                results, 
+                results=results, 
                 filename_prefix="QUICK_ANALYSIS"
             )
             
