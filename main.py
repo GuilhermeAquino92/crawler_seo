@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-# main.py - SEO Analyzer Integrado Completo
+# main.py - SEO Analyzer Integrado CORRIGIDO
 
 """
-🏷️ SEO ANALYZER ULTRA COMPLETO - VERSÃO FINAL
+🏷️ SEO ANALYZER ULTRA COMPLETO - VERSÃO CORRIGIDA
 
 Integra TODOS os analyzers:
 ✅ HeadingsAnalyzer (com correções)
@@ -391,7 +391,7 @@ class ModifiedCrawler:
 
 
 def main():
-    """🚀 Função principal"""
+    """🚀 Função principal CORRIGIDA"""
     try:
         # 1. Parse e validação de argumentos
         args = parse_arguments()
@@ -447,12 +447,12 @@ def main():
         
         print(MSG_ANALYSIS_COMPLETE.format(total_urls=len(results)))
         
-        # 8. Gera relatório completo
+        # 8. Gera relatório completo - CORREÇÃO APLICADA
         print("\n📊 FASE 2: GERAÇÃO DE RELATÓRIOS INTEGRADOS")
         
+        # 🔥 CORREÇÃO: Usar apenas os parâmetros corretos
         filepath, df_principal = report_generator.generate_complete_report(
             results=results,
-            crawlers_data=integrated_analyzer,
             filename_prefix=args.filename
         )
         
@@ -535,6 +535,45 @@ def main():
         import traceback
         traceback.print_exc()
         sys.exit(1)
+
+
+def quick_analysis(url, max_urls=100, output_folder="output"):
+    """🚀 Função de conveniência para análise rápida"""
+    try:
+        config = get_config()
+        config['crawler'].update({
+            'max_urls': max_urls,
+            'max_depth': 3,
+            'max_threads': 5
+        })
+        config['output']['folder'] = output_folder
+        
+        # Componentes
+        crawler = create_crawler('smart', config)
+        analyzer = IntegratedAnalyzer(config)
+        reporter = create_report_generator('default', config['output'])
+        
+        # Wrapper
+        modified_crawler = ModifiedCrawler(crawler, analyzer)
+        
+        # Execução
+        results = modified_crawler.crawl(url, max_urls)
+        
+        if results:
+            filepath, df = reporter.generate_complete_report(
+                results, 
+                filename_prefix="QUICK_ANALYSIS"
+            )
+            
+            stats = analyzer.get_stats()
+            
+            return filepath, df, stats
+        
+        return None, None, None
+        
+    except Exception as e:
+        print(f"Erro na análise rápida: {e}")
+        return None, None, None
 
 
 if __name__ == "__main__":
