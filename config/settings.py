@@ -4,8 +4,8 @@ import os
 # 🌐 URLs E CONFIGURAÇÕES BÁSICAS
 # ========================
 
-DEFAULT_URL = "https://alastin.com.br/"  # 🆕 ADICIONADO
-URL_INICIAL = "https://alastin.com.br/"
+DEFAULT_URL = "https://www.ccgsaude.com.br/"  # 🆕 ADICIONADO
+URL_INICIAL = "https://www.ccgsaude.com.br/"
 MAX_URLS_DEFAULT = 10000
 MAX_DEPTH_DEFAULT = 10
 MAX_THREADS_DEFAULT = 25
