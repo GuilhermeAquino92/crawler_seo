@@ -1,4 +1,4 @@
-# utils/constants.py - Constantes do projeto
+# utils/constants.py - Constantes do projeto (CORRIGIDO)
 
 # ========================
 # 📋 MENSAGENS DO SISTEMA
@@ -12,7 +12,7 @@ MSG_PROCESSING_BATCH = "🔄 Processando {batch_size} URLs... (total: {current}/
 # Mensagens de conclusão
 MSG_CRAWL_COMPLETE = "✅ Crawl ULTRA concluído: {total_urls} URLs encontradas"
 MSG_ANALYSIS_COMPLETE = "✅ Análise ultra completa CORRIGIDA concluída: {total_urls} URLs"
-MSG_REPORT_GENERATED = "✅ RELATÓRIO METATAGS ULTRA CORRIGIDO gerado: {filename}"
+MSG_REPORT_GENERATED = "✅ RELATÓRIO METATAGS ULTRA CORRIGIDO gerado: {filepath}"
 
 # Mensagens de erro
 MSG_NO_RESULTS = "❌ Nenhum resultado para gerar relatório!"
@@ -90,7 +90,8 @@ SHEET_NAMES_EMOJI = {
     'hidden_headings': '👻_Headings_Ocultos',
     'critical': '🔥_CRITICOS',
     'score_ranking': '🎯_Score_Ranking',
-    'summary': '📊_RESUMO_ULTRA_CORRIGIDO'
+    'summary': '📊_RESUMO_ULTRA_CORRIGIDO',
+    'principal': '📊_Dados_Principais'
 }
 
 # ========================
