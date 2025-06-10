@@ -96,6 +96,13 @@ class StatusAnalyzer:
             status_data['Warnings'].append("Sem resposta HTTP")
         
         return status_data
+
+    def _is_insecure_url(self, value):
+        """Check if a URL uses the insecure HTTP protocol"""
+        try:
+            return isinstance(value, str) and value.strip().lower().startswith('http://')
+        except Exception:
+            return False
     
     def _analyze_mixed_content(self, soup, url):
         """🔒 Análise de Mixed Content (recursos HTTP em páginas HTTPS)"""
@@ -118,7 +125,7 @@ class StatusAnalyzer:
             # 1. IMAGENS com src HTTP
             for img in soup.find_all('img', src=True):
                 src = img.get('src', '').strip()
-                if src.startswith('http://'):
+                if self._is_insecure_url(src):
                     full_url = urljoin(url, src)
                     mixed_resources.append({
                         'type': 'image',
@@ -131,7 +138,7 @@ class StatusAnalyzer:
             # 2. SCRIPTS com src HTTP
             for script in soup.find_all('script', src=True):
                 src = script.get('src', '').strip()
-                if src.startswith('http://'):
+                if self._is_insecure_url(src):
                     full_url = urljoin(url, src)
                     mixed_resources.append({
                         'type': 'script',
@@ -144,7 +151,7 @@ class StatusAnalyzer:
             # 3. LINKS (CSS) com href HTTP
             for link in soup.find_all('link', href=True):
                 href = link.get('href', '').strip()
-                if href.startswith('http://'):
+                if self._is_insecure_url(href):
                     full_url = urljoin(url, href)
                     mixed_resources.append({
                         'type': 'stylesheet',
@@ -157,7 +164,7 @@ class StatusAnalyzer:
             # 4. IFRAMES com src HTTP
             for iframe in soup.find_all('iframe', src=True):
                 src = iframe.get('src', '').strip()
-                if src.startswith('http://'):
+                if self._is_insecure_url(src):
                     full_url = urljoin(url, src)
                     mixed_resources.append({
                         'type': 'iframe',
@@ -172,7 +179,7 @@ class StatusAnalyzer:
                 for attr in ['src', 'poster']:
                     if tag.has_attr(attr):
                         url_attr = tag.get(attr, '').strip()
-                        if url_attr.startswith('http://'):
+                        if self._is_insecure_url(url_attr):
                             full_url = urljoin(url, url_attr)
                             mixed_resources.append({
                                 'type': 'media',
@@ -181,6 +188,47 @@ class StatusAnalyzer:
                                 'url': full_url,
                                 'element': str(tag)[:100] + '...' if len(str(tag)) > 100 else str(tag)
                             })
+
+            # 6. <style> contendo url(http://...)
+            for style_tag in soup.find_all('style'):
+                content = style_tag.string or ''
+                for match in re.findall(r'url\(\s*["\']?(http://[^)"\']+)', content, re.IGNORECASE):
+                    if self._is_insecure_url(match):
+                        full_url = urljoin(url, match)
+                        mixed_resources.append({
+                            'type': 'inline-style',
+                            'tag': 'style',
+                            'attribute': 'content',
+                            'url': full_url,
+                            'element': str(style_tag)[:100] + '...' if len(str(style_tag)) > 100 else str(style_tag)
+                        })
+
+            # 7. Atributo style com url(http://...)
+            for element in soup.find_all(style=True):
+                style_attr = element.get('style', '')
+                for match in re.findall(r'url\(\s*["\']?(http://[^)"\']+)', style_attr, re.IGNORECASE):
+                    if self._is_insecure_url(match):
+                        full_url = urljoin(url, match)
+                        mixed_resources.append({
+                            'type': 'inline-style',
+                            'tag': element.name,
+                            'attribute': 'style',
+                            'url': full_url,
+                            'element': str(element)[:100] + '...' if len(str(element)) > 100 else str(element)
+                        })
+
+            # 8. Formulários com action HTTP
+            for form in soup.find_all('form', action=True):
+                action = form.get('action', '').strip()
+                if self._is_insecure_url(action):
+                    full_url = urljoin(url, action)
+                    mixed_resources.append({
+                        'type': 'form',
+                        'tag': 'form',
+                        'attribute': 'action',
+                        'url': full_url,
+                        'element': str(form)[:100] + '...' if len(str(form)) > 100 else str(form)
+                    })
             
             mixed_content_data['mixed_content_resources'] = mixed_resources
             mixed_content_data['has_mixed_content'] = len(mixed_resources) > 0
