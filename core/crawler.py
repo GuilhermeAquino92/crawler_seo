@@ -50,7 +50,8 @@ class SEOCrawler:
         
         url_config = self.config.get('filters', {})
         self.url_manager = create_url_manager('default', domain, url_config)
-        
+        self.url_manager.set_base_domain(start_url)
+
         self.url_manager.add_url(start_url, depth=0)
         
         self.start_time = time.time()
@@ -288,7 +289,8 @@ class SmartSEOCrawler(SEOCrawler):
         url_config = self.config.get('filters', {})
         url_config['priority_patterns'] = self.priority_patterns
         self.url_manager = create_url_manager('smart', domain, url_config)
-        
+        self.url_manager.set_base_domain(start_url)
+
         self.url_manager.add_url(start_url, depth=0, priority=True)
         
         self.start_time = time.time()
@@ -313,7 +315,8 @@ class BatchSEOCrawler(SEOCrawler):
         url_config = self.config.get('filters', {})
         url_config['batch_size'] = self.batch_size
         self.url_manager = create_url_manager('batch', domain, url_config)
-        
+        self.url_manager.set_base_domain(start_url)
+
         self.url_manager.add_url(start_url, depth=0)
         
         self.start_time = time.time()
