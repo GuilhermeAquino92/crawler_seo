@@ -181,6 +181,45 @@ class StatusAnalyzer:
                                 'url': full_url,
                                 'element': str(tag)[:100] + '...' if len(str(tag)) > 100 else str(tag)
                             })
+
+            # 6. FORMS com action HTTP
+            for form in soup.find_all('form', action=True):
+                action = form.get('action', '').strip()
+                if action.startswith('http://'):
+                    full_url = urljoin(url, action)
+                    mixed_resources.append({
+                        'type': 'form',
+                        'tag': 'form',
+                        'attribute': 'action',
+                        'url': full_url,
+                        'element': str(form)[:100] + '...' if len(str(form)) > 100 else str(form)
+                    })
+
+            # 7. CSS em <style> com url() HTTP
+            for style_tag in soup.find_all('style'):
+                if style_tag.string:
+                    for match in re.findall(r'url\(\s*(http://[^\)\s]+)', style_tag.string, re.I):
+                        full_url = urljoin(url, match)
+                        mixed_resources.append({
+                            'type': 'style',
+                            'tag': 'style',
+                            'attribute': 'css-url',
+                            'url': full_url,
+                            'element': style_tag.string[:100] + '...' if len(style_tag.string) > 100 else style_tag.string
+                        })
+
+            # 8. Estilos inline com url() HTTP
+            for element in soup.find_all(style=True):
+                style_attr = element.get('style', '')
+                for match in re.findall(r'url\(\s*(http://[^\)\s]+)', style_attr, re.I):
+                    full_url = urljoin(url, match)
+                    mixed_resources.append({
+                        'type': 'inline-style',
+                        'tag': element.name,
+                        'attribute': 'style',
+                        'url': full_url,
+                        'element': str(element)[:100] + '...' if len(str(element)) > 100 else str(element)
+                    })
             
             mixed_content_data['mixed_content_resources'] = mixed_resources
             mixed_content_data['has_mixed_content'] = len(mixed_resources) > 0
@@ -284,10 +323,17 @@ def test_status_analyzer():
         <title>Teste Mixed Content</title>
         <link rel="stylesheet" href="http://insecure.com/style.css">
         <script src="http://insecure.com/script.js"></script>
+        <style>
+            body { background-image: url(http://insecure.com/bg.css); }
+        </style>
     </head>
     <body>
         <img src="http://insecure.com/image.jpg" alt="Imagem insegura">
         <iframe src="http://insecure.com/iframe.html"></iframe>
+        <form action="http://insecure.com/submit">
+            <input type="text" name="q">
+        </form>
+        <div style="background:url(http://insecure.com/inline.jpg)">Teste</div>
         <img src="https://secure.com/safe.jpg" alt="Imagem segura">
     </body>
     </html>
@@ -311,17 +357,22 @@ def test_status_analyzer():
     # Teste com página HTTPS e mixed content
     response_https = MockResponse(200, "https://test.com")
     resultado = analyzer.analyze(soup, "https://test.com", response_https)
-    
+
     print("🔒 ANÁLISE DE MIXED CONTENT:")
     print(f"  URL: {resultado['url']}")
     print(f"  Status Code: {resultado['Status_Code']}")
     print(f"  Mixed Content encontrado: {resultado['has_mixed_content']}")
     print(f"  Número de recursos inseguros: {resultado['mixed_content_count']}")
-    
+    assert resultado['mixed_content_count'] == 7
+
     if resultado['mixed_content_resources']:
         print(f"  Recursos inseguros encontrados:")
         for resource in resultado['mixed_content_resources']:
             print(f"    - {resource['type']}: {resource['url']}")
+    # Mostra o primeiro recurso detectado para demonstrar a nova verificacao
+    if resultado['mixed_content_resources']:
+        first = resultado['mixed_content_resources'][0]
+        print(f"\n🔍 Exemplo de detection: {first['tag']} → {first['url']}")
     
     # Teste com status de erro
     response_error = MockResponse(404, "https://test.com/404")
