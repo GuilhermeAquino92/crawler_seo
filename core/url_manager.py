@@ -28,7 +28,10 @@ class URLManager:
     
     def set_base_domain(self, url):
         """Define o domínio base a partir de uma URL"""
-        self.base_domain = urlparse(url).netloc
+        domain = urlparse(url).netloc.lower()
+        if domain.startswith("www."):
+            domain = domain[4:]
+        self.base_domain = domain
     
     def normalize_url(self, url, base_url=None):
         """🔥 CORREÇÃO: Normalização robusta anti-duplicação"""
@@ -43,12 +46,15 @@ class URLManager:
                 url = urljoin(base_url, url)
             
             parsed = urlparse(url)
-            
+
             # Validações básicas
             if parsed.scheme not in ['http', 'https']:
                 return None
-            
-            if self.base_domain and parsed.netloc != self.base_domain:
+
+            domain = parsed.netloc.lower()
+            if domain.startswith("www."):
+                domain = domain[4:]
+            if self.base_domain and domain != self.base_domain:
                 return None
             
             # 🔥 NORMALIZAÇÃO ANTI-DUPLICAÇÃO
