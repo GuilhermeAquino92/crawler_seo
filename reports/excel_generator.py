@@ -646,6 +646,20 @@ class ExcelReportGenerator:
             if 'Has_Mixed_Content' in df.columns:
                 mixed = len(df[df['Has_Mixed_Content'] == 'SIM'])
                 resumo_data.append({'📊 Métrica': 'URLs com mixed content', 'Valor': mixed})
+
+            # Quantidade total de recursos mixed content críticos/passivos
+            if 'critical_mixed_count' in df.columns:
+                crit_total = int(df['critical_mixed_count'].sum())
+                resumo_data.append({'📊 Métrica': 'Recursos críticos em mixed content', 'Valor': crit_total})
+
+            if 'passive_mixed_count' in df.columns:
+                pass_total = int(df['passive_mixed_count'].sum())
+                resumo_data.append({'📊 Métrica': 'Recursos passivos em mixed content', 'Valor': pass_total})
+
+            # Distribuição de níveis de risco, se disponível
+            if 'risk_level' in df.columns:
+                for level, count in df['risk_level'].value_counts().items():
+                    resumo_data.append({'📊 Métrica': f'URLs risco {level}', 'Valor': int(count)})
             
             # Score médio
             if 'Metatags_Score' in df.columns:
@@ -670,13 +684,24 @@ class ExcelReportGenerator:
             if mixed_urls.empty:
                 return pd.DataFrame()
             
-            colunas_mixed = ['URL', 'Has_Mixed_Content', 'Mixed_Content_Count', 'Metatags_Score']
+            colunas_mixed = [
+                'URL',
+                'Has_Mixed_Content',
+                'Mixed_Content_Count',
+                'critical_mixed_count',
+                'passive_mixed_count',
+                'risk_level',
+                'Metatags_Score'
+            ]
             colunas_existentes = [col for col in colunas_mixed if col in df.columns]
             
             return mixed_urls[colunas_existentes].rename(columns={
                 'URL': '🔗 URL',
                 'Has_Mixed_Content': 'Tem Mixed Content',
                 'Mixed_Content_Count': 'Quantidade',
+                'critical_mixed_count': 'Críticos',
+                'passive_mixed_count': 'Passivos',
+                'risk_level': 'Nível de Risco',
                 'Metatags_Score': '🎯 Score'
             })
             
