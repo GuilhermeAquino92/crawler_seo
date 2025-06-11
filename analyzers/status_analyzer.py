@@ -273,7 +273,12 @@ class StatusAnalyzer:
         other_data = {
             'Security_Headers': {},
             'Performance_Issues': [],
-            'SEO_Status_Issues': []
+            'SEO_Status_Issues': [],
+            'hsts_present': False,
+            'csp_present': False,
+            'x_frame_options': False,
+            'x_content_type_options': False,
+            'referrer_policy': False
         }
         
         if not response:
@@ -288,10 +293,18 @@ class StatusAnalyzer:
                 'X-Content-Type-Options': headers.get('X-Content-Type-Options'),
                 'X-XSS-Protection': headers.get('X-XSS-Protection'),
                 'Strict-Transport-Security': headers.get('Strict-Transport-Security'),
-                'Content-Security-Policy': headers.get('Content-Security-Policy')
+                'Content-Security-Policy': headers.get('Content-Security-Policy'),
+                'Referrer-Policy': headers.get('Referrer-Policy')
             }
-            
+
             other_data['Security_Headers'] = {k: v for k, v in security_headers.items() if v}
+
+            # Flags booleanas indicando presença dos headers principais
+            other_data['hsts_present'] = bool(security_headers.get('Strict-Transport-Security'))
+            other_data['csp_present'] = bool(security_headers.get('Content-Security-Policy'))
+            other_data['x_frame_options'] = bool(security_headers.get('X-Frame-Options'))
+            other_data['x_content_type_options'] = bool(security_headers.get('X-Content-Type-Options'))
+            other_data['referrer_policy'] = bool(security_headers.get('Referrer-Policy'))
             
             # Verifica performance issues
             content_length = headers.get('Content-Length')
@@ -315,7 +328,14 @@ class StatusAnalyzer:
         try:
             critical = mixed_data.get('critical_mixed_count', 0)
             passive = mixed_data.get('passive_mixed_count', 0)
-            missing_headers = 5 - len(other_data.get('Security_Headers', {}))
+
+            missing_headers = sum([
+                not other_data.get('hsts_present', False),
+                not other_data.get('csp_present', False),
+                not other_data.get('x_frame_options', False),
+                not other_data.get('x_content_type_options', False),
+                not other_data.get('referrer_policy', False)
+            ])
 
             score = (critical * 2 + passive + missing_headers * 3) * 10
             score = min(score, 100)
