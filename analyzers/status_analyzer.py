@@ -37,6 +37,10 @@ class StatusAnalyzer:
             # 3. OUTRAS VERIFICAÇÕES DE STATUS
             other_status_data = self._analyze_other_status_issues(response, url)
             result.update(other_status_data)
+
+            # 4. CÁLCULO DO NÍVEL DE RISCO
+            risk_data = self._calculate_risk_level(mixed_content_data, other_status_data)
+            result.update(risk_data)
             
             self.stats['urls_processadas'] += 1
             
@@ -109,7 +113,9 @@ class StatusAnalyzer:
         mixed_content_data = {
             'mixed_content_resources': [],
             'has_mixed_content': False,
-            'mixed_content_count': 0
+            'mixed_content_count': 0,
+            'critical_mixed_count': 0,
+            'passive_mixed_count': 0
         }
         
         # Só analisa se a página é HTTPS
@@ -121,6 +127,8 @@ class StatusAnalyzer:
         
         try:
             mixed_resources = []
+            critical_count = 0
+            passive_count = 0
             
             # 1. IMAGENS com src HTTP
             for img in soup.find_all('img', src=True):
@@ -132,8 +140,10 @@ class StatusAnalyzer:
                         'tag': 'img',
                         'attribute': 'src',
                         'url': full_url,
-                        'element': str(img)[:100] + '...' if len(str(img)) > 100 else str(img)
+                        'element': str(img)[:100] + '...' if len(str(img)) > 100 else str(img),
+                        'category': 'passive'
                     })
+                    passive_count += 1
             
             # 2. SCRIPTS com src HTTP
             for script in soup.find_all('script', src=True):
@@ -143,10 +153,12 @@ class StatusAnalyzer:
                     mixed_resources.append({
                         'type': 'script',
                         'tag': 'script',
-                        'attribute': 'src', 
+                        'attribute': 'src',
                         'url': full_url,
-                        'element': str(script)[:100] + '...' if len(str(script)) > 100 else str(script)
+                        'element': str(script)[:100] + '...' if len(str(script)) > 100 else str(script),
+                        'category': 'critical'
                     })
+                    critical_count += 1
             
             # 3. LINKS (CSS) com href HTTP
             for link in soup.find_all('link', href=True):
@@ -158,8 +170,10 @@ class StatusAnalyzer:
                         'tag': 'link',
                         'attribute': 'href',
                         'url': full_url,
-                        'element': str(link)[:100] + '...' if len(str(link)) > 100 else str(link)
+                        'element': str(link)[:100] + '...' if len(str(link)) > 100 else str(link),
+                        'category': 'critical'
                     })
+                    critical_count += 1
             
             # 4. IFRAMES com src HTTP
             for iframe in soup.find_all('iframe', src=True):
@@ -171,8 +185,10 @@ class StatusAnalyzer:
                         'tag': 'iframe',
                         'attribute': 'src',
                         'url': full_url,
-                        'element': str(iframe)[:100] + '...' if len(str(iframe)) > 100 else str(iframe)
+                        'element': str(iframe)[:100] + '...' if len(str(iframe)) > 100 else str(iframe),
+                        'category': 'critical'
                     })
+                    critical_count += 1
             
             # 5. OUTROS recursos com URLs HTTP
             for tag in soup.find_all(['video', 'audio', 'source']):
@@ -186,8 +202,10 @@ class StatusAnalyzer:
                                 'tag': tag.name,
                                 'attribute': attr,
                                 'url': full_url,
-                                'element': str(tag)[:100] + '...' if len(str(tag)) > 100 else str(tag)
+                                'element': str(tag)[:100] + '...' if len(str(tag)) > 100 else str(tag),
+                                'category': 'passive'
                             })
+                            passive_count += 1
 
             # 6. <style> contendo url(http://...)
             for style_tag in soup.find_all('style'):
@@ -200,8 +218,10 @@ class StatusAnalyzer:
                             'tag': 'style',
                             'attribute': 'content',
                             'url': full_url,
-                            'element': str(style_tag)[:100] + '...' if len(str(style_tag)) > 100 else str(style_tag)
+                            'element': str(style_tag)[:100] + '...' if len(str(style_tag)) > 100 else str(style_tag),
+                            'category': 'passive'
                         })
+                        passive_count += 1
 
             # 7. Atributo style com url(http://...)
             for element in soup.find_all(style=True):
@@ -214,8 +234,10 @@ class StatusAnalyzer:
                             'tag': element.name,
                             'attribute': 'style',
                             'url': full_url,
-                            'element': str(element)[:100] + '...' if len(str(element)) > 100 else str(element)
+                            'element': str(element)[:100] + '...' if len(str(element)) > 100 else str(element),
+                            'category': 'passive'
                         })
+                        passive_count += 1
 
             # 8. Formulários com action HTTP
             for form in soup.find_all('form', action=True):
@@ -227,12 +249,16 @@ class StatusAnalyzer:
                         'tag': 'form',
                         'attribute': 'action',
                         'url': full_url,
-                        'element': str(form)[:100] + '...' if len(str(form)) > 100 else str(form)
+                        'element': str(form)[:100] + '...' if len(str(form)) > 100 else str(form),
+                        'category': 'critical'
                     })
+                    critical_count += 1
             
             mixed_content_data['mixed_content_resources'] = mixed_resources
             mixed_content_data['has_mixed_content'] = len(mixed_resources) > 0
             mixed_content_data['mixed_content_count'] = len(mixed_resources)
+            mixed_content_data['critical_mixed_count'] = critical_count
+            mixed_content_data['passive_mixed_count'] = passive_count
             
             if mixed_resources:
                 self.stats['mixed_content_found'] += 1
@@ -281,8 +307,30 @@ class StatusAnalyzer:
             
         except Exception as e:
             print(f"Erro analisando outros status em {url}: {e}")
-        
+
         return other_data
+
+    def _calculate_risk_level(self, mixed_data, other_data):
+        """⚠️ Calcula um nível de risco baseado em mixed content e headers"""
+        try:
+            critical = mixed_data.get('critical_mixed_count', 0)
+            passive = mixed_data.get('passive_mixed_count', 0)
+            missing_headers = 5 - len(other_data.get('Security_Headers', {}))
+
+            score = (critical * 2 + passive + missing_headers * 3) * 10
+            score = min(score, 100)
+
+            if score >= 70:
+                level = 'high'
+            elif score >= 40:
+                level = 'medium'
+            else:
+                level = 'low'
+
+            return {'risk_level': level, 'risk_score': score}
+
+        except Exception:
+            return {'risk_level': 'unknown', 'risk_score': 0}
     
     def get_stats(self):
         """📊 Estatísticas do analisador de status"""
@@ -365,6 +413,9 @@ def test_status_analyzer():
     print(f"  Status Code: {resultado['Status_Code']}")
     print(f"  Mixed Content encontrado: {resultado['has_mixed_content']}")
     print(f"  Número de recursos inseguros: {resultado['mixed_content_count']}")
+    print(f"  Recursos críticos: {resultado['critical_mixed_count']}")
+    print(f"  Recursos passivos: {resultado['passive_mixed_count']}")
+    print(f"  Risco geral: {resultado['risk_level']} ({resultado['risk_score']})")
     
     if resultado['mixed_content_resources']:
         print(f"  Recursos inseguros encontrados:")
