@@ -152,11 +152,10 @@ class ExcelReportGenerator:
                 # Aba mixed content (se disponível)
                 if 'mixed_content_resources' in df_main.columns or 'Has_Mixed_Content' in df_main.columns:
                     aba_mixed = self._aba_mixed(df_main)
-                    if not aba_mixed.empty:
-                        aba_mixed.to_excel(writer, sheet_name="🔒_Mixed_Content", index=False)
-                        self._ajustar_colunas(writer, aba_mixed, "🔒_Mixed_Content")
-                        abas_criadas += 1
-                        print(f"✅ Aba mixed content: {len(aba_mixed)} linhas")
+                    aba_mixed.to_excel(writer, sheet_name="🔒_Mixed_Content", index=False)
+                    self._ajustar_colunas(writer, aba_mixed, "🔒_Mixed_Content")
+                    abas_criadas += 1
+                    print(f"✅ Aba mixed content: {len(aba_mixed)} linhas")
                 
             except Exception as e:
                 print(f"⚠️ Erro gerando abas adicionais: {e}")
@@ -682,7 +681,15 @@ class ExcelReportGenerator:
                 mixed_urls = pd.DataFrame()
             
             if mixed_urls.empty:
-                return pd.DataFrame()
+                return pd.DataFrame(columns=[
+                    '🔗 URL',
+                    'Tem Mixed Content',
+                    'Quantidade',
+                    'Críticos',
+                    'Passivos',
+                    'Nível de Risco',
+                    '🎯 Score'
+                ])
             
             colunas_mixed = [
                 'URL',
